@@ -113,6 +113,34 @@ class BaseInputProcessor(metaclass=abc.ABCMeta):
         """
         raise NotImplementedError()
 
+    def load_local_glossary(self, csv_path: str, source_lang: str, target_lang: str):
+        """
+        Load a local CSV glossary file for use during translation.
+        The CSV must have language codes as column headers (e.g. 'en', 'zh').
+        Terms found in the source text will be injected into the LLM prompt.
+
+        Args:
+            csv_path: Path to the CSV file
+            source_lang: Source language column name (e.g. 'en')
+            target_lang: Target language column name (e.g. 'zh')
+        """
+        import numpy as np
+        df = pd.read_csv(csv_path)
+
+        glossary_dict = {}
+        for _, row in df.iterrows():
+            term = clean_text(str(row[source_lang]))
+            translation = str(row[target_lang])
+            if term not in glossary_dict:
+                glossary_dict[term] = {target_lang: [translation]}
+            else:
+                glossary_dict[term][target_lang].append(translation)
+
+        for term in glossary_dict:
+            glossary_dict[term][target_lang] = np.array(glossary_dict[term][target_lang])
+
+        self.general_glossary_dict[f"{source_lang}_{target_lang}"] = glossary_dict
+
     def load_general_glossary(self, glossary_parquet_folder=None, source_lang='ja', target_lang='en', encoding="utf8"):
         """
         Load the general glossary (i.e. wikidata title pair/ dictionary entries )

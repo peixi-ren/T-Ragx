@@ -126,11 +126,13 @@ class TRagx:
 
         memory_results = [[]] * len(text_list)
         if search_memory:
-            memory_results = self.input_processor.search_memory(text_list, **memory_search_args)
+            memory_results = self.input_processor.search_memory(
+                text_list, source_lang=source_lang_code, target_lang=target_lang_code, **memory_search_args)
 
         glossary_results = [[]] * len(text_list)
         if search_glossary:
-            glossary_results = self.input_processor.batch_search_glossary(text_list, **glossary_search_args)
+            glossary_results = self.input_processor.batch_search_glossary(
+                text_list, source_lang=source_lang_code, target_lang=target_lang_code, **glossary_search_args)
 
         generation_output_dict = {}
         for model_idx, generation_model, p_args, tok_args, gen_args in zip(
@@ -152,7 +154,7 @@ class TRagx:
                         'memory': memory_results[i],
                         'glossary': glossary_results[i],
                     }
-                    for i in range(len(batch_idx))
+                    for i in batch_idx
                 ]
 
                 translated_text_list += generation_model.batch_translate(

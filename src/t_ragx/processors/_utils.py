@@ -2,6 +2,7 @@ import base64
 import json
 import os.path
 import pathlib
+import re
 import tempfile
 import urllib.request
 from hashlib import md5
@@ -19,17 +20,7 @@ def serialize_str(s):
 def en_text_search(text, keyword):
     if len(keyword) > len(text):
         return False
-    text = text.casefold()
-    keyword = keyword.casefold()
-    if f" {keyword} " in text:
-        return True
-    elif text == keyword:
-        return True
-    elif len(keyword) - 1 > len(text) and text[:len(keyword) + 1] == keyword + " ":
-        return True
-    elif len(keyword) - 1 > len(text) and text[-len(keyword) + 1:] == " " + keyword:
-        return True
-    return False
+    return bool(re.search(r'\b' + re.escape(keyword) + r'\b', text, re.IGNORECASE))
 
 
 def merge_glossary_index(df):

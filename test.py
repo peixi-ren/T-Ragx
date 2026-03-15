@@ -5,8 +5,9 @@ from elasticsearch import Elasticsearch
 # Get your free API key at https://console.groq.com (no credit card required)
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 
-# Path to the local zh-en translation memory CSV
+# Path to the local zh-en translation memory and glossary CSV files
 MEMORY_CSV_PATH = os.path.join(os.path.dirname(__file__), "zh_en_memory.csv")
+GLOSSARY_CSV_PATH = os.path.join(os.path.dirname(__file__), "zh_en_glossary.csv")
 MEMORY_INDEX = "zh_en_translation_memory"
 LOCAL_ES_HOST = "http://localhost:9200"
 
@@ -14,6 +15,26 @@ EXAMPLE_SENTENCES = [
     "The quick brown fox jumps over the lazy dog.",
     "Artificial intelligence is transforming the way we live and work.",
     "She walked along the riverbank as the sun set behind the mountains.",
+    "How can we lower the CAC using First-Party Data?",
+    "The DSP is integrated with the top three Ad Exchange platforms.",
+    "We observed a drop in Impressions but an increase in CTR.",
+    "The MCN will manage the KOL cooperation for the summer launch.",
+    "Is Header Bidding supported by your current SSP?",
+    "A strong SEO strategy can complement your Programmatic Advertising.",
+    "The brand is focusing on Private Traffic to increase ROAS.",
+    "Does the Ad Server support Dynamic Creative Optimization?",
+    "Our Yield Management team recommended using a PMP.",
+    "The ATD is responsible for the overall media strategy.",
+    "We need to audit our DMP for better data accuracy.",
+    "D2C brands usually have a lower Customer Acquisition Cost.",
+    "Native Advertising should look like natural content.",
+    "What is the average CPM for this specific Ad Inventory?",
+    "The OpenRTB protocol helps maintain industry standards.",
+    "Low Viewability is affecting our brand safety scores.",
+    "The KOC community is growing faster than the KOL market.",
+    "Auction Dynamics vary depending on the time of day.",
+    "We are looking for a new Ad Network to expand our reach.",
+    "Attribution Modeling is necessary for omnichannel marketing."
 ]
 
 
@@ -36,8 +57,8 @@ def main():
     # --- Input processor: glossary + translation memory ---
     input_processor = t_ragx.processors.ElasticInputProcessor()
 
-    # Load en→zh glossary (downloads and caches a Parquet from S3)
-    input_processor.load_general_glossary(source_lang='en', target_lang='zh')
+    # Load en→zh glossary from local CSV
+    input_processor.load_local_glossary(GLOSSARY_CSV_PATH, source_lang='en', target_lang='zh')
 
     # --- Set up local zh-en translation memory ---
     # Requires Elasticsearch running locally:

@@ -16,9 +16,11 @@ def pretext_to_text(pretext_list, max_sent=5):
 
 
 def glossary_to_text(glossary):
-    out_text = "Relevant Dictionary records:\n"
+    if not glossary:
+        return ""
+    out_text = "MANDATORY glossary — you MUST translate every listed term using ONLY its provided translation, with no exceptions:\n"
     for source_text in glossary:
-        out_text += f"  {source_text}: {', '.join(glossary[source_text])}\n"
+        out_text += f"  {source_text} → {', '.join(glossary[source_text])}\n"
     return out_text
 
 
@@ -205,13 +207,22 @@ class BaseModel(metaclass=abc.ABCMeta):
         if search_result is None:
             search_result = {'glossary': [], 'memory': []}
 
+        glossary_text = glossary_to_text(search_result['glossary'])
+        system_content = "You are a professional translator."
+        if glossary_text:
+            system_content += (
+                " When translating, you MUST strictly follow the provided glossary. "
+                "Every glossary term — including abbreviations like DSP, CTR, ROAS — MUST be replaced with its Chinese translation. "
+                "Never keep any glossary term in English. Never use parenthetical formats like 'Term (Translation)'. "
+                "Output only the translated text."
+            )
         chat = [
+            {"role": "system", "content": system_content},
             {"role": "user", "content": (
-                "As a large language model, you are a trained expert in multiple languages. "
-                "These are some references that might help you translating passages:\n"
-                f"{glossary_to_text(search_result['glossary'])}{pretext_to_text(pre_text)}{trans_mem_to_text(search_result['memory'], source_lang_code=source_lang_code, target_lang_code=target_lang_code)}"
+                f"{glossary_text}"
+                f"{pretext_to_text(pre_text)}{trans_mem_to_text(search_result['memory'], source_lang_code=source_lang_code, target_lang_code=target_lang_code)}"
                 f"Translate this {source_lang} passage to {target_lang} "
-                "without additional questions, disclaimer, or explanations, but accurately and completely:"
+                "without additional questions, disclaimer, or explanations, but accurately and completely:\n"
                 f"{text}"
             )},
         ]
