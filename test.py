@@ -64,6 +64,9 @@ def main():
     # --- Translator ---
     translator = t_ragx.TRagx([model], input_processor=input_processor)
 
+    # Load exact match memory — 100% matches bypass the LLM entirely
+    translator.load_exact_match_memory(MEMORY_CSV_PATH, source_lang='en', target_lang='zh')
+
     # --- Translate ---
     translations = translator.batch_translate(
         EXAMPLE_SENTENCES,

@@ -1,6 +1,7 @@
 from typing import List, Union
 
 import numpy as np
+import pandas as pd
 from tqdm.auto import tqdm
 
 from t_ragx.processors import ElasticInputProcessor, BaseInputProcessor
@@ -43,6 +44,22 @@ class TRagx:
         else:
             if len(self.generation_models) > 1:
                 self.aggregate_model = CometAggregationModel()
+
+        self.exact_match_memory = {}
+
+    def load_exact_match_memory(self, csv_path: str, source_lang: str, target_lang: str):
+        """
+        Load a CSV translation memory file for exact match lookup.
+        If a source sentence matches exactly, it will be returned directly
+        without calling the LLM.
+
+        Args:
+            csv_path: Path to the CSV file with language code column headers (e.g. 'en', 'zh')
+            source_lang: Source language column name (e.g. 'en')
+            target_lang: Target language column name (e.g. 'zh')
+        """
+        df = pd.read_csv(csv_path)
+        self.exact_match_memory = dict(zip(df[source_lang], df[target_lang]))
 
     def __call__(self, *args, **kwargs):
         return self.translate(*args, **kwargs)
@@ -89,6 +106,23 @@ class TRagx:
 
         if generation_args is None:
             generation_args = [{}] * len(text_list)
+
+        # --- Exact match: bypass LLM for sentences found in exact_match_memory ---
+        final_results = [None] * len(text_list)
+        llm_indices = []
+        for i, text in enumerate(text_list):
+            if text in self.exact_match_memory:
+                final_results[i] = self.exact_match_memory[text]
+            else:
+                llm_indices.append(i)
+
+        if not llm_indices:
+            return final_results
+
+        # Only send unmatched sentences to the LLM
+        text_list = [text_list[i] for i in llm_indices]
+        pre_text_list = [pre_text_list[i] for i in llm_indices]
+        tokenize_args = [tokenize_args[i] for i in llm_indices]
 
         memory_results = [[]] * len(text_list)
         if search_memory:
@@ -137,4 +171,9 @@ class TRagx:
             generation_output = self.aggregate_model.combine_preds(
                 generation_output_dict, batch_text, target_lang_code=target_lang_code
             )
-        return generation_output
+
+        # Merge LLM results back into final_results at the correct positions
+        for i, translation in zip(llm_indices, generation_output):
+            final_results[i] = translation
+
+        return final_results
