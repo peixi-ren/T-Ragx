@@ -1,14 +1,35 @@
 import os
 import t_ragx
+from elasticsearch import Elasticsearch
 
 # Get your free API key at https://console.groq.com (no credit card required)
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "your_groq_api_key_here")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+
+# Path to the local zh-en translation memory CSV
+MEMORY_CSV_PATH = os.path.join(os.path.dirname(__file__), "zh_en_memory.csv")
+MEMORY_INDEX = "zh_en_translation_memory"
+LOCAL_ES_HOST = "http://localhost:9200"
 
 EXAMPLE_SENTENCES = [
     "The quick brown fox jumps over the lazy dog.",
     "Artificial intelligence is transforming the way we live and work.",
     "She walked along the riverbank as the sun set behind the mountains.",
 ]
+
+
+def index_memory_csv(es_client):
+    """Index zh_en_memory.csv into local Elasticsearch if not already indexed."""
+    from t_ragx.utils.elastic import csv_to_elastic
+    try:
+        es_client.indices.create(index=MEMORY_INDEX)
+        print(f"Indexing {MEMORY_CSV_PATH} into Elasticsearch...")
+        csv_to_elastic(MEMORY_CSV_PATH, id_key='en', es_client=es_client, index=MEMORY_INDEX)
+        print("Indexing complete.")
+    except Exception as e:
+        if 'resource_already_exists' in str(e).lower():
+            print(f"Index '{MEMORY_INDEX}' already exists, skipping indexing.")
+        else:
+            raise
 
 
 def main():
@@ -18,10 +39,15 @@ def main():
     # Load en→zh glossary (downloads and caches a Parquet from S3)
     input_processor.load_general_glossary(source_lang='en', target_lang='zh')
 
-    # Load general translation memory from the demo Elasticsearch cluster
+    # --- Set up local zh-en translation memory ---
+    # Requires Elasticsearch running locally:
+    #   docker run -d -p 9200:9200 -e "discovery.type=single-node" -e "xpack.security.enabled=false" elasticsearch:8.11.0
+    es_client = Elasticsearch(LOCAL_ES_HOST)
+    index_memory_csv(es_client)
     input_processor.load_general_translation(
-        elastic_index="general_translation_memory",
-        elasticsearch_host=["https://t-ragx-fossil.rayliu.ca", "https://t-ragx-fossil2.rayliu.ca"]
+        elastic_index=MEMORY_INDEX,
+        elasticsearch_host=LOCAL_ES_HOST,
+        es_client=es_client,
     )
 
     # --- Model: Groq (free, OpenAI-compatible API) ---
@@ -43,7 +69,7 @@ def main():
         EXAMPLE_SENTENCES,
         source_lang_code='en',
         target_lang_code='zh',
-        search_memory=False,  # demo ES cluster only has ja/en pairs, no zh
+        search_memory=True,  # uses local zh-en translation memory
     )
 
     print("\n=== English → Chinese translations ===\n")

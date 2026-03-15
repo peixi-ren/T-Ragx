@@ -129,6 +129,28 @@ def upload_df(df: pd.DataFrame, es_client: Elasticsearch, id_key: str = 'ja', ba
             raise r
 
 
+def setup_local_memory(file_path, source_lang='en', elasticsearch_host='localhost', index='translation_memory'):
+    """
+    Index a CSV translation memory file into a local Elasticsearch instance.
+    The CSV must have language codes as column headers (e.g. 'en', 'zh').
+
+    Requires Elasticsearch running locally:
+        docker run -d -p 9200:9200 -e "discovery.type=single-node" -e "xpack.security.enabled=false" elasticsearch:8.11.0
+
+    Args:
+        file_path: Path to the CSV file
+        source_lang: The source language column to use as the document ID (e.g. 'en')
+        elasticsearch_host: Elasticsearch host URL (default: 'localhost')
+        index: Elasticsearch index name to write into
+    """
+    es_client = Elasticsearch(elasticsearch_host)
+    if not es_client.indices.exists(index=index):
+        es_client.indices.create(index=index)
+    csv_to_elastic(file_path, id_key=source_lang, elasticsearch_host=elasticsearch_host,
+                   es_client=es_client, index=index)
+    return es_client
+
+
 def csv_to_elastic(file_path,
                    id_key='ja',
                    elasticsearch_host: str = "localhost",
