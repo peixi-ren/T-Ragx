@@ -1,0 +1,101 @@
+/Users/peixi/miniconda3/envs/t_ragx/lib/python3.10/site-packages/torchmetrics/utilities/imports.py:23: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import DistributionNotFound, get_distribution
+/Users/peixi/miniconda3/envs/t_ragx/lib/python3.10/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: 'Could not load this library: /Users/peixi/miniconda3/envs/t_ragx/lib/python3.10/site-packages/torchvision/image.so'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+
+  0%|          | 0/21 [00:00<?, ?it/s]
+  5%|▍         | 1/21 [00:00<00:12,  1.66it/s]
+ 10%|▉         | 2/21 [00:00<00:06,  2.77it/s]
+ 14%|█▍        | 3/21 [00:01<00:06,  2.76it/s]
+ 19%|█▉        | 4/21 [00:01<00:05,  2.93it/s]
+ 24%|██▍       | 5/21 [00:01<00:05,  3.08it/s]
+ 29%|██▊       | 6/21 [00:02<00:04,  3.10it/s]
+ 33%|███▎      | 7/21 [00:02<00:04,  3.15it/s]
+ 38%|███▊      | 8/21 [00:02<00:04,  3.18it/s]
+ 43%|████▎     | 9/21 [00:03<00:03,  3.19it/s]
+ 48%|████▊     | 10/21 [00:03<00:03,  3.22it/s]
+ 52%|█████▏    | 11/21 [00:03<00:03,  3.23it/s]
+ 57%|█████▋    | 12/21 [00:03<00:02,  3.77it/s]
+ 62%|██████▏   | 13/21 [00:04<00:02,  3.86it/s]
+ 67%|██████▋   | 14/21 [00:04<00:01,  4.08it/s]
+ 71%|███████▏  | 15/21 [00:04<00:01,  3.57it/s]
+ 76%|███████▌  | 16/21 [00:04<00:01,  3.94it/s]
+ 81%|████████  | 17/21 [00:05<00:01,  3.50it/s]
+ 86%|████████▌ | 18/21 [00:05<00:00,  3.62it/s]
+ 90%|█████████ | 19/21 [00:05<00:00,  3.32it/s]
+ 95%|█████████▌| 20/21 [00:06<00:00,  3.29it/s]
+100%|██████████| 21/21 [00:06<00:00,  3.29it/s]
+100%|██████████| 21/21 [00:06<00:00,  3.29it/s]
+Index 'zh_en_translation_memory' already exists, skipping indexing.
+
+=== English → Chinese translations ===
+
+  EN: The quick brown fox jumps over the lazy dog.
+  ZH: 那只敏捷的棕色狐狸跳过了那只懒狗。
+
+  EN: Artificial intelligence is transforming the way we live and work.
+  ZH: 人工智能正在改变我们生活和工作的模式。
+
+  EN: She walked along the riverbank as the sun set behind the mountains.
+  ZH: 她沿着河岸行走，太阳沉落在山后。
+
+  EN: How can we lower the CAC using First-Party Data?
+  ZH: 我们如何使用第一方数据来降低客户获取成本？
+
+  EN: The DSP is integrated with the top three Ad Exchange platforms.
+  ZH: 需求方平台与前三家广告交易平台集成。
+
+  EN: We observed a drop in Impressions but an increase in CTR.
+  ZH: 我们观察到广告曝光的下降，但点击率的增加。
+
+  EN: The MCN will manage the KOL cooperation for the summer launch.
+  ZH: 多频道网络将为夏季发布管理关键意见领袖合作。
+
+  EN: Is Header Bidding supported by your current SSP?
+  ZH: 您的当前供应方平台是否支持头部竞价？
+
+  EN: A strong SEO strategy can complement your Programmatic Advertising.
+  ZH: 良好的搜索引擎优化策略可以补充您的程序化广告。
+
+  EN: The brand is focusing on Private Traffic to increase ROAS.
+  ZH: 该品牌正在专注于私域流量来提高广告支出回报率。
+
+  EN: Does the Ad Server support Dynamic Creative Optimization?
+  ZH: 广告投放服务器是否支持动态创意优化？
+
+  EN: Our Yield Management team recommended using a PMP.
+  ZH: 我们的收益管理团队推荐使用私有交易市场。
+
+  EN: The ATD is responsible for the overall media strategy.
+  ZH: 代理商通用平台负责整个媒体策略。
+
+  EN: We need to audit our DMP for better data accuracy.
+  ZH: 我们需要审核我们的数据管理平台以提高数据准确性。
+
+  EN: D2C brands usually have a lower Customer Acquisition Cost.
+  ZH: 直面消费者品牌通常具有较低的客户获取成本。
+
+  EN: Native Advertising should look like natural content.
+  ZH: 原生广告应该看起来像自然内容。
+
+  EN: What is the average CPM for this specific Ad Inventory?
+  ZH: 这个具体的广告库存的平均每千次展示成本是多少？
+
+  EN: The OpenRTB protocol helps maintain industry standards.
+  ZH: 开放实时竞价协议帮助维持行业标准。
+
+  EN: Low Viewability is affecting our brand safety scores.
+  ZH: 低可见性影响了我们的品牌安全评分。
+
+  EN: The KOC community is growing faster than the KOL market.
+  ZH: 关键意见消费者社区正在比关键意见领袖市场增长得更快。
+
+  EN: Auction Dynamics vary depending on the time of day.
+  ZH: 竞价机制会根据一天中的时间而有所不同。
+
+  EN: We are looking for a new Ad Network to expand our reach.
+  ZH: 我们正在寻找新的广告网络来扩大我们的覆盖范围。
+
+  EN: Attribution Modeling is necessary for omnichannel marketing.
+  ZH: 归因模型是全渠道营销所必需的。
+

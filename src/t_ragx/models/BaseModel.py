@@ -27,10 +27,15 @@ def glossary_to_text(glossary):
 def trans_mem_to_text(trans_mem: list, source_lang_code='ja', target_lang_code='en'):
     if len(trans_mem) < 1:
         return ""
-    out_text = "Examples translations:\n"
+    out_text = "Example translations (similarity: 0.0 = identical to source, 1.0 = completely different):\n"
     count = 1
     for row in trans_mem:
-        out_text += f""" {count}. \n   {row[source_lang_code]}\n   {row[target_lang_code]}\n"""
+        normed_distance = row.get('normed_distance', None)
+        if normed_distance is not None:
+            score_label = f" [similarity: {normed_distance:.2f}]"
+        else:
+            score_label = ""
+        out_text += f""" {count}.{score_label}\n   {row[source_lang_code]}\n   {row[target_lang_code]}\n"""
         count += 1
     return out_text
 
@@ -208,7 +213,12 @@ class BaseModel(metaclass=abc.ABCMeta):
             search_result = {'glossary': [], 'memory': []}
 
         glossary_text = glossary_to_text(search_result['glossary'])
-        system_content = "You are a professional translator."
+        system_content = (
+            "You are a professional translator. "
+            "When example translations are provided with a similarity score, "
+            "a score of 0.0 means the example is identical to the source — follow it very closely. "
+            "A score closer to 1.0 means the example is less similar — use it only as a loose reference."
+        )
         if glossary_text:
             system_content += (
                 " When translating, you MUST strictly follow the provided glossary. "

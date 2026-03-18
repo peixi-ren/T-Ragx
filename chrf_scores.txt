@@ -1,0 +1,65 @@
+chrF Comparison: baseline vs. with-score translations
+(chrF score per sentence: with-score output vs. baseline as pseudo-reference)
+Higher = more similar to baseline. Lower = more diverged.
+================================================================================
+#       chrF  Changed  EN source
+--------------------------------------------------------------------------------
+1      100.0           The quick brown fox jumps over the lazy dog.
+2      100.0           Artificial intelligence is transforming the way we live and work.
+3       37.0        *  She walked along the riverbank as the sun set behind the mountains.
+       Baseline : 她沿着河岸走着，太阳沉在了山后。
+       WithScore: 她沿着河岸行走，太阳沉落在山后。
+4       79.4        *  How can we lower the CAC using First-Party Data?
+       Baseline : 如何使用第一方数据降低客户获取成本？
+       WithScore: 我们如何使用第一方数据来降低客户获取成本？
+5       34.4        *  The DSP is integrated with the top three Ad Exchange platforms.
+       Baseline : 需求方平台已与顶尖的三个广告交易平台整合。
+       WithScore: 需求方平台与前三家广告交易平台集成。
+6       50.1        *  We observed a drop in Impressions but an increase in CTR.
+       Baseline : 我们观察到广告曝光的降低，但点击率却有所上升。
+       WithScore: 我们观察到广告曝光的下降，但点击率的增加。
+7       43.9        *  The MCN will manage the KOL cooperation for the summer launch.
+       Baseline : 多频道网络将管理关键意见领袖的合作，以便于夏季的发布。
+       WithScore: 多频道网络将为夏季发布管理关键意见领袖合作。
+8       93.5        *  Is Header Bidding supported by your current SSP?
+       Baseline : 你的当前供应方平台是否支持头部竞价？
+       WithScore: 您的当前供应方平台是否支持头部竞价？
+9       90.2        *  A strong SEO strategy can complement your Programmatic Advertising.
+       Baseline : 强大的搜索引擎优化策略可以补充您的程序化广告。
+       WithScore: 良好的搜索引擎优化策略可以补充您的程序化广告。
+10      45.9        *  The brand is focusing on Private Traffic to increase ROAS.
+       Baseline : 该品牌致力于 私域流量 以增加 广告支出回报率。
+       WithScore: 该品牌正在专注于私域流量来提高广告支出回报率。
+11     100.0           Does the Ad Server support Dynamic Creative Optimization?
+12      73.1        *  Our Yield Management team recommended using a PMP.
+       Baseline : 我们的收益管理团队建议使用私有交易市场。
+       WithScore: 我们的收益管理团队推荐使用私有交易市场。
+13     100.0           The ATD is responsible for the overall media strategy.
+14      50.0        *  We need to audit our DMP for better data accuracy.
+       Baseline : 我们需要审计我们的数据管理平台，以实现更好的数据准确性。
+       WithScore: 我们需要审核我们的数据管理平台以提高数据准确性。
+15      80.1        *  D2C brands usually have a lower Customer Acquisition Cost.
+       Baseline : 直面消费者品牌通常具备较低的客户获取成本。
+       WithScore: 直面消费者品牌通常具有较低的客户获取成本。
+16     100.0           Native Advertising should look like natural content.
+17     100.0           What is the average CPM for this specific Ad Inventory?
+18      61.1        *  The OpenRTB protocol helps maintain industry standards.
+       Baseline : 开封实时竞价 协议帮助维护行业标准。
+       WithScore: 开放实时竞价协议帮助维持行业标准。
+19      61.2        *  Low Viewability is affecting our brand safety scores.
+       Baseline : 低可见性正影响着我们的品牌安全评分。
+       WithScore: 低可见性影响了我们的品牌安全评分。
+20      60.4        *  The KOC community is growing faster than the KOL market.
+       Baseline : 关键意见消费者社区的增长速度比关键意见领袖市场更快。
+       WithScore: 关键意见消费者社区正在比关键意见领袖市场增长得更快。
+21     100.0           Auction Dynamics vary depending on the time of day.
+22     100.0           We are looking for a new Ad Network to expand our reach.
+23      58.8        *  Attribution Modeling is necessary for omnichannel marketing.
+       Baseline : 归因模型是全渠道营销的必要条件。
+       WithScore: 归因模型是全渠道营销所必需的。
+================================================================================
+Sentences changed       : 15/23
+Corpus chrF (new vs base): 73.38
+Corpus chrF (base vs new): 74.60
+Average sentence chrF   : 74.74
+Avg chrF on changed only: 61.27
