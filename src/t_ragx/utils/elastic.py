@@ -124,9 +124,9 @@ def upload_df(df: pd.DataFrame, es_client: Elasticsearch, id_key: str = 'ja', ba
     batch_idx = np.array_split(range(len(df)), max(int(len(df) / batch_size), 1))
     for select_idx in tqdm(batch_idx):
         try:
-            r = es_client.bulk(upsert_doc(df.iloc[select_idx]), index)  # return a dict
-        except:
-            raise r
+            r = es_client.bulk(operations=upsert_doc(df.iloc[select_idx], index=index), index=index)  # return a dict
+        except Exception as e:
+            raise e
 
 
 def setup_local_memory(file_path, source_lang='en', elasticsearch_host='localhost', index='translation_memory'):
