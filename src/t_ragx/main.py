@@ -204,6 +204,11 @@ class TRagx:
 
         for i, text in enumerate(text_list):
             if text in self.exact_match_memory:
+                # Long segments (>5 words) are specific enough — use TM directly without context check
+                if len(text.split()) > 5:
+                    final_results[i] = self.exact_match_memory[text][0]["target"]
+                    continue
+
                 actual_prev = text_list[max(0, i - 1):i]
                 actual_next = text_list[i + 1:i + 2]
 
@@ -242,7 +247,11 @@ class TRagx:
             first_pass_indices.append(occurrences[0][0])
             for orig_idx, prev_1, next_1 in occurrences[1:]:
                 first_occ_idx, first_prev, first_next = occurrences[0]
-                same_context = (prev_1 == first_prev and next_1 == first_next)
+                # Long segments (>5 words) are specific enough — propagate directly without context check
+                if len(text.split()) > 5:
+                    same_context = True
+                else:
+                    same_context = (prev_1 == first_prev and next_1 == first_next)
                 deferred_repeats.append((orig_idx, first_occ_idx, same_context))
 
         # --- First LLM pass: translate first occurrences and non-repeats ---

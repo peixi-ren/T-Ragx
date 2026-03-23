@@ -27,16 +27,47 @@ def glossary_to_text(glossary):
 def trans_mem_to_text(trans_mem: list, source_lang_code='ja', target_lang_code='en'):
     if len(trans_mem) < 1:
         return ""
-    out_text = "Example translations (similarity: 0.0 = identical to source, 1.0 = completely different):\n"
+
+    # Separate hits with scores from legacy hits without
+    scored = [(row, row['normed_distance']) for row in trans_mem if row.get('normed_distance') is not None]
+    unscored = [row for row in trans_mem if row.get('normed_distance') is None]
+
+    if not scored:
+        # Legacy fallback: flat list
+        out_text = "Example translations:\n"
+        for count, row in enumerate(unscored, 1):
+            out_text += f" {count}.\n   {row[source_lang_code]}\n   {row[target_lang_code]}\n"
+        return out_text
+
+    tiers = [
+        (0.0,  0.0,  "Identical — follow very closely"),
+        (0.0,  0.3,  "High similarity — strong wording and sentence structure reference"),
+        (0.3,  0.5,  "Partial similarity — selective wording and sentence structure reference"),
+        (0.5,  None, "Low similarity — style and tone context only"),
+    ]
+
+    out_text = "Example translations:\n"
     count = 1
-    for row in trans_mem:
-        normed_distance = row.get('normed_distance', None)
-        if normed_distance is not None:
-            score_label = f" [similarity: {normed_distance:.2f}]"
+    for low, high, label in tiers:
+        if low == 0.0 and high == 0.0:
+            bucket = [(row, s) for row, s in scored if s == 0.0]
+        elif high is None:
+            bucket = [(row, s) for row, s in scored if s > low]
         else:
-            score_label = ""
-        out_text += f""" {count}.{score_label}\n   {row[source_lang_code]}\n   {row[target_lang_code]}\n"""
-        count += 1
+            bucket = [(row, s) for row, s in scored if low < s <= high]
+        if not bucket:
+            continue
+        out_text += f"\n[{label}]\n"
+        for row, s in bucket:
+            out_text += f"  {count}. [score: {s:.2f}]\n    {row[source_lang_code]}\n    {row[target_lang_code]}\n"
+            count += 1
+
+    if unscored:
+        out_text += "\n[Additional examples]\n"
+        for row in unscored:
+            out_text += f"  {count}.\n    {row[source_lang_code]}\n    {row[target_lang_code]}\n"
+            count += 1
+
     return out_text
 
 
@@ -47,17 +78,19 @@ def tm_context_to_text(tm_context: dict):
         out_text = "This segment appears earlier in the document with translation:\n"
         out_text += f"  Earlier translation: {tm_context['proposal']}\n\n"
         review_instruction = (
-            "\nThe surrounding context differs from the earlier occurrence. "
-            "If the earlier translation fits this context, use it exactly. "
-            "If the surrounding context suggests a different meaning, provide a corrected translation.\n\n"
+            "\nThis segment was already translated earlier in this document. "
+            "The surrounding context here differs from the earlier occurrence. "
+            "Default to the earlier translation. Only provide a corrected translation if the surrounding context "
+            "clearly indicates a different meaning.\n\n"
         )
     else:
         out_text = "A 100% translation memory match was found for this sentence:\n"
         out_text += f"  Proposed translation: {tm_context['proposal']}\n\n"
         review_instruction = (
-            "\nThe context differs from the translation memory. "
-            "If the proposed translation fits this context, use it exactly. "
-            "If the surrounding context suggests a different meaning, provide a corrected translation.\n\n"
+            "\nThis is a verified 100% translation memory match. "
+            "The context here differs from the original TM entry. "
+            "Default to the proposed translation. Only provide a corrected translation if the surrounding context "
+            "clearly indicates a different meaning.\n\n"
         )
     out_text += "Surrounding context in the current document:\n"
     if tm_context['prev_segments']:
@@ -257,9 +290,12 @@ class BaseModel(metaclass=abc.ABCMeta):
         glossary_text = glossary_to_text(search_result['glossary'])
         system_content = (
             "You are a professional translator. "
-            "When example translations are provided with a similarity score, "
+            "When example translations are provided with a similarity score: "
             "a score of 0.0 means the example is identical to the source — follow it very closely. "
-            "A score closer to 1.0 means the example is less similar — use it only as a loose reference."
+            "The higher the score, the less similar the example is to the source. "
+            "A score between 0.0 and 0.3 indicates high similarity — use as a strong reference for wording and sentence structure. "
+            "A score between 0.3 and 0.5 indicates partial similarity — use selectively as a wording and sentence structure reference. "
+            "A score above 0.5 indicates low similarity but some relevance — use only as context for style and tone."
         )
         if tm_context is not None:
             if tm_context.get("source") == "repeat":

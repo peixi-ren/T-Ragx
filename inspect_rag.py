@@ -123,6 +123,9 @@ def main():
     non_tm_indices = []
     for idx, src in enumerate(EXAMPLE_SENTENCES):
         if src in exact_match_memory:
+            # Long segments (>5 words) used directly — excluded from repeat detection
+            if len(src.split()) > 5:
+                continue
             actual_prev = EXAMPLE_SENTENCES[max(0, idx - 1):idx]
             actual_next = EXAMPLE_SENTENCES[idx + 1:idx + 2]
             if any(occ["prev"] == actual_prev and occ["next"] == actual_next
@@ -138,14 +141,17 @@ def main():
         repeat_map.setdefault(text, []).append((i, prev_1, next_1))
 
     # For each later occurrence, determine status
-    repeat_status = {}  # idx → ("same_context", first_occ_idx) or ("context_differs", first_occ_idx)
+    repeat_status = {}  # idx → ("same_context"|"context_differs"|"long_segment", first_occ_idx)
     for text, occurrences in repeat_map.items():
         if len(occurrences) < 2:
             continue
         first_occ_idx, first_prev, first_next = occurrences[0]
         for orig_idx, prev_1, next_1 in occurrences[1:]:
-            same = (prev_1 == first_prev and next_1 == first_next)
-            repeat_status[orig_idx] = ("same_context" if same else "context_differs", first_occ_idx)
+            if len(text.split()) > 5:
+                status = "long_segment"
+            else:
+                status = "same_context" if (prev_1 == first_prev and next_1 == first_next) else "context_differs"
+            repeat_status[orig_idx] = (status, first_occ_idx)
 
     # --- Print report ---
     separator = "=" * 80
@@ -157,6 +163,14 @@ def main():
         # --- 100% Match Context Check ---
         tm_context = None  # will be set if 100% match with context difference
         if src in exact_match_memory:
+            # Long segments (>5 words) are specific enough — use TM directly without context check
+            if len(src.split()) > 5:
+                print(f"  [100% MATCH] Status: LONG SEGMENT (>5 words) — used directly")
+                print(f"       TM translation: {exact_match_memory[src][0]['target']}")
+                print(f"       -> Bypassing context check (no LLM call)")
+                print()
+                continue
+
             # Build actual context (1 before + 1 after)
             actual_prev = EXAMPLE_SENTENCES[max(0, idx - 1):idx]
             actual_next = EXAMPLE_SENTENCES[idx + 1:idx + 2]
@@ -217,7 +231,12 @@ def main():
             actual_next_1 = EXAMPLE_SENTENCES[idx + 1:idx + 2]
             first_prev_1 = EXAMPLE_SENTENCES[max(0, first_occ_idx - 1):first_occ_idx]
             first_next_1 = EXAMPLE_SENTENCES[first_occ_idx + 1:first_occ_idx + 2]
-            if status == "same_context":
+            if status == "long_segment":
+                print(f"  [REPEAT] Status: LONG SEGMENT (>5 words) — copy translation from occurrence at [{first_occ_idx + 1:02d}]")
+                print(f"       -> Bypassing context check (no LLM call)")
+                print()
+                continue
+            elif status == "same_context":
                 print(f"  [REPEAT] Status: SAME CONTEXT — copy translation from occurrence at [{first_occ_idx + 1:02d}]")
                 print(f"       First occurrence prev: {first_prev_1}")
                 print(f"       First occurrence next: {first_next_1}")
