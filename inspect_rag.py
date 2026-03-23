@@ -1,6 +1,6 @@
 """
-inspect_rag.py — Show TM and TB (glossary) retrieval results and the LLM prompt
-for each source sentence.
+inspect_rag.py — Show TM and TB (glossary) retrieval results, 100% match
+context-check status, and the LLM prompt for each source sentence.
 
 Run with:
     conda run -n t_ragx python inspect_rag.py > rag_inspection.txt
@@ -9,10 +9,11 @@ or simply:
 """
 
 import os
+import pandas as pd
 import t_ragx
 from elasticsearch import Elasticsearch
 from t_ragx.models.OpenAIModel import OpenAIModel
-from t_ragx.models.BaseModel import glossary_to_text, trans_mem_to_text, pretext_to_text
+from t_ragx.models.BaseModel import glossary_to_text, trans_mem_to_text, pretext_to_text, tm_context_to_text
 from t_ragx.models.constants import LANG_BY_LANG_CODE
 
 MEMORY_CSV_PATH = os.path.join(os.path.dirname(__file__), "zh_en_memory.csv")
@@ -43,11 +44,28 @@ EXAMPLE_SENTENCES = [
     "The KOC community is growing faster than the KOL market.",
     "Auction Dynamics vary depending on the time of day.",
     "We are looking for a new Ad Network to expand our reach.",
-    "Attribution Modeling is necessary for omnichannel marketing."
+    "Attribution Modeling is necessary for omnichannel marketing.",
+    "The KOC community is growing faster than the KOL market.",
+    "Auction Dynamics vary depending on the time of day.",
+    "We are looking for a new Ad Network to expand our reach.",
 ]
 
 SOURCE_LANG = 'en'
 TARGET_LANG = 'zh'
+
+
+def load_exact_match_memory(csv_path, source_lang, target_lang):
+    """Load exact match memory with context (mirrors TRagx.load_exact_match_memory)."""
+    df = pd.read_csv(csv_path)
+    src_col = df[source_lang].tolist()
+    tgt_col = df[target_lang].tolist()
+    exact_match_memory = {}
+    for i, (src, tgt) in enumerate(zip(src_col, tgt_col)):
+        prev = [src_col[j] for j in range(max(0, i - 1), i)]
+        nxt = [src_col[j] for j in range(i + 1, min(len(src_col), i + 2))]
+        entry = {"target": tgt, "prev": prev, "next": nxt}
+        exact_match_memory.setdefault(src, []).append(entry)
+    return exact_match_memory
 
 
 def index_memory_csv(es_client):
@@ -83,6 +101,9 @@ def main():
         es_client=es_client,
     )
 
+    # --- Load exact match memory with context ---
+    exact_match_memory = load_exact_match_memory(MEMORY_CSV_PATH, SOURCE_LANG, TARGET_LANG)
+
     # --- Batch-retrieve TM hits for all sentences ---
     tm_results = input_processor.search_memory(
         EXAMPLE_SENTENCES,
@@ -97,12 +118,148 @@ def main():
         target_lang=TARGET_LANG,
     )
 
+    # --- Build repeat map (mirrors batch_translate logic) ---
+    # First, identify which indices are NOT TM context matches
+    non_tm_indices = []
+    for idx, src in enumerate(EXAMPLE_SENTENCES):
+        if src in exact_match_memory:
+            actual_prev = EXAMPLE_SENTENCES[max(0, idx - 1):idx]
+            actual_next = EXAMPLE_SENTENCES[idx + 1:idx + 2]
+            if any(occ["prev"] == actual_prev and occ["next"] == actual_next
+                   for occ in exact_match_memory[src]):
+                continue  # TM context match — excluded from repeat detection
+        non_tm_indices.append(idx)
+
+    repeat_map = {}  # text → list of (idx, prev_1, next_1)
+    for i in non_tm_indices:
+        text = EXAMPLE_SENTENCES[i]
+        prev_1 = EXAMPLE_SENTENCES[max(0, i - 1):i]
+        next_1 = EXAMPLE_SENTENCES[i + 1:i + 2]
+        repeat_map.setdefault(text, []).append((i, prev_1, next_1))
+
+    # For each later occurrence, determine status
+    repeat_status = {}  # idx → ("same_context", first_occ_idx) or ("context_differs", first_occ_idx)
+    for text, occurrences in repeat_map.items():
+        if len(occurrences) < 2:
+            continue
+        first_occ_idx, first_prev, first_next = occurrences[0]
+        for orig_idx, prev_1, next_1 in occurrences[1:]:
+            same = (prev_1 == first_prev and next_1 == first_next)
+            repeat_status[orig_idx] = ("same_context" if same else "context_differs", first_occ_idx)
+
     # --- Print report ---
     separator = "=" * 80
-    for idx, (src, tm_hits, tb_hits) in enumerate(zip(EXAMPLE_SENTENCES, tm_results, tb_results), 1):
+    for idx, (src, tm_hits, tb_hits) in enumerate(zip(EXAMPLE_SENTENCES, tm_results, tb_results)):
         print(separator)
-        print(f"[{idx:02d}] SRC: {src}")
+        print(f"[{idx + 1:02d}] SRC: {src}")
         print()
+
+        # --- 100% Match Context Check ---
+        tm_context = None  # will be set if 100% match with context difference
+        if src in exact_match_memory:
+            # Build actual context (1 before + 1 after)
+            actual_prev = EXAMPLE_SENTENCES[max(0, idx - 1):idx]
+            actual_next = EXAMPLE_SENTENCES[idx + 1:idx + 2]
+
+            occurrences = exact_match_memory[src]
+            context_matched = False
+            matched_occ_idx = None
+            for occ_idx, occ in enumerate(occurrences):
+                if occ["prev"] == actual_prev and occ["next"] == actual_next:
+                    context_matched = True
+                    matched_occ_idx = occ_idx
+                    break
+
+            if context_matched:
+                occ = occurrences[matched_occ_idx]
+                print(f"  [100% MATCH] Status: CONTEXT MATCH")
+                print(f"       TM translation: {occ['target']}")
+                print(f"       Context matched occurrence #{matched_occ_idx + 1}:")
+                print(f"         TM prev: {occ['prev']}")
+                print(f"         TM next: {occ['next']}")
+                print(f"         Actual prev: {actual_prev}")
+                print(f"         Actual next: {actual_next}")
+                print(f"       -> Using TM translation directly (no LLM call)")
+                print()
+                # Skip TM/TB/PROMPT sections for context matches
+                continue
+            else:
+                proposal = occurrences[0]["target"]
+                # 2 before + 2 after for LLM context
+                prev_segments = EXAMPLE_SENTENCES[max(0, idx - 2):idx]
+                next_segments = EXAMPLE_SENTENCES[idx + 1:idx + 3]
+                tm_context = {
+                    "proposal": proposal,
+                    "prev_segments": prev_segments,
+                    "next_segments": next_segments,
+                }
+                print(f"  [100% MATCH] Status: CONTEXT DIFFERS — LLM review needed")
+                print(f"       TM proposal: {proposal}")
+                for occ_idx, occ in enumerate(occurrences):
+                    print(f"       TM context (occurrence #{occ_idx + 1}):")
+                    print(f"         TM prev: {occ['prev']}")
+                    print(f"         TM next: {occ['next']}")
+                print(f"       Actual context:")
+                print(f"         prev (1): {actual_prev}")
+                print(f"         next (1): {actual_next}")
+                print(f"         prev (2, for LLM): {prev_segments}")
+                print(f"         next (2, for LLM): {next_segments}")
+                print(f"       -> Sending to LLM with proposal + surrounding context")
+                print()
+        else:
+            print("  [100% MATCH] Status: NO MATCH")
+            print()
+
+        # --- Repeat Segment Check ---
+        if idx in repeat_status:
+            status, first_occ_idx = repeat_status[idx]
+            actual_prev_1 = EXAMPLE_SENTENCES[max(0, idx - 1):idx]
+            actual_next_1 = EXAMPLE_SENTENCES[idx + 1:idx + 2]
+            first_prev_1 = EXAMPLE_SENTENCES[max(0, first_occ_idx - 1):first_occ_idx]
+            first_next_1 = EXAMPLE_SENTENCES[first_occ_idx + 1:first_occ_idx + 2]
+            if status == "same_context":
+                print(f"  [REPEAT] Status: SAME CONTEXT — copy translation from occurrence at [{first_occ_idx + 1:02d}]")
+                print(f"       First occurrence prev: {first_prev_1}")
+                print(f"       First occurrence next: {first_next_1}")
+                print(f"       -> Using same translation directly (no LLM call)")
+                print()
+                # Skip TM/TB/PROMPT for same-context repeats
+                continue
+            else:
+                prev_2 = EXAMPLE_SENTENCES[max(0, idx - 2):idx]
+                next_2 = EXAMPLE_SENTENCES[idx + 1:idx + 3]
+                tm_context = {
+                    "proposal": f"<translation of occurrence [{first_occ_idx + 1:02d}]>",
+                    "prev_segments": prev_2,
+                    "next_segments": next_2,
+                    "source": "repeat",
+                }
+                print(f"  [REPEAT] Status: CONTEXT DIFFERS — LLM review needed")
+                print(f"       First occurrence at [{first_occ_idx + 1:02d}]")
+                print(f"       First occurrence context:")
+                print(f"         prev (1): {first_prev_1}")
+                print(f"         next (1): {first_next_1}")
+                print(f"       Current context:")
+                print(f"         prev (1): {actual_prev_1}")
+                print(f"         next (1): {actual_next_1}")
+                print(f"         prev (2, for LLM): {prev_2}")
+                print(f"         next (2, for LLM): {next_2}")
+                print(f"       -> Sending to LLM with first occurrence's translation as proposal")
+                print()
+        else:
+            if idx in non_tm_indices:
+                # Only show NO REPEAT for first-occurrence or unique segments
+                first_in_repeat = any(
+                    occurrences[0][0] == idx
+                    for occurrences in repeat_map.values()
+                    if len(occurrences) > 1
+                )
+                if first_in_repeat:
+                    print(f"  [REPEAT] Status: FIRST OCCURRENCE — translation will be reused for later repeats")
+                    print()
+                else:
+                    print(f"  [REPEAT] Status: UNIQUE")
+                    print()
 
         # --- Translation Memory ---
         print("  [TM] Translation Memory hits:")
@@ -134,6 +291,7 @@ def main():
             source_lang_code=SOURCE_LANG,
             target_lang_code=TARGET_LANG,
             search_result={'memory': tm_hits, 'glossary': tb_hits},
+            tm_context=tm_context,
         )
         print("  [PROMPT] LLM input:")
         for msg in prompt:

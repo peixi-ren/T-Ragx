@@ -40,6 +40,40 @@ def trans_mem_to_text(trans_mem: list, source_lang_code='ja', target_lang_code='
     return out_text
 
 
+def tm_context_to_text(tm_context: dict):
+    """Format a TM or repeat proposal with surrounding context for LLM review."""
+    source = tm_context.get("source", "tm")
+    if source == "repeat":
+        out_text = "This segment appears earlier in the document with translation:\n"
+        out_text += f"  Earlier translation: {tm_context['proposal']}\n\n"
+        review_instruction = (
+            "\nThe surrounding context differs from the earlier occurrence. "
+            "If the earlier translation fits this context, use it exactly. "
+            "If the surrounding context suggests a different meaning, provide a corrected translation.\n\n"
+        )
+    else:
+        out_text = "A 100% translation memory match was found for this sentence:\n"
+        out_text += f"  Proposed translation: {tm_context['proposal']}\n\n"
+        review_instruction = (
+            "\nThe context differs from the translation memory. "
+            "If the proposed translation fits this context, use it exactly. "
+            "If the surrounding context suggests a different meaning, provide a corrected translation.\n\n"
+        )
+    out_text += "Surrounding context in the current document:\n"
+    if tm_context['prev_segments']:
+        for seg in tm_context['prev_segments']:
+            out_text += f"  [before] {seg}\n"
+    else:
+        out_text += "  [before] (start of document)\n"
+    if tm_context['next_segments']:
+        for seg in tm_context['next_segments']:
+            out_text += f"  [after] {seg}\n"
+    else:
+        out_text += "  [after] (end of document)\n"
+    out_text += review_instruction
+    return out_text
+
+
 class BaseModel(metaclass=abc.ABCMeta):
     tokenizer = None
     model = None
@@ -132,6 +166,7 @@ class BaseModel(metaclass=abc.ABCMeta):
                         target_lang_code="en",
                         batch_search_result: list = None,
                         batch_pre_text: list = None,
+                        batch_tm_context: list = None,
                         tokenize_config=None,
                         generation_config=None
                         ):
@@ -141,7 +176,8 @@ class BaseModel(metaclass=abc.ABCMeta):
             source_lang_code=source_lang_code,
             target_lang_code=target_lang_code,
             pre_text_list=batch_pre_text,
-            search_result=batch_search_result
+            search_result=batch_search_result,
+            tm_context_list=batch_tm_context
         )
 
         token_data = self.tokenize(query_prompts, tokenize_config)
@@ -177,6 +213,7 @@ class BaseModel(metaclass=abc.ABCMeta):
                            target_lang_code="English",
                            search_result: list = None,
                            pre_text_list: list = None,
+                           tm_context_list: list = None,
                            ):
 
         if pre_text_list is not None:
@@ -189,15 +226,19 @@ class BaseModel(metaclass=abc.ABCMeta):
         else:
             search_result = [None] * len(text)
 
+        if tm_context_list is None:
+            tm_context_list = [None] * len(text)
+
         return [
             self.build_prompt(
                 t,
                 source_lang_code=source_lang_code,
                 target_lang_code=target_lang_code,
                 search_result=sr,
-                pre_text=pt
+                pre_text=pt,
+                tm_context=tc
             )
-            for t, sr, pt in zip(text, search_result, pre_text_list)
+            for t, sr, pt, tc in zip(text, search_result, pre_text_list, tm_context_list)
         ]
 
     def build_prompt(self,
@@ -205,7 +246,8 @@ class BaseModel(metaclass=abc.ABCMeta):
                      source_lang_code="ja",
                      target_lang_code="en",
                      search_result=None,
-                     pre_text: list = None
+                     pre_text: list = None,
+                     tm_context: dict = None
                      ):
         source_lang = LANG_BY_LANG_CODE[source_lang_code]
         target_lang = LANG_BY_LANG_CODE[target_lang_code]
@@ -219,6 +261,21 @@ class BaseModel(metaclass=abc.ABCMeta):
             "a score of 0.0 means the example is identical to the source — follow it very closely. "
             "A score closer to 1.0 means the example is less similar — use it only as a loose reference."
         )
+        if tm_context is not None:
+            if tm_context.get("source") == "repeat":
+                system_content += (
+                    " You are also reviewing a translation used for an earlier occurrence of "
+                    "this segment in the document. Use the surrounding segments to judge if "
+                    "the earlier translation still fits; if the context suggests a different "
+                    "meaning, provide a corrected translation."
+                )
+            else:
+                system_content += (
+                    " You are also reviewing a proposed translation from translation memory "
+                    "whose context differs from the current document. Use the surrounding segments "
+                    "to judge if the proposed translation fits; if the context suggests a different "
+                    "meaning, provide a corrected translation."
+                )
         if glossary_text:
             system_content += (
                 " When translating, you MUST strictly follow the provided glossary. "
@@ -226,11 +283,22 @@ class BaseModel(metaclass=abc.ABCMeta):
                 "Never keep any glossary term in English. Never use parenthetical formats like 'Term (Translation)'. "
                 "Output only the translated text."
             )
+
+        # Build TM context review section if applicable
+        tm_context_text = ""
+        if tm_context is not None:
+            tm_context_text = tm_context_to_text(tm_context)
+
+        # When reviewing a 100% TM match, skip fuzzy TM examples — the proposal replaces them
+        tm_examples_text = "" if tm_context is not None else trans_mem_to_text(
+            search_result['memory'], source_lang_code=source_lang_code, target_lang_code=target_lang_code)
+
         chat = [
             {"role": "system", "content": system_content},
             {"role": "user", "content": (
                 f"{glossary_text}"
-                f"{pretext_to_text(pre_text)}{trans_mem_to_text(search_result['memory'], source_lang_code=source_lang_code, target_lang_code=target_lang_code)}"
+                f"{pretext_to_text(pre_text)}{tm_examples_text}"
+                f"{tm_context_text}"
                 f"Translate this {source_lang} passage to {target_lang} "
                 "without additional questions, disclaimer, or explanations, but accurately and completely:\n"
                 f"{text}"

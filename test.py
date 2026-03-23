@@ -34,7 +34,10 @@ EXAMPLE_SENTENCES = [
     "The KOC community is growing faster than the KOL market.",
     "Auction Dynamics vary depending on the time of day.",
     "We are looking for a new Ad Network to expand our reach.",
-    "Attribution Modeling is necessary for omnichannel marketing."
+    "Attribution Modeling is necessary for omnichannel marketing.",
+    "The KOC community is growing faster than the KOL market.",
+    "Auction Dynamics vary depending on the time of day.",
+    "We are looking for a new Ad Network to expand our reach."
 ]
 
 
@@ -85,12 +88,20 @@ def main():
     # --- Translator ---
     translator = t_ragx.TRagx([model], input_processor=input_processor)
 
-    # Load exact match memory — 100% matches bypass the LLM entirely
+    # Load exact match memory — context matches bypass the LLM;
+    # 100% matches with different context go to LLM for review
     translator.load_exact_match_memory(MEMORY_CSV_PATH, source_lang='en', target_lang='zh')
+
+    # Build preceding text context (2 sentences before each segment)
+    pre_text_list = [
+        EXAMPLE_SENTENCES[max(0, i - 2):i] or None
+        for i in range(len(EXAMPLE_SENTENCES))
+    ]
 
     # --- Translate ---
     translations = translator.batch_translate(
         EXAMPLE_SENTENCES,
+        pre_text_list=pre_text_list,
         source_lang_code='en',
         target_lang_code='zh',
         search_memory=True,  # uses local zh-en translation memory
