@@ -1,6 +1,5 @@
 import os
 import t_ragx
-from elasticsearch import Elasticsearch
 
 # Get your free API key at https://console.groq.com (no credit card required)
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
@@ -8,8 +7,6 @@ GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 # Path to the local zh-en translation memory and glossary CSV files
 MEMORY_CSV_PATH = os.path.join(os.path.dirname(__file__), "zh_en_memory.csv")
 GLOSSARY_CSV_PATH = os.path.join(os.path.dirname(__file__), "zh_en_glossary.csv")
-MEMORY_INDEX = "zh_en_translation_memory"
-LOCAL_ES_HOST = "http://localhost:9200"
 
 EXAMPLE_SENTENCES = [
     "The quick brown fox jumps over the lazy dog.",
@@ -41,38 +38,15 @@ EXAMPLE_SENTENCES = [
 ]
 
 
-def index_memory_csv(es_client):
-    """Index zh_en_memory.csv into local Elasticsearch if not already indexed."""
-    from t_ragx.utils.elastic import csv_to_elastic
-    try:
-        es_client.indices.create(index=MEMORY_INDEX)
-        print(f"Indexing {MEMORY_CSV_PATH} into Elasticsearch...")
-        csv_to_elastic(MEMORY_CSV_PATH, id_key='en', es_client=es_client, index=MEMORY_INDEX)
-        print("Indexing complete.")
-    except Exception as e:
-        if 'resource_already_exists' in str(e).lower():
-            print(f"Index '{MEMORY_INDEX}' already exists, skipping indexing.")
-        else:
-            raise
-
-
 def main():
     # --- Input processor: glossary + translation memory ---
-    input_processor = t_ragx.processors.ElasticInputProcessor()
+    input_processor = t_ragx.processors.RapidFuzzInputProcessor()
 
     # Load en→zh glossary from local CSV
     input_processor.load_local_glossary(GLOSSARY_CSV_PATH, source_lang='en', target_lang='zh')
 
-    # --- Set up local zh-en translation memory ---
-    # Requires Elasticsearch running locally:
-    #   docker run -d -p 9200:9200 -e "discovery.type=single-node" -e "xpack.security.enabled=false" elasticsearch:8.11.0
-    es_client = Elasticsearch(LOCAL_ES_HOST)
-    index_memory_csv(es_client)
-    input_processor.load_general_translation(
-        elastic_index=MEMORY_INDEX,
-        elasticsearch_host=LOCAL_ES_HOST,
-        es_client=es_client,
-    )
+    # Load en→zh translation memory from local CSV (no Docker required)
+    input_processor.load_general_translation(MEMORY_CSV_PATH, source_lang='en', target_lang='zh')
 
     # --- Model: Groq (free, OpenAI-compatible API) ---
     # Other free Groq models: "llama-3.1-8b-instant", "mixtral-8x7b-32768"

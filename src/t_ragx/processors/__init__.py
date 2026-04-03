@@ -1,12 +1,13 @@
 from .BaseInputProcessor import BaseInputProcessor
 from .ElasticInputProcessor import ElasticInputProcessor
+from .RapidFuzzInputProcessor import RapidFuzzInputProcessor
 
 """Import all modules that exist in the current directory."""
 # Ref https://stackoverflow.com/a/60861023/
 from importlib import import_module
 from pathlib import Path
 
-__all__ = ["BaseInputProcessor", "ElasticInputProcessor"]
+__all__ = ["BaseInputProcessor", "ElasticInputProcessor", "RapidFuzzInputProcessor"]
 
 for f in Path(__file__).parent.glob("*.py"):
     module_name = f.stem

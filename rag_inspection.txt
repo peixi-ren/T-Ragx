@@ -1,4 +1,3 @@
-Index 'zh_en_translation_memory' already exists, skipping indexing.
 ================================================================================
 [01] SRC: The quick brown fox jumps over the lazy dog.
 
@@ -21,36 +20,36 @@ Index 'zh_en_translation_memory' already exists, skipping indexing.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=59.7%  score=18.1806  dist=27  normed_dist=0.4030
+       #1  sim=59.7%  score=69.5122  dist=27  normed_dist=0.4030
            EN: She walked along the riverbank enjoying the cool breeze.
            ZH: 她沿着河岸漫步享受着凉爽的微风。
-       #2  sim=34.3%  score=2.3188  dist=44  normed_dist=0.6567
+       #2  sim=34.3%  score=47.5000  dist=44  normed_dist=0.6567
            EN: Neural networks are inspired by the structure of the human brain.
            ZH: 神经网络的灵感来源于人类大脑的结构。
-       #3  sim=32.8%  score=2.7135  dist=45  normed_dist=0.6716
-           EN: The Ad Server delivers the creative to the user browser.
-           ZH: 广告投放服务器将创意投递到用户的浏览器。
-       #4  sim=32.8%  score=2.3818  dist=45  normed_dist=0.6716
+       #3  sim=32.8%  score=47.2441  dist=45  normed_dist=0.6716
            EN: The Ad Exchange facilitates the buying and selling of media.
            ZH: 广告交易平台促进了媒介的买卖。
-       #5  sim=29.9%  score=2.3188  dist=47  normed_dist=0.7015
-           EN: The Key Opinion Leader shared the product link with their followers.
-           ZH: 关键意见领袖与他们的粉丝分享了产品链接。
-       #6  sim=28.4%  score=2.3818  dist=48  normed_dist=0.7164
-           EN: The D2C model allows brands to own the customer relationship.
-           ZH: 直面消费者模式允许品牌拥有客户关系。
-       #7  sim=25.4%  score=2.4483  dist=50  normed_dist=0.7463
+       #4  sim=32.8%  score=47.1545  dist=45  normed_dist=0.6716
+           EN: The Ad Server delivers the creative to the user browser.
+           ZH: 广告投放服务器将创意投递到用户的浏览器。
+       #5  sim=31.3%  score=47.5000  dist=46  normed_dist=0.6866
+           EN: The DSP uses algorithms to bid on the most relevant Ad Inventory.
+           ZH: 需求方平台使用算法对最相关的广告库存进行竞价。
+       #6  sim=28.4%  score=47.7612  dist=48  normed_dist=0.7164
+           EN: Our Return on Ad Spend has improved since we refined our targeting.
+           ZH: 自从我们优化了定向投放后，我们的广告支出回报率有所提高。
+       #7  sim=25.4%  score=85.5000  dist=50  normed_dist=0.7463
            EN: The quick brown fox jumps over the lazy dog.
            ZH: 那只敏捷的棕色狐狸跳过了那只懒狗。
-       #8  sim=22.4%  score=15.0604  dist=52  normed_dist=0.7761
+       #8  sim=22.4%  score=61.4286  dist=52  normed_dist=0.7761
            EN: The sun set behind the mountains painting the sky in shades of orange and red.
            ZH: 夕阳西下山峦之后将天空染成橙红色。
-       #9  sim=19.4%  score=2.2590  dist=54  normed_dist=0.8060
-           EN: Auction Dynamics determine the final price paid for each of the Impressions.
-           ZH: 竞价机制决定了每条广告曝光所支付的最终价格。
-       #10  sim=17.9%  score=2.3188  dist=55  normed_dist=0.8209
-           EN: Native Advertising blends in with the editorial content of the website.
-           ZH: 原生广告与网站的编辑内容融为一体。
+       #9  sim=22.4%  score=47.4074  dist=52  normed_dist=0.7761
+           EN: Yield Management strategies help publishers fill their unsold spots.
+           ZH: 收益管理策略帮助媒体方填充未售出的广告位。
+       #10  sim=20.9%  score=50.0000  dist=53  normed_dist=0.7910
+           EN: Deep learning has achieved remarkable results in image recognition tasks.
+           ZH: 深度学习在图像识别任务中取得了显著成果。
 
   [TB] Terminology Base (glossary) hits:
        (none)
@@ -68,29 +67,29 @@ Index 'zh_en_translation_memory' already exists, skipping indexing.
     Neural networks are inspired by the structure of the human brain.
     神经网络的灵感来源于人类大脑的结构。
   3. [score: 0.67]
-    The Ad Server delivers the creative to the user browser.
-    广告投放服务器将创意投递到用户的浏览器。
-  4. [score: 0.67]
     The Ad Exchange facilitates the buying and selling of media.
     广告交易平台促进了媒介的买卖。
-  5. [score: 0.70]
-    The Key Opinion Leader shared the product link with their followers.
-    关键意见领袖与他们的粉丝分享了产品链接。
+  4. [score: 0.67]
+    The Ad Server delivers the creative to the user browser.
+    广告投放服务器将创意投递到用户的浏览器。
+  5. [score: 0.69]
+    The DSP uses algorithms to bid on the most relevant Ad Inventory.
+    需求方平台使用算法对最相关的广告库存进行竞价。
   6. [score: 0.72]
-    The D2C model allows brands to own the customer relationship.
-    直面消费者模式允许品牌拥有客户关系。
+    Our Return on Ad Spend has improved since we refined our targeting.
+    自从我们优化了定向投放后，我们的广告支出回报率有所提高。
   7. [score: 0.75]
     The quick brown fox jumps over the lazy dog.
     那只敏捷的棕色狐狸跳过了那只懒狗。
   8. [score: 0.78]
     The sun set behind the mountains painting the sky in shades of orange and red.
     夕阳西下山峦之后将天空染成橙红色。
-  9. [score: 0.81]
-    Auction Dynamics determine the final price paid for each of the Impressions.
-    竞价机制决定了每条广告曝光所支付的最终价格。
-  10. [score: 0.82]
-    Native Advertising blends in with the editorial content of the website.
-    原生广告与网站的编辑内容融为一体。
+  9. [score: 0.78]
+    Yield Management strategies help publishers fill their unsold spots.
+    收益管理策略帮助媒体方填充未售出的广告位。
+  10. [score: 0.79]
+    Deep learning has achieved remarkable results in image recognition tasks.
+    深度学习在图像识别任务中取得了显著成果。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 She walked along the riverbank as the sun set behind the mountains.
 
@@ -102,36 +101,36 @@ She walked along the riverbank as the sun set behind the mountains.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=4.2%  score=2.0545  dist=46  normed_dist=0.9583
-           EN: We use CPC bidding to drive traffic to our landing page.
-           ZH: 我们使用每次点击成本竞价来为落地页引流。
-       #2  sim=2.1%  score=10.2396  dist=47  normed_dist=0.9792
+       #1  sim=10.4%  score=41.8000  dist=43  normed_dist=0.8958
+           EN: The Ad Server delivers the creative to the user browser.
+           ZH: 广告投放服务器将创意投递到用户的浏览器。
+       #2  sim=2.1%  score=50.6667  dist=47  normed_dist=0.9792
            EN: First-Party Data is essential for personalized marketing.
            ZH: 第一方数据对于个性化营销至关重要。
-       #3  sim=2.1%  score=3.0337  dist=47  normed_dist=0.9792
-           EN: Machine learning models require large amounts of training data.
-           ZH: 机器学习模型需要大量的训练数据。
-       #4  sim=2.1%  score=2.5169  dist=47  normed_dist=0.9792
+       #3  sim=2.1%  score=41.2264  dist=47  normed_dist=0.9792
            EN: High Impressions are good but we need to focus on the CTR.
            ZH: 高广告曝光是好事，但我们需要关注点击率。
-       #5  sim=0.0%  score=3.9331  dist=49  normed_dist=1.0208
-           EN: Using a DMP allows for more sophisticated audience segmentation.
-           ZH: 使用数据管理平台可以实现更复杂的人群细分。
-       #6  sim=0.0%  score=4.2514  dist=52  normed_dist=1.0833
-           EN: Our CAC is currently higher than the lifetime value of the customer.
-           ZH: 我们的客户获取成本目前高于客户的终身价值。
-       #7  sim=0.0%  score=2.7171  dist=53  normed_dist=1.1042
-           EN: Artificial intelligence is transforming the way we live and work.
-           ZH: 人工智能正在改变我们生活和工作的模式。
-       #8  sim=0.0%  score=10.6977  dist=54  normed_dist=1.1250
+       #4  sim=0.0%  score=85.5000  dist=54  normed_dist=1.1250
            EN: The Data Management Platform aggregates First-Party Data for better targeting.
            ZH: 数据管理平台汇总第一方数据以实现更好的精准投放。
-       #9  sim=0.0%  score=5.9129  dist=56  normed_dist=1.1667
-           EN: Real-Time Bidding has revolutionized how we purchase Ad Inventory.
-           ZH: 实时竞价彻底改变了我们购买广告库存的方式。
-       #10  sim=0.0%  score=5.4166  dist=62  normed_dist=1.2917
+       #5  sim=0.0%  score=85.5000  dist=58  normed_dist=1.2083
+           EN: The sun set behind the mountains painting the sky in shades of orange and red.
+           ZH: 夕阳西下山峦之后将天空染成橙红色。
+       #6  sim=0.0%  score=85.5000  dist=58  normed_dist=1.2083
+           EN: Auction Dynamics determine the final price paid for each of the Impressions.
+           ZH: 竞价机制决定了每条广告曝光所支付的最终价格。
+       #7  sim=0.0%  score=85.5000  dist=59  normed_dist=1.2292
+           EN: Attribution Modeling helps us understand the true value of each touchpoint.
+           ZH: 归因模型帮助我们了解每个触点的真实价值。
+       #8  sim=0.0%  score=85.5000  dist=62  normed_dist=1.2917
            EN: We need to optimize our Click-Through Rate to lower the total Cost Per Click.
            ZH: 我们需要优化点击率以降低总每次点击成本。
+       #9  sim=0.0%  score=85.5000  dist=62  normed_dist=1.2917
+           EN: Customer Acquisition Cost has increased due to high competition in the market.
+           ZH: 由于市场竞争激烈，客户获取成本有所上升。
+       #10  sim=0.0%  score=85.5000  dist=62  normed_dist=1.2917
+           EN: Dynamic Creative Optimization adjusts the ad content based on user behavior.
+           ZH: 动态创意优化根据用户行为调整广告内容。
 
   [TB] Terminology Base (glossary) hits:
        'CAC'  →  ['客户获取成本']
@@ -144,36 +143,36 @@ She walked along the riverbank as the sun set behind the mountains.
 Example translations:
 
 [Low similarity — style and tone context only]
-  1. [score: 0.96]
-    We use CPC bidding to drive traffic to our landing page.
-    我们使用每次点击成本竞价来为落地页引流。
+  1. [score: 0.90]
+    The Ad Server delivers the creative to the user browser.
+    广告投放服务器将创意投递到用户的浏览器。
   2. [score: 0.98]
     First-Party Data is essential for personalized marketing.
     第一方数据对于个性化营销至关重要。
   3. [score: 0.98]
-    Machine learning models require large amounts of training data.
-    机器学习模型需要大量的训练数据。
-  4. [score: 0.98]
     High Impressions are good but we need to focus on the CTR.
     高广告曝光是好事，但我们需要关注点击率。
-  5. [score: 1.02]
-    Using a DMP allows for more sophisticated audience segmentation.
-    使用数据管理平台可以实现更复杂的人群细分。
-  6. [score: 1.08]
-    Our CAC is currently higher than the lifetime value of the customer.
-    我们的客户获取成本目前高于客户的终身价值。
-  7. [score: 1.10]
-    Artificial intelligence is transforming the way we live and work.
-    人工智能正在改变我们生活和工作的模式。
-  8. [score: 1.12]
+  4. [score: 1.12]
     The Data Management Platform aggregates First-Party Data for better targeting.
     数据管理平台汇总第一方数据以实现更好的精准投放。
-  9. [score: 1.17]
-    Real-Time Bidding has revolutionized how we purchase Ad Inventory.
-    实时竞价彻底改变了我们购买广告库存的方式。
-  10. [score: 1.29]
+  5. [score: 1.21]
+    The sun set behind the mountains painting the sky in shades of orange and red.
+    夕阳西下山峦之后将天空染成橙红色。
+  6. [score: 1.21]
+    Auction Dynamics determine the final price paid for each of the Impressions.
+    竞价机制决定了每条广告曝光所支付的最终价格。
+  7. [score: 1.23]
+    Attribution Modeling helps us understand the true value of each touchpoint.
+    归因模型帮助我们了解每个触点的真实价值。
+  8. [score: 1.29]
     We need to optimize our Click-Through Rate to lower the total Cost Per Click.
     我们需要优化点击率以降低总每次点击成本。
+  9. [score: 1.29]
+    Customer Acquisition Cost has increased due to high competition in the market.
+    由于市场竞争激烈，客户获取成本有所上升。
+  10. [score: 1.29]
+    Dynamic Creative Optimization adjusts the ad content based on user behavior.
+    动态创意优化根据用户行为调整广告内容。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 How can we lower the CAC using First-Party Data?
 
@@ -185,36 +184,36 @@ How can we lower the CAC using First-Party Data?
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=34.9%  score=6.2777  dist=41  normed_dist=0.6508
+       #1  sim=34.9%  score=54.6875  dist=41  normed_dist=0.6508
            EN: The DSP uses algorithms to bid on the most relevant Ad Inventory.
            ZH: 需求方平台使用算法对最相关的广告库存进行竞价。
-       #2  sim=31.7%  score=3.7044  dist=43  normed_dist=0.6825
+       #2  sim=31.7%  score=49.4958  dist=43  normed_dist=0.6825
            EN: The Ad Server delivers the creative to the user browser.
            ZH: 广告投放服务器将创意投递到用户的浏览器。
-       #3  sim=28.6%  score=6.7392  dist=45  normed_dist=0.7143
+       #3  sim=28.6%  score=55.6098  dist=45  normed_dist=0.7143
            EN: The Ad Exchange facilitates the buying and selling of media.
            ZH: 广告交易平台促进了媒介的买卖。
-       #4  sim=25.4%  score=4.3475  dist=47  normed_dist=0.7460
+       #4  sim=28.6%  score=46.0156  dist=45  normed_dist=0.7143
+           EN: The DCO engine generates thousands of ad variations in real-time.
+           ZH: 动态创意优化引擎实时生成数千个广告变体。
+       #5  sim=27.0%  score=46.7742  dist=46  normed_dist=0.7302
+           EN: The D2C model allows brands to own the customer relationship.
+           ZH: 直面消费者模式允许品牌拥有客户关系。
+       #6  sim=25.4%  score=47.8626  dist=47  normed_dist=0.7460
            EN: The Key Opinion Leader shared the product link with their followers.
            ZH: 关键意见领袖与他们的粉丝分享了产品链接。
-       #5  sim=25.4%  score=3.0813  dist=47  normed_dist=0.7460
-           EN: Our CAC is currently higher than the lifetime value of the customer.
-           ZH: 我们的客户获取成本目前高于客户的终身价值。
-       #6  sim=23.8%  score=3.0813  dist=48  normed_dist=0.7619
+       #7  sim=23.8%  score=46.7692  dist=48  normed_dist=0.7619
            EN: A good CTR indicates that the creative is relevant to the audience.
            ZH: 良好的点击率表明创意与受众相关。
-       #7  sim=22.2%  score=5.8479  dist=49  normed_dist=0.7778
+       #8  sim=22.2%  score=53.0612  dist=49  normed_dist=0.7778
            EN: The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
            ZH: 需求方平台允许广告主管理多个广告交易平台账号。
-       #8  sim=19.0%  score=4.3475  dist=51  normed_dist=0.8095
+       #9  sim=20.6%  score=46.8085  dist=50  normed_dist=0.7937
+           EN: The sun set behind the mountains painting the sky in shades of orange and red.
+           ZH: 夕阳西下山峦之后将天空染成橙红色。
+       #10  sim=19.0%  score=46.7910  dist=51  normed_dist=0.8095
            EN: Native Advertising blends in with the editorial content of the website.
            ZH: 原生广告与网站的编辑内容融为一体。
-       #9  sim=17.5%  score=3.1648  dist=52  normed_dist=0.8254
-           EN: SEO ranking factors change frequently with algorithm updates.
-           ZH: 搜索引擎优化排名因素随算法更新而频繁变化。
-       #10  sim=7.9%  score=4.0922  dist=58  normed_dist=0.9206
-           EN: The Open Real-Time Bidding protocol ensures compatibility between DSP and SSP.
-           ZH: 开放实时竞价协议确保了需求方平台与供应方平台之间的兼容性。
 
   [TB] Terminology Base (glossary) hits:
        'Ad Exchange'  →  ['广告交易平台']
@@ -236,27 +235,27 @@ Example translations:
   3. [score: 0.71]
     The Ad Exchange facilitates the buying and selling of media.
     广告交易平台促进了媒介的买卖。
-  4. [score: 0.75]
+  4. [score: 0.71]
+    The DCO engine generates thousands of ad variations in real-time.
+    动态创意优化引擎实时生成数千个广告变体。
+  5. [score: 0.73]
+    The D2C model allows brands to own the customer relationship.
+    直面消费者模式允许品牌拥有客户关系。
+  6. [score: 0.75]
     The Key Opinion Leader shared the product link with their followers.
     关键意见领袖与他们的粉丝分享了产品链接。
-  5. [score: 0.75]
-    Our CAC is currently higher than the lifetime value of the customer.
-    我们的客户获取成本目前高于客户的终身价值。
-  6. [score: 0.76]
+  7. [score: 0.76]
     A good CTR indicates that the creative is relevant to the audience.
     良好的点击率表明创意与受众相关。
-  7. [score: 0.78]
+  8. [score: 0.78]
     The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
     需求方平台允许广告主管理多个广告交易平台账号。
-  8. [score: 0.81]
+  9. [score: 0.79]
+    The sun set behind the mountains painting the sky in shades of orange and red.
+    夕阳西下山峦之后将天空染成橙红色。
+  10. [score: 0.81]
     Native Advertising blends in with the editorial content of the website.
     原生广告与网站的编辑内容融为一体。
-  9. [score: 0.83]
-    SEO ranking factors change frequently with algorithm updates.
-    搜索引擎优化排名因素随算法更新而频繁变化。
-  10. [score: 0.92]
-    The Open Real-Time Bidding protocol ensures compatibility between DSP and SSP.
-    开放实时竞价协议确保了需求方平台与供应方平台之间的兼容性。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 The DSP is integrated with the top three Ad Exchange platforms.
 
@@ -268,36 +267,36 @@ The DSP is integrated with the top three Ad Exchange platforms.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=21.1%  score=9.9323  dist=45  normed_dist=0.7895
+       #1  sim=24.6%  score=44.2478  dist=43  normed_dist=0.7544
+           EN: We use CPC bidding to drive traffic to our landing page.
+           ZH: 我们使用每次点击成本竞价来为落地页引流。
+       #2  sim=21.1%  score=47.0940  dist=45  normed_dist=0.7895
            EN: The SSP reported a significant increase in available inventory.
            ZH: 供应方平台报告可用库存显著增加。
-       #2  sim=19.3%  score=11.5094  dist=46  normed_dist=0.8070
+       #3  sim=19.3%  score=57.6786  dist=46  normed_dist=0.8070
            EN: High Impressions are good but we need to focus on the CTR.
            ZH: 高广告曝光是好事，但我们需要关注点击率。
-       #3  sim=12.3%  score=4.1091  dist=50  normed_dist=0.8772
-           EN: The DCO engine generates thousands of ad variations in real-time.
-           ZH: 动态创意优化引擎实时生成数千个广告变体。
-       #4  sim=10.5%  score=4.6418  dist=51  normed_dist=0.8947
-           EN: OpenRTB allows for transparency in the programmatic ecosystem.
-           ZH: 开放实时竞价使程序化生态系统具备透明度。
-       #5  sim=8.8%  score=4.2725  dist=52  normed_dist=0.9123
+       #4  sim=15.8%  score=43.3333  dist=48  normed_dist=0.8421
+           EN: Scientists are developing new methods to combat climate change.
+           ZH: 科学家们正在开发应对气候变化的新方法。
+       #5  sim=14.0%  score=43.5484  dist=49  normed_dist=0.8596
+           EN: Our Return on Ad Spend has improved since we refined our targeting.
+           ZH: 自从我们优化了定向投放后，我们的广告支出回报率有所提高。
+       #6  sim=12.3%  score=42.6230  dist=50  normed_dist=0.8772
+           EN: Neural networks are inspired by the structure of the human brain.
+           ZH: 神经网络的灵感来源于人类大脑的结构。
+       #7  sim=8.8%  score=41.5385  dist=52  normed_dist=0.9123
            EN: Deep learning has achieved remarkable results in image recognition tasks.
            ZH: 深度学习在图像识别任务中取得了显著成果。
-       #6  sim=7.0%  score=4.8768  dist=53  normed_dist=0.9298
-           EN: A good CTR indicates that the creative is relevant to the audience.
-           ZH: 良好的点击率表明创意与受众相关。
-       #7  sim=3.5%  score=4.1091  dist=55  normed_dist=0.9649
-           EN: Native Advertising blends in with the editorial content of the website.
-           ZH: 原生广告与网站的编辑内容融为一体。
-       #8  sim=3.5%  score=3.5638  dist=55  normed_dist=0.9649
-           EN: The sun set behind the mountains painting the sky in shades of orange and red.
-           ZH: 夕阳西下山峦之后将天空染成橙红色。
-       #9  sim=0.0%  score=3.9577  dist=60  normed_dist=1.0526
-           EN: Customer Acquisition Cost has increased due to high competition in the market.
-           ZH: 由于市场竞争激烈，客户获取成本有所上升。
-       #10  sim=0.0%  score=3.0161  dist=61  normed_dist=1.0702
+       #8  sim=3.5%  score=42.7132  dist=55  normed_dist=0.9649
+           EN: Our main goal for this campaign is to increase Brand Awareness among Gen Z.
+           ZH: 我们此次活动的主要目标是提高 Z 世代的品牌知名度。
+       #9  sim=0.0%  score=43.7302  dist=61  normed_dist=1.0702
            EN: Auction Dynamics determine the final price paid for each of the Impressions.
            ZH: 竞价机制决定了每条广告曝光所支付的最终价格。
+       #10  sim=0.0%  score=41.7266  dist=62  normed_dist=1.0877
+           EN: Key Opinion Consumers provide more authentic reviews than traditional celebrities.
+           ZH: 关键意见消费者提供比传统名人更真实的评价。
 
   [TB] Terminology Base (glossary) hits:
        'CTR'  →  ['点击率']
@@ -310,36 +309,36 @@ The DSP is integrated with the top three Ad Exchange platforms.
 Example translations:
 
 [Low similarity — style and tone context only]
-  1. [score: 0.79]
+  1. [score: 0.75]
+    We use CPC bidding to drive traffic to our landing page.
+    我们使用每次点击成本竞价来为落地页引流。
+  2. [score: 0.79]
     The SSP reported a significant increase in available inventory.
     供应方平台报告可用库存显著增加。
-  2. [score: 0.81]
+  3. [score: 0.81]
     High Impressions are good but we need to focus on the CTR.
     高广告曝光是好事，但我们需要关注点击率。
-  3. [score: 0.88]
-    The DCO engine generates thousands of ad variations in real-time.
-    动态创意优化引擎实时生成数千个广告变体。
-  4. [score: 0.89]
-    OpenRTB allows for transparency in the programmatic ecosystem.
-    开放实时竞价使程序化生态系统具备透明度。
-  5. [score: 0.91]
+  4. [score: 0.84]
+    Scientists are developing new methods to combat climate change.
+    科学家们正在开发应对气候变化的新方法。
+  5. [score: 0.86]
+    Our Return on Ad Spend has improved since we refined our targeting.
+    自从我们优化了定向投放后，我们的广告支出回报率有所提高。
+  6. [score: 0.88]
+    Neural networks are inspired by the structure of the human brain.
+    神经网络的灵感来源于人类大脑的结构。
+  7. [score: 0.91]
     Deep learning has achieved remarkable results in image recognition tasks.
     深度学习在图像识别任务中取得了显著成果。
-  6. [score: 0.93]
-    A good CTR indicates that the creative is relevant to the audience.
-    良好的点击率表明创意与受众相关。
-  7. [score: 0.96]
-    Native Advertising blends in with the editorial content of the website.
-    原生广告与网站的编辑内容融为一体。
   8. [score: 0.96]
-    The sun set behind the mountains painting the sky in shades of orange and red.
-    夕阳西下山峦之后将天空染成橙红色。
-  9. [score: 1.05]
-    Customer Acquisition Cost has increased due to high competition in the market.
-    由于市场竞争激烈，客户获取成本有所上升。
-  10. [score: 1.07]
+    Our main goal for this campaign is to increase Brand Awareness among Gen Z.
+    我们此次活动的主要目标是提高 Z 世代的品牌知名度。
+  9. [score: 1.07]
     Auction Dynamics determine the final price paid for each of the Impressions.
     竞价机制决定了每条广告曝光所支付的最终价格。
+  10. [score: 1.09]
+    Key Opinion Consumers provide more authentic reviews than traditional celebrities.
+    关键意见消费者提供比传统名人更真实的评价。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 We observed a drop in Impressions but an increase in CTR.
 
@@ -351,34 +350,34 @@ We observed a drop in Impressions but an increase in CTR.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=38.7%  score=2.7135  dist=38  normed_dist=0.6129
+       #1  sim=38.7%  score=49.1525  dist=38  normed_dist=0.6129
            EN: The Ad Server delivers the creative to the user browser.
            ZH: 广告投放服务器将创意投递到用户的浏览器。
-       #2  sim=33.9%  score=5.9962  dist=41  normed_dist=0.6613
+       #2  sim=33.9%  score=48.7611  dist=41  normed_dist=0.6613
            EN: The MCN helps influencers optimize their video content.
            ZH: 多频道网络帮助网红优化他们的视频内容。
-       #3  sim=25.8%  score=5.7479  dist=46  normed_dist=0.7419
-           EN: The KOL campaign reached over five million potential customers.
-           ZH: 关键意见领袖营销活动触达了超过五百万潜在客户。
-       #4  sim=25.8%  score=3.4156  dist=46  normed_dist=0.7419
-           EN: The ATD provides centralized reporting for all digital campaigns.
-           ZH: 代理商通用平台为所有数字营销活动提供集中报告。
-       #5  sim=24.2%  score=3.4156  dist=47  normed_dist=0.7581
+       #3  sim=29.0%  score=50.4065  dist=44  normed_dist=0.7097
+           EN: The D2C model allows brands to own the customer relationship.
+           ZH: 直面消费者模式允许品牌拥有客户关系。
+       #4  sim=29.0%  score=45.7627  dist=44  normed_dist=0.7097
+           EN: She walked along the riverbank enjoying the cool breeze.
+           ZH: 她沿着河岸漫步享受着凉爽的微风。
+       #5  sim=24.2%  score=50.0000  dist=47  normed_dist=0.7581
+           EN: KOC marketing is becoming more popular for niche brands.
+           ZH: 关键意见消费者营销在小众品牌中变得越来越流行。
+       #6  sim=24.2%  score=45.0000  dist=47  normed_dist=0.7581
            EN: The PMP provides a brand-safe environment for advertisers.
            ZH: 私有交易市场为广告主提供了一个品牌安全的环境。
-       #6  sim=22.6%  score=3.2798  dist=48  normed_dist=0.7742
+       #7  sim=22.6%  score=48.2540  dist=48  normed_dist=0.7742
+           EN: The Key Opinion Leader shared the product link with their followers.
+           ZH: 关键意见领袖与他们的粉丝分享了产品链接。
+       #8  sim=22.6%  score=45.0000  dist=48  normed_dist=0.7742
            EN: ROAS is the primary metric for our e-commerce performance.
            ZH: 广告支出回报率是我们电商绩效的核心指标。
-       #7  sim=14.5%  score=3.5632  dist=53  normed_dist=0.8548
-           EN: OpenRTB allows for transparency in the programmatic ecosystem.
-           ZH: 开放实时竞价使程序化生态系统具备透明度。
-       #8  sim=11.3%  score=3.6829  dist=55  normed_dist=0.8871
-           EN: Auction Dynamics determine the final price paid for each of the Impressions.
-           ZH: 竞价机制决定了每条广告曝光所支付的最终价格。
-       #9  sim=8.1%  score=3.1543  dist=57  normed_dist=0.9194
-           EN: The Data Management Platform aggregates First-Party Data for better targeting.
-           ZH: 数据管理平台汇总第一方数据以实现更好的精准投放。
-       #10  sim=0.0%  score=5.1126  dist=62  normed_dist=1.0000
+       #9  sim=19.4%  score=46.5116  dist=50  normed_dist=0.8065
+           EN: A good CTR indicates that the creative is relevant to the audience.
+           ZH: 良好的点击率表明创意与受众相关。
+       #10  sim=0.0%  score=45.4930  dist=62  normed_dist=1.0000
            EN: The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
            ZH: 需求方平台允许广告主管理多个广告交易平台账号。
 
@@ -399,27 +398,27 @@ Example translations:
   2. [score: 0.66]
     The MCN helps influencers optimize their video content.
     多频道网络帮助网红优化他们的视频内容。
-  3. [score: 0.74]
-    The KOL campaign reached over five million potential customers.
-    关键意见领袖营销活动触达了超过五百万潜在客户。
-  4. [score: 0.74]
-    The ATD provides centralized reporting for all digital campaigns.
-    代理商通用平台为所有数字营销活动提供集中报告。
+  3. [score: 0.71]
+    The D2C model allows brands to own the customer relationship.
+    直面消费者模式允许品牌拥有客户关系。
+  4. [score: 0.71]
+    She walked along the riverbank enjoying the cool breeze.
+    她沿着河岸漫步享受着凉爽的微风。
   5. [score: 0.76]
+    KOC marketing is becoming more popular for niche brands.
+    关键意见消费者营销在小众品牌中变得越来越流行。
+  6. [score: 0.76]
     The PMP provides a brand-safe environment for advertisers.
     私有交易市场为广告主提供了一个品牌安全的环境。
-  6. [score: 0.77]
+  7. [score: 0.77]
+    The Key Opinion Leader shared the product link with their followers.
+    关键意见领袖与他们的粉丝分享了产品链接。
+  8. [score: 0.77]
     ROAS is the primary metric for our e-commerce performance.
     广告支出回报率是我们电商绩效的核心指标。
-  7. [score: 0.85]
-    OpenRTB allows for transparency in the programmatic ecosystem.
-    开放实时竞价使程序化生态系统具备透明度。
-  8. [score: 0.89]
-    Auction Dynamics determine the final price paid for each of the Impressions.
-    竞价机制决定了每条广告曝光所支付的最终价格。
-  9. [score: 0.92]
-    The Data Management Platform aggregates First-Party Data for better targeting.
-    数据管理平台汇总第一方数据以实现更好的精准投放。
+  9. [score: 0.81]
+    A good CTR indicates that the creative is relevant to the audience.
+    良好的点击率表明创意与受众相关。
   10. [score: 1.00]
     The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
     需求方平台允许广告主管理多个广告交易平台账号。
@@ -434,36 +433,36 @@ The MCN will manage the KOL cooperation for the summer launch.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=20.8%  score=2.5553  dist=38  normed_dist=0.7917
+       #1  sim=20.8%  score=40.3846  dist=38  normed_dist=0.7917
            EN: We use CPC bidding to drive traffic to our landing page.
            ZH: 我们使用每次点击成本竞价来为落地页引流。
-       #2  sim=8.3%  score=1.7710  dist=44  normed_dist=0.9167
+       #2  sim=8.3%  score=38.4615  dist=44  normed_dist=0.9167
            EN: KOC marketing is becoming more popular for niche brands.
            ZH: 关键意见消费者营销在小众品牌中变得越来越流行。
-       #3  sim=6.2%  score=2.6569  dist=45  normed_dist=0.9375
+       #3  sim=6.2%  score=43.8596  dist=45  normed_dist=0.9375
            EN: Real-Time Bidding has revolutionized how we purchase Ad Inventory.
            ZH: 实时竞价彻底改变了我们购买广告库存的方式。
-       #4  sim=2.1%  score=1.8476  dist=47  normed_dist=0.9792
-           EN: First-Party Data is essential for personalized marketing.
-           ZH: 第一方数据对于个性化营销至关重要。
-       #5  sim=0.0%  score=2.9131  dist=48  normed_dist=1.0000
-           EN: Many content creators are managed by a Multi-Channel Network.
-           ZH: 许多内容创作者由多频道网络管理。
-       #6  sim=0.0%  score=2.8016  dist=49  normed_dist=1.0208
+       #4  sim=6.2%  score=39.9000  dist=45  normed_dist=0.9375
+           EN: The Ad Server delivers the creative to the user browser.
+           ZH: 广告投放服务器将创意投递到用户的浏览器。
+       #5  sim=0.0%  score=40.7080  dist=49  normed_dist=1.0208
            EN: Neural networks are inspired by the structure of the human brain.
            ZH: 神经网络的灵感来源于人类大脑的结构。
-       #7  sim=0.0%  score=3.3909  dist=51  normed_dist=1.0625
-           EN: The SSP reported a significant increase in available inventory.
-           ZH: 供应方平台报告可用库存显著增加。
-       #8  sim=0.0%  score=5.4772  dist=54  normed_dist=1.1250
+       #6  sim=0.0%  score=85.5000  dist=54  normed_dist=1.1250
            EN: The Open Real-Time Bidding protocol ensures compatibility between DSP and SSP.
            ZH: 开放实时竞价协议确保了需求方平台与供应方平台之间的兼容性。
-       #9  sim=0.0%  score=2.6984  dist=55  normed_dist=1.1458
-           EN: Low Viewability scores indicate that ads are not being seen by users.
-           ZH: 低可见性得分表明广告未被用户看到。
-       #10  sim=0.0%  score=6.1875  dist=59  normed_dist=1.2292
+       #7  sim=0.0%  score=38.6129  dist=57  normed_dist=1.1875
+           EN: The Agency Trading Desk manages programmatic buys across various Ad Networks.
+           ZH: 代理商通用平台管理不同广告网络的程序化购买。
+       #8  sim=0.0%  score=85.5000  dist=59  normed_dist=1.2292
            EN: Header Bidding allows publishers to offer inventory to multiple SSPs simultaneously.
            ZH: 头部竞价允许媒体方同时向多个供应方平台提供库存。
+       #9  sim=0.0%  score=38.2021  dist=59  normed_dist=1.2292
+           EN: Customer Acquisition Cost has increased due to high competition in the market.
+           ZH: 由于市场竞争激烈，客户获取成本有所上升。
+       #10  sim=0.0%  score=38.7097  dist=67  normed_dist=1.3958
+           EN: Key Opinion Consumers provide more authentic reviews than traditional celebrities.
+           ZH: 关键意见消费者提供比传统名人更真实的评价。
 
   [TB] Terminology Base (glossary) hits:
        'Header Bidding'  →  ['头部竞价']
@@ -485,27 +484,27 @@ Example translations:
   3. [score: 0.94]
     Real-Time Bidding has revolutionized how we purchase Ad Inventory.
     实时竞价彻底改变了我们购买广告库存的方式。
-  4. [score: 0.98]
-    First-Party Data is essential for personalized marketing.
-    第一方数据对于个性化营销至关重要。
-  5. [score: 1.00]
-    Many content creators are managed by a Multi-Channel Network.
-    许多内容创作者由多频道网络管理。
-  6. [score: 1.02]
+  4. [score: 0.94]
+    The Ad Server delivers the creative to the user browser.
+    广告投放服务器将创意投递到用户的浏览器。
+  5. [score: 1.02]
     Neural networks are inspired by the structure of the human brain.
     神经网络的灵感来源于人类大脑的结构。
-  7. [score: 1.06]
-    The SSP reported a significant increase in available inventory.
-    供应方平台报告可用库存显著增加。
-  8. [score: 1.12]
+  6. [score: 1.12]
     The Open Real-Time Bidding protocol ensures compatibility between DSP and SSP.
     开放实时竞价协议确保了需求方平台与供应方平台之间的兼容性。
-  9. [score: 1.15]
-    Low Viewability scores indicate that ads are not being seen by users.
-    低可见性得分表明广告未被用户看到。
-  10. [score: 1.23]
+  7. [score: 1.19]
+    The Agency Trading Desk manages programmatic buys across various Ad Networks.
+    代理商通用平台管理不同广告网络的程序化购买。
+  8. [score: 1.23]
     Header Bidding allows publishers to offer inventory to multiple SSPs simultaneously.
     头部竞价允许媒体方同时向多个供应方平台提供库存。
+  9. [score: 1.23]
+    Customer Acquisition Cost has increased due to high competition in the market.
+    由于市场竞争激烈，客户获取成本有所上升。
+  10. [score: 1.40]
+    Key Opinion Consumers provide more authentic reviews than traditional celebrities.
+    关键意见消费者提供比传统名人更真实的评价。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 Is Header Bidding supported by your current SSP?
 
@@ -517,34 +516,34 @@ Is Header Bidding supported by your current SSP?
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=29.9%  score=2.8865  dist=47  normed_dist=0.7015
+       #1  sim=29.9%  score=44.9612  dist=47  normed_dist=0.7015
            EN: OpenRTB allows for transparency in the programmatic ecosystem.
            ZH: 开放实时竞价使程序化生态系统具备透明度。
-       #2  sim=23.9%  score=4.1030  dist=51  normed_dist=0.7612
-           EN: SEO ranking factors change frequently with algorithm updates.
-           ZH: 搜索引擎优化排名因素随算法更新而频繁变化。
-       #3  sim=19.4%  score=2.0919  dist=54  normed_dist=0.8060
-           EN: Using a DMP allows for more sophisticated audience segmentation.
-           ZH: 使用数据管理平台可以实现更复杂的人群细分。
-       #4  sim=17.9%  score=5.3138  dist=55  normed_dist=0.8209
+       #2  sim=26.9%  score=45.1613  dist=49  normed_dist=0.7313
+           EN: First-Party Data is essential for personalized marketing.
+           ZH: 第一方数据对于个性化营销至关重要。
+       #3  sim=25.4%  score=44.8000  dist=50  normed_dist=0.7463
+           EN: The PMP provides a brand-safe environment for advertisers.
+           ZH: 私有交易市场为广告主提供了一个品牌安全的环境。
+       #4  sim=22.4%  score=44.7761  dist=52  normed_dist=0.7761
+           EN: Our Return on Ad Spend has improved since we refined our targeting.
+           ZH: 自从我们优化了定向投放后，我们的广告支出回报率有所提高。
+       #5  sim=17.9%  score=59.4656  dist=55  normed_dist=0.8209
            EN: Programmatic Advertising is now used for connected TV and radio.
            ZH: 程序化广告现在也用于联网电视和广播。
-       #5  sim=14.9%  score=5.5640  dist=57  normed_dist=0.8507
-           EN: Search Engine Optimization is a long-term strategy for organic growth.
-           ZH: 搜索引擎优化是实现有机增长的长期战略。
-       #6  sim=14.9%  score=2.7670  dist=57  normed_dist=0.8507
+       #6  sim=14.9%  score=47.8626  dist=57  normed_dist=0.8507
            EN: Native Advertising often sees higher engagement than banner ads.
            ZH: 原生广告的互动率通常高于横幅广告。
-       #7  sim=13.4%  score=2.5553  dist=58  normed_dist=0.8657
+       #7  sim=14.9%  score=42.9927  dist=57  normed_dist=0.8507
+           EN: Search Engine Optimization is a long-term strategy for organic growth.
+           ZH: 搜索引擎优化是实现有机增长的长期战略。
+       #8  sim=13.4%  score=41.6667  dist=58  normed_dist=0.8657
            EN: The Agency Trading Desk manages programmatic buys across various Ad Networks.
            ZH: 代理商通用平台管理不同广告网络的程序化购买。
-       #8  sim=10.4%  score=5.3138  dist=60  normed_dist=0.8955
+       #9  sim=10.4%  score=58.2482  dist=60  normed_dist=0.8955
            EN: Programmatic Advertising uses AI to automate the media buying process.
            ZH: 程序化广告使用人工智能来自动化媒体购买流程。
-       #9  sim=10.4%  score=2.6039  dist=60  normed_dist=0.8955
-           EN: A Private Marketplace offers premium inventory to a select group of buyers.
-           ZH: 私有交易市场向选定的买家群体提供优质库存。
-       #10  sim=10.4%  score=2.5553  dist=60  normed_dist=0.8955
+       #10  sim=10.4%  score=46.7910  dist=60  normed_dist=0.8955
            EN: Native Advertising blends in with the editorial content of the website.
            ZH: 原生广告与网站的编辑内容融为一体。
 
@@ -562,30 +561,30 @@ Example translations:
   1. [score: 0.70]
     OpenRTB allows for transparency in the programmatic ecosystem.
     开放实时竞价使程序化生态系统具备透明度。
-  2. [score: 0.76]
-    SEO ranking factors change frequently with algorithm updates.
-    搜索引擎优化排名因素随算法更新而频繁变化。
-  3. [score: 0.81]
-    Using a DMP allows for more sophisticated audience segmentation.
-    使用数据管理平台可以实现更复杂的人群细分。
-  4. [score: 0.82]
+  2. [score: 0.73]
+    First-Party Data is essential for personalized marketing.
+    第一方数据对于个性化营销至关重要。
+  3. [score: 0.75]
+    The PMP provides a brand-safe environment for advertisers.
+    私有交易市场为广告主提供了一个品牌安全的环境。
+  4. [score: 0.78]
+    Our Return on Ad Spend has improved since we refined our targeting.
+    自从我们优化了定向投放后，我们的广告支出回报率有所提高。
+  5. [score: 0.82]
     Programmatic Advertising is now used for connected TV and radio.
     程序化广告现在也用于联网电视和广播。
-  5. [score: 0.85]
-    Search Engine Optimization is a long-term strategy for organic growth.
-    搜索引擎优化是实现有机增长的长期战略。
   6. [score: 0.85]
     Native Advertising often sees higher engagement than banner ads.
     原生广告的互动率通常高于横幅广告。
-  7. [score: 0.87]
+  7. [score: 0.85]
+    Search Engine Optimization is a long-term strategy for organic growth.
+    搜索引擎优化是实现有机增长的长期战略。
+  8. [score: 0.87]
     The Agency Trading Desk manages programmatic buys across various Ad Networks.
     代理商通用平台管理不同广告网络的程序化购买。
-  8. [score: 0.90]
+  9. [score: 0.90]
     Programmatic Advertising uses AI to automate the media buying process.
     程序化广告使用人工智能来自动化媒体购买流程。
-  9. [score: 0.90]
-    A Private Marketplace offers premium inventory to a select group of buyers.
-    私有交易市场向选定的买家群体提供优质库存。
   10. [score: 0.90]
     Native Advertising blends in with the editorial content of the website.
     原生广告与网站的编辑内容融为一体。
@@ -600,36 +599,36 @@ A strong SEO strategy can complement your Programmatic Advertising.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=39.7%  score=4.4197  dist=35  normed_dist=0.6034
+       #1  sim=39.7%  score=52.6316  dist=35  normed_dist=0.6034
            EN: We use CPC bidding to drive traffic to our landing page.
            ZH: 我们使用每次点击成本竞价来为落地页引流。
-       #2  sim=19.0%  score=3.9958  dist=47  normed_dist=0.8103
+       #2  sim=24.1%  score=45.6140  dist=44  normed_dist=0.7586
+           EN: She walked along the riverbank enjoying the cool breeze.
+           ZH: 她沿着河岸漫步享受着凉爽的微风。
+       #3  sim=20.7%  score=47.1545  dist=46  normed_dist=0.7931
+           EN: The DCO engine generates thousands of ad variations in real-time.
+           ZH: 动态创意优化引擎实时生成数千个广告变体。
+       #4  sim=19.0%  score=47.1074  dist=47  normed_dist=0.8103
            EN: The SSP reported a significant increase in available inventory.
            ZH: 供应方平台报告可用库存显著增加。
-       #3  sim=15.5%  score=3.9362  dist=49  normed_dist=0.8448
-           EN: High Impressions are good but we need to focus on the CTR.
-           ZH: 高广告曝光是好事，但我们需要关注点击率。
-       #4  sim=13.8%  score=4.1511  dist=50  normed_dist=0.8621
+       #5  sim=17.2%  score=47.0588  dist=48  normed_dist=0.8276
+           EN: The D2C model allows brands to own the customer relationship.
+           ZH: 直面消费者模式允许品牌拥有客户关系。
+       #6  sim=15.5%  score=47.0588  dist=49  normed_dist=0.8448
+           EN: The translation model uses retrieval augmented generation to improve accuracy.
+           ZH: 翻译模型使用检索增强生成技术来提高准确性。
+       #7  sim=13.8%  score=46.3415  dist=50  normed_dist=0.8621
            EN: The DSP uses algorithms to bid on the most relevant Ad Inventory.
            ZH: 需求方平台使用算法对最相关的广告库存进行竞价。
-       #5  sim=12.1%  score=9.4945  dist=51  normed_dist=0.8793
+       #8  sim=12.1%  score=56.0656  dist=51  normed_dist=0.8793
            EN: Direct to Consumer brands often rely heavily on Private Traffic.
            ZH: 直面消费者品牌通常严重依赖私域流量。
-       #6  sim=12.1%  score=4.8048  dist=51  normed_dist=0.8793
-           EN: Brand Awareness is measured through surveys and search volume.
-           ZH: 品牌知名度通过调研和搜索量来衡量。
-       #7  sim=10.3%  score=7.5267  dist=52  normed_dist=0.8966
+       #9  sim=10.3%  score=50.4688  dist=52  normed_dist=0.8966
            EN: Private Traffic is more cost-effective than constant paid acquisition.
            ZH: 私域流量比持续的付费获客更具成本效益。
-       #8  sim=10.3%  score=6.0581  dist=52  normed_dist=0.8966
-           EN: ROAS is the primary metric for our e-commerce performance.
-           ZH: 广告支出回报率是我们电商绩效的核心指标。
-       #9  sim=1.7%  score=7.8386  dist=57  normed_dist=0.9828
+       #10  sim=1.7%  score=45.7143  dist=57  normed_dist=0.9828
            EN: Our main goal for this campaign is to increase Brand Awareness among Gen Z.
            ZH: 我们此次活动的主要目标是提高 Z 世代的品牌知名度。
-       #10  sim=0.0%  score=3.8248  dist=60  normed_dist=1.0345
-           EN: A Private Marketplace offers premium inventory to a select group of buyers.
-           ZH: 私有交易市场向选定的买家群体提供优质库存。
 
   [TB] Terminology Base (glossary) hits:
        'Private Traffic'  →  ['私域流量']
@@ -645,33 +644,33 @@ Example translations:
   1. [score: 0.60]
     We use CPC bidding to drive traffic to our landing page.
     我们使用每次点击成本竞价来为落地页引流。
-  2. [score: 0.81]
+  2. [score: 0.76]
+    She walked along the riverbank enjoying the cool breeze.
+    她沿着河岸漫步享受着凉爽的微风。
+  3. [score: 0.79]
+    The DCO engine generates thousands of ad variations in real-time.
+    动态创意优化引擎实时生成数千个广告变体。
+  4. [score: 0.81]
     The SSP reported a significant increase in available inventory.
     供应方平台报告可用库存显著增加。
-  3. [score: 0.84]
-    High Impressions are good but we need to focus on the CTR.
-    高广告曝光是好事，但我们需要关注点击率。
-  4. [score: 0.86]
+  5. [score: 0.83]
+    The D2C model allows brands to own the customer relationship.
+    直面消费者模式允许品牌拥有客户关系。
+  6. [score: 0.84]
+    The translation model uses retrieval augmented generation to improve accuracy.
+    翻译模型使用检索增强生成技术来提高准确性。
+  7. [score: 0.86]
     The DSP uses algorithms to bid on the most relevant Ad Inventory.
     需求方平台使用算法对最相关的广告库存进行竞价。
-  5. [score: 0.88]
+  8. [score: 0.88]
     Direct to Consumer brands often rely heavily on Private Traffic.
     直面消费者品牌通常严重依赖私域流量。
-  6. [score: 0.88]
-    Brand Awareness is measured through surveys and search volume.
-    品牌知名度通过调研和搜索量来衡量。
-  7. [score: 0.90]
+  9. [score: 0.90]
     Private Traffic is more cost-effective than constant paid acquisition.
     私域流量比持续的付费获客更具成本效益。
-  8. [score: 0.90]
-    ROAS is the primary metric for our e-commerce performance.
-    广告支出回报率是我们电商绩效的核心指标。
-  9. [score: 0.98]
+  10. [score: 0.98]
     Our main goal for this campaign is to increase Brand Awareness among Gen Z.
     我们此次活动的主要目标是提高 Z 世代的品牌知名度。
-  10. [score: 1.03]
-    A Private Marketplace offers premium inventory to a select group of buyers.
-    私有交易市场向选定的买家群体提供优质库存。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 The brand is focusing on Private Traffic to increase ROAS.
 
@@ -683,36 +682,36 @@ The brand is focusing on Private Traffic to increase ROAS.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=31.6%  score=9.4895  dist=39  normed_dist=0.6842
+       #1  sim=31.6%  score=52.2936  dist=39  normed_dist=0.6842
            EN: The Ad Server delivers the creative to the user browser.
            ZH: 广告投放服务器将创意投递到用户的浏览器。
-       #2  sim=14.0%  score=2.3815  dist=49  normed_dist=0.8596
-           EN: The DCO engine generates thousands of ad variations in real-time.
-           ZH: 动态创意优化引擎实时生成数千个广告变体。
-       #3  sim=8.8%  score=3.6322  dist=52  normed_dist=0.9123
-           EN: A high Cost Per Mille does not always guarantee high Viewability.
-           ZH: 高每千次展示成本并不总是能保证高可见性。
-       #4  sim=8.8%  score=3.4514  dist=52  normed_dist=0.9123
+       #2  sim=14.0%  score=41.9355  dist=49  normed_dist=0.8596
+           EN: Our Return on Ad Spend has improved since we refined our targeting.
+           ZH: 自从我们优化了定向投放后，我们的广告支出回报率有所提高。
+       #3  sim=10.5%  score=41.6667  dist=51  normed_dist=0.8947
+           EN: The SSP reported a significant increase in available inventory.
+           ZH: 供应方平台报告可用库存显著增加。
+       #4  sim=10.5%  score=40.9836  dist=51  normed_dist=0.8947
+           EN: The ATD provides centralized reporting for all digital campaigns.
+           ZH: 代理商通用平台为所有数字营销活动提供集中报告。
+       #5  sim=8.8%  score=44.3333  dist=52  normed_dist=0.9123
            EN: A good CTR indicates that the creative is relevant to the audience.
            ZH: 良好的点击率表明创意与受众相关。
-       #5  sim=8.8%  score=2.6893  dist=52  normed_dist=0.9123
-           EN: The Ad Exchange facilitates the buying and selling of media.
-           ZH: 广告交易平台促进了媒介的买卖。
-       #6  sim=5.3%  score=2.5087  dist=54  normed_dist=0.9474
-           EN: The DSP uses algorithms to bid on the most relevant Ad Inventory.
-           ZH: 需求方平台使用算法对最相关的广告库存进行竞价。
-       #7  sim=0.0%  score=3.1314  dist=58  normed_dist=1.0175
-           EN: Search Engine Optimization is a long-term strategy for organic growth.
-           ZH: 搜索引擎优化是实现有机增长的长期战略。
-       #8  sim=0.0%  score=11.9467  dist=60  normed_dist=1.0526
+       #6  sim=7.0%  score=42.7500  dist=53  normed_dist=0.9298
+           EN: The KOL campaign reached over five million potential customers.
+           ZH: 关键意见领袖营销活动触达了超过五百万潜在客户。
+       #7  sim=3.5%  score=41.8898  dist=55  normed_dist=0.9649
+           EN: Programmatic Advertising uses AI to automate the media buying process.
+           ZH: 程序化广告使用人工智能来自动化媒体购买流程。
+       #8  sim=0.0%  score=44.2857  dist=58  normed_dist=1.0175
+           EN: Auction Dynamics determine the final price paid for each of the Impressions.
+           ZH: 竞价机制决定了每条广告曝光所支付的最终价格。
+       #9  sim=0.0%  score=42.9032  dist=58  normed_dist=1.0175
+           EN: Native Advertising blends in with the editorial content of the website.
+           ZH: 原生广告与网站的编辑内容融为一体。
+       #10  sim=0.0%  score=57.1429  dist=60  normed_dist=1.0526
            EN: Dynamic Creative Optimization adjusts the ad content based on user behavior.
            ZH: 动态创意优化根据用户行为调整广告内容。
-       #9  sim=0.0%  score=2.3815  dist=60  normed_dist=1.0526
-           EN: The Agency Trading Desk manages programmatic buys across various Ad Networks.
-           ZH: 代理商通用平台管理不同广告网络的程序化购买。
-       #10  sim=0.0%  score=2.2937  dist=65  normed_dist=1.1404
-           EN: The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
-           ZH: 需求方平台允许广告主管理多个广告交易平台账号。
 
   [TB] Terminology Base (glossary) hits:
        'Ad Server'  →  ['广告投放服务器']
@@ -729,32 +728,32 @@ Example translations:
     The Ad Server delivers the creative to the user browser.
     广告投放服务器将创意投递到用户的浏览器。
   2. [score: 0.86]
-    The DCO engine generates thousands of ad variations in real-time.
-    动态创意优化引擎实时生成数千个广告变体。
-  3. [score: 0.91]
-    A high Cost Per Mille does not always guarantee high Viewability.
-    高每千次展示成本并不总是能保证高可见性。
-  4. [score: 0.91]
+    Our Return on Ad Spend has improved since we refined our targeting.
+    自从我们优化了定向投放后，我们的广告支出回报率有所提高。
+  3. [score: 0.89]
+    The SSP reported a significant increase in available inventory.
+    供应方平台报告可用库存显著增加。
+  4. [score: 0.89]
+    The ATD provides centralized reporting for all digital campaigns.
+    代理商通用平台为所有数字营销活动提供集中报告。
+  5. [score: 0.91]
     A good CTR indicates that the creative is relevant to the audience.
     良好的点击率表明创意与受众相关。
-  5. [score: 0.91]
-    The Ad Exchange facilitates the buying and selling of media.
-    广告交易平台促进了媒介的买卖。
-  6. [score: 0.95]
-    The DSP uses algorithms to bid on the most relevant Ad Inventory.
-    需求方平台使用算法对最相关的广告库存进行竞价。
-  7. [score: 1.02]
-    Search Engine Optimization is a long-term strategy for organic growth.
-    搜索引擎优化是实现有机增长的长期战略。
-  8. [score: 1.05]
+  6. [score: 0.93]
+    The KOL campaign reached over five million potential customers.
+    关键意见领袖营销活动触达了超过五百万潜在客户。
+  7. [score: 0.96]
+    Programmatic Advertising uses AI to automate the media buying process.
+    程序化广告使用人工智能来自动化媒体购买流程。
+  8. [score: 1.02]
+    Auction Dynamics determine the final price paid for each of the Impressions.
+    竞价机制决定了每条广告曝光所支付的最终价格。
+  9. [score: 1.02]
+    Native Advertising blends in with the editorial content of the website.
+    原生广告与网站的编辑内容融为一体。
+  10. [score: 1.05]
     Dynamic Creative Optimization adjusts the ad content based on user behavior.
     动态创意优化根据用户行为调整广告内容。
-  9. [score: 1.05]
-    The Agency Trading Desk manages programmatic buys across various Ad Networks.
-    代理商通用平台管理不同广告网络的程序化购买。
-  10. [score: 1.14]
-    The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
-    需求方平台允许广告主管理多个广告交易平台账号。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 Does the Ad Server support Dynamic Creative Optimization?
 
@@ -766,36 +765,36 @@ Does the Ad Server support Dynamic Creative Optimization?
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=16.0%  score=2.1363  dist=42  normed_dist=0.8400
+       #1  sim=16.0%  score=40.7407  dist=42  normed_dist=0.8400
            EN: ROAS is the primary metric for our e-commerce performance.
            ZH: 广告支出回报率是我们电商绩效的核心指标。
-       #2  sim=12.0%  score=6.4246  dist=44  normed_dist=0.8800
+       #2  sim=12.0%  score=49.9153  dist=44  normed_dist=0.8800
            EN: Yield Management strategies help publishers fill their unsold spots.
            ZH: 收益管理策略帮助媒体方填充未售出的广告位。
-       #3  sim=6.0%  score=5.4828  dist=47  normed_dist=0.9400
-           EN: The PMP provides a brand-safe environment for advertisers.
-           ZH: 私有交易市场为广告主提供了一个品牌安全的环境。
-       #4  sim=2.0%  score=2.7693  dist=49  normed_dist=0.9800
+       #3  sim=2.0%  score=44.4444  dist=49  normed_dist=0.9800
            EN: Our Return on Ad Spend has improved since we refined our targeting.
            ZH: 自从我们优化了定向投放后，我们的广告支出回报率有所提高。
-       #5  sim=0.0%  score=6.0250  dist=50  normed_dist=1.0000
-           EN: Using a DMP allows for more sophisticated audience segmentation.
-           ZH: 使用数据管理平台可以实现更复杂的人群细分。
-       #6  sim=0.0%  score=2.0919  dist=50  normed_dist=1.0000
-           EN: The SSP reported a significant increase in available inventory.
-           ZH: 供应方平台报告可用库存显著增加。
-       #7  sim=0.0%  score=4.8174  dist=53  normed_dist=1.0600
-           EN: We are shifting our budget from RTB to PMP for better quality control.
-           ZH: 为了更好的质量控制，我们正将预算从实时竞价转向私有交易市场。
-       #8  sim=0.0%  score=2.8016  dist=56  normed_dist=1.1200
+       #4  sim=0.0%  score=41.0811  dist=50  normed_dist=1.0000
+           EN: Many content creators are managed by a Multi-Channel Network.
+           ZH: 许多内容创作者由多频道网络管理。
+       #5  sim=0.0%  score=85.5000  dist=52  normed_dist=1.0400
+           EN: Our main goal for this campaign is to increase Brand Awareness among Gen Z.
+           ZH: 我们此次活动的主要目标是提高 Z 世代的品牌知名度。
+       #6  sim=0.0%  score=46.4000  dist=53  normed_dist=1.0600
+           EN: Natural language processing enables computers to understand human language.
+           ZH: 自然语言处理使计算机能够理解人类语言。
+       #7  sim=0.0%  score=85.5000  dist=56  normed_dist=1.1200
            EN: The Data Management Platform aggregates First-Party Data for better targeting.
            ZH: 数据管理平台汇总第一方数据以实现更好的精准投放。
-       #9  sim=0.0%  score=6.1690  dist=57  normed_dist=1.1400
+       #8  sim=0.0%  score=47.5000  dist=57  normed_dist=1.1400
            EN: The Supply Side Platform helps publishers maximize their Yield Management.
            ZH: 供应方平台帮助媒体方实现收益管理最大化。
-       #10  sim=0.0%  score=2.6039  dist=58  normed_dist=1.1600
+       #9  sim=0.0%  score=85.5000  dist=58  normed_dist=1.1600
            EN: A Private Marketplace offers premium inventory to a select group of buyers.
            ZH: 私有交易市场向选定的买家群体提供优质库存。
+       #10  sim=0.0%  score=40.4082  dist=60  normed_dist=1.2000
+           EN: The translation model uses retrieval augmented generation to improve accuracy.
+           ZH: 翻译模型使用检索增强生成技术来提高准确性。
 
   [TB] Terminology Base (glossary) hits:
        'PMP'  →  ['私有交易市场']
@@ -814,30 +813,30 @@ Example translations:
   2. [score: 0.88]
     Yield Management strategies help publishers fill their unsold spots.
     收益管理策略帮助媒体方填充未售出的广告位。
-  3. [score: 0.94]
-    The PMP provides a brand-safe environment for advertisers.
-    私有交易市场为广告主提供了一个品牌安全的环境。
-  4. [score: 0.98]
+  3. [score: 0.98]
     Our Return on Ad Spend has improved since we refined our targeting.
     自从我们优化了定向投放后，我们的广告支出回报率有所提高。
-  5. [score: 1.00]
-    Using a DMP allows for more sophisticated audience segmentation.
-    使用数据管理平台可以实现更复杂的人群细分。
-  6. [score: 1.00]
-    The SSP reported a significant increase in available inventory.
-    供应方平台报告可用库存显著增加。
-  7. [score: 1.06]
-    We are shifting our budget from RTB to PMP for better quality control.
-    为了更好的质量控制，我们正将预算从实时竞价转向私有交易市场。
-  8. [score: 1.12]
+  4. [score: 1.00]
+    Many content creators are managed by a Multi-Channel Network.
+    许多内容创作者由多频道网络管理。
+  5. [score: 1.04]
+    Our main goal for this campaign is to increase Brand Awareness among Gen Z.
+    我们此次活动的主要目标是提高 Z 世代的品牌知名度。
+  6. [score: 1.06]
+    Natural language processing enables computers to understand human language.
+    自然语言处理使计算机能够理解人类语言。
+  7. [score: 1.12]
     The Data Management Platform aggregates First-Party Data for better targeting.
     数据管理平台汇总第一方数据以实现更好的精准投放。
-  9. [score: 1.14]
+  8. [score: 1.14]
     The Supply Side Platform helps publishers maximize their Yield Management.
     供应方平台帮助媒体方实现收益管理最大化。
-  10. [score: 1.16]
+  9. [score: 1.16]
     A Private Marketplace offers premium inventory to a select group of buyers.
     私有交易市场向选定的买家群体提供优质库存。
+  10. [score: 1.20]
+    The translation model uses retrieval augmented generation to improve accuracy.
+    翻译模型使用检索增强生成技术来提高准确性。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 Our Yield Management team recommended using a PMP.
 
@@ -849,36 +848,36 @@ Our Yield Management team recommended using a PMP.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=27.8%  score=6.7438  dist=39  normed_dist=0.7222
+       #1  sim=31.5%  score=48.9796  dist=37  normed_dist=0.6852
+           EN: The quick brown fox jumps over the lazy dog.
+           ZH: 那只敏捷的棕色狐狸跳过了那只懒狗。
+       #2  sim=27.8%  score=55.4622  dist=39  normed_dist=0.7222
            EN: The ATD provides centralized reporting for all digital campaigns.
            ZH: 代理商通用平台为所有数字营销活动提供集中报告。
-       #2  sim=25.9%  score=3.5176  dist=40  normed_dist=0.7407
+       #3  sim=25.9%  score=48.6486  dist=40  normed_dist=0.7407
            EN: First-Party Data is essential for personalized marketing.
            ZH: 第一方数据对于个性化营销至关重要。
-       #3  sim=20.4%  score=4.8438  dist=43  normed_dist=0.7963
-           EN: The Ad Exchange facilitates the buying and selling of media.
-           ZH: 广告交易平台促进了媒介的买卖。
-       #4  sim=18.5%  score=4.3995  dist=44  normed_dist=0.8148
+       #4  sim=25.9%  score=47.2727  dist=40  normed_dist=0.7407
+           EN: The Ad Server delivers the creative to the user browser.
+           ZH: 广告投放服务器将创意投递到用户的浏览器。
+       #5  sim=20.4%  score=48.7395  dist=43  normed_dist=0.7963
+           EN: The DSP uses algorithms to bid on the most relevant Ad Inventory.
+           ZH: 需求方平台使用算法对最相关的广告库存进行竞价。
+       #6  sim=18.5%  score=50.8929  dist=44  normed_dist=0.8148
            EN: ROAS is the primary metric for our e-commerce performance.
            ZH: 广告支出回报率是我们电商绩效的核心指标。
-       #5  sim=18.5%  score=3.3719  dist=44  normed_dist=0.8148
-           EN: KOC marketing is becoming more popular for niche brands.
-           ZH: 关键意见消费者营销在小众品牌中变得越来越流行。
-       #6  sim=14.8%  score=3.0813  dist=46  normed_dist=0.8519
-           EN: Our CAC is currently higher than the lifetime value of the customer.
-           ZH: 我们的客户获取成本目前高于客户的终身价值。
-       #7  sim=9.3%  score=3.2378  dist=49  normed_dist=0.9074
-           EN: Programmatic Advertising is now used for connected TV and radio.
-           ZH: 程序化广告现在也用于联网电视和广播。
-       #8  sim=7.4%  score=3.0813  dist=50  normed_dist=0.9259
-           EN: A good CTR indicates that the creative is relevant to the audience.
-           ZH: 良好的点击率表明创意与受众相关。
-       #9  sim=5.6%  score=4.4177  dist=51  normed_dist=0.9444
-           EN: Programmatic Advertising uses AI to automate the media buying process.
-           ZH: 程序化广告使用人工智能来自动化媒体购买流程。
-       #10  sim=0.0%  score=6.7461  dist=55  normed_dist=1.0185
+       #7  sim=18.5%  score=47.9130  dist=44  normed_dist=0.8148
+           EN: The D2C model allows brands to own the customer relationship.
+           ZH: 直面消费者模式允许品牌拥有客户关系。
+       #8  sim=16.7%  score=48.7395  dist=45  normed_dist=0.8333
+           EN: The DCO engine generates thousands of ad variations in real-time.
+           ZH: 动态创意优化引擎实时生成数千个广告变体。
+       #9  sim=0.0%  score=47.5000  dist=55  normed_dist=1.0185
            EN: Search Engine Optimization is a long-term strategy for organic growth.
            ZH: 搜索引擎优化是实现有机增长的长期战略。
+       #10  sim=0.0%  score=85.5000  dist=62  normed_dist=1.1481
+           EN: The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
+           ZH: 需求方平台允许广告主管理多个广告交易平台账号。
 
   [TB] Terminology Base (glossary) hits:
        'ATD'  →  ['代理商通用平台']
@@ -889,36 +888,36 @@ Our Yield Management team recommended using a PMP.
 Example translations:
 
 [Low similarity — style and tone context only]
-  1. [score: 0.72]
+  1. [score: 0.69]
+    The quick brown fox jumps over the lazy dog.
+    那只敏捷的棕色狐狸跳过了那只懒狗。
+  2. [score: 0.72]
     The ATD provides centralized reporting for all digital campaigns.
     代理商通用平台为所有数字营销活动提供集中报告。
-  2. [score: 0.74]
+  3. [score: 0.74]
     First-Party Data is essential for personalized marketing.
     第一方数据对于个性化营销至关重要。
-  3. [score: 0.80]
-    The Ad Exchange facilitates the buying and selling of media.
-    广告交易平台促进了媒介的买卖。
-  4. [score: 0.81]
+  4. [score: 0.74]
+    The Ad Server delivers the creative to the user browser.
+    广告投放服务器将创意投递到用户的浏览器。
+  5. [score: 0.80]
+    The DSP uses algorithms to bid on the most relevant Ad Inventory.
+    需求方平台使用算法对最相关的广告库存进行竞价。
+  6. [score: 0.81]
     ROAS is the primary metric for our e-commerce performance.
     广告支出回报率是我们电商绩效的核心指标。
-  5. [score: 0.81]
-    KOC marketing is becoming more popular for niche brands.
-    关键意见消费者营销在小众品牌中变得越来越流行。
-  6. [score: 0.85]
-    Our CAC is currently higher than the lifetime value of the customer.
-    我们的客户获取成本目前高于客户的终身价值。
-  7. [score: 0.91]
-    Programmatic Advertising is now used for connected TV and radio.
-    程序化广告现在也用于联网电视和广播。
-  8. [score: 0.93]
-    A good CTR indicates that the creative is relevant to the audience.
-    良好的点击率表明创意与受众相关。
-  9. [score: 0.94]
-    Programmatic Advertising uses AI to automate the media buying process.
-    程序化广告使用人工智能来自动化媒体购买流程。
-  10. [score: 1.02]
+  7. [score: 0.81]
+    The D2C model allows brands to own the customer relationship.
+    直面消费者模式允许品牌拥有客户关系。
+  8. [score: 0.83]
+    The DCO engine generates thousands of ad variations in real-time.
+    动态创意优化引擎实时生成数千个广告变体。
+  9. [score: 1.02]
     Search Engine Optimization is a long-term strategy for organic growth.
     搜索引擎优化是实现有机增长的长期战略。
+  10. [score: 1.15]
+    The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
+    需求方平台允许广告主管理多个广告交易平台账号。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 The ATD is responsible for the overall media strategy.
 
@@ -930,36 +929,36 @@ The ATD is responsible for the overall media strategy.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=22.0%  score=9.1857  dist=39  normed_dist=0.7800
-           EN: We are shifting our budget from RTB to PMP for better quality control.
-           ZH: 为了更好的质量控制，我们正将预算从实时竞价转向私有交易市场。
-       #2  sim=22.0%  score=5.7272  dist=39  normed_dist=0.7800
-           EN: We use CPC bidding to drive traffic to our landing page.
-           ZH: 我们使用每次点击成本竞价来为落地页引流。
-       #3  sim=14.0%  score=4.8348  dist=43  normed_dist=0.8600
-           EN: First-Party Data is essential for personalized marketing.
-           ZH: 第一方数据对于个性化营销至关重要。
-       #4  sim=6.0%  score=7.7429  dist=47  normed_dist=0.9400
+       #1  sim=6.0%  score=85.5000  dist=47  normed_dist=0.9400
            EN: We need to optimize our Click-Through Rate to lower the total Cost Per Click.
            ZH: 我们需要优化点击率以降低总每次点击成本。
-       #5  sim=6.0%  score=6.1214  dist=47  normed_dist=0.9400
-           EN: High Impressions are good but we need to focus on the CTR.
-           ZH: 高广告曝光是好事，但我们需要关注点击率。
-       #6  sim=6.0%  score=5.5339  dist=47  normed_dist=0.9400
-           EN: Using a DMP allows for more sophisticated audience segmentation.
-           ZH: 使用数据管理平台可以实现更复杂的人群细分。
-       #7  sim=0.0%  score=4.7481  dist=51  normed_dist=1.0200
-           EN: Our Return on Ad Spend has improved since we refined our targeting.
-           ZH: 自从我们优化了定向投放后，我们的广告支出回报率有所提高。
-       #8  sim=0.0%  score=8.4860  dist=52  normed_dist=1.0400
+       #2  sim=0.0%  score=85.5000  dist=52  normed_dist=1.0400
            EN: The Data Management Platform aggregates First-Party Data for better targeting.
            ZH: 数据管理平台汇总第一方数据以实现更好的精准投放。
-       #9  sim=0.0%  score=4.9927  dist=53  normed_dist=1.0600
+       #3  sim=0.0%  score=85.5000  dist=53  normed_dist=1.0600
            EN: The translation model uses retrieval augmented generation to improve accuracy.
            ZH: 翻译模型使用检索增强生成技术来提高准确性。
-       #10  sim=0.0%  score=4.2184  dist=59  normed_dist=1.1800
+       #4  sim=0.0%  score=85.5000  dist=56  normed_dist=1.1200
+           EN: A Private Marketplace offers premium inventory to a select group of buyers.
+           ZH: 私有交易市场向选定的买家群体提供优质库存。
+       #5  sim=0.0%  score=85.5000  dist=57  normed_dist=1.1400
+           EN: Natural language processing enables computers to understand human language.
+           ZH: 自然语言处理使计算机能够理解人类语言。
+       #6  sim=0.0%  score=85.5000  dist=59  normed_dist=1.1800
+           EN: Auction Dynamics determine the final price paid for each of the Impressions.
+           ZH: 竞价机制决定了每条广告曝光所支付的最终价格。
+       #7  sim=0.0%  score=85.5000  dist=59  normed_dist=1.1800
            EN: Our main goal for this campaign is to increase Brand Awareness among Gen Z.
            ZH: 我们此次活动的主要目标是提高 Z 世代的品牌知名度。
+       #8  sim=0.0%  score=85.5000  dist=61  normed_dist=1.2200
+           EN: The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
+           ZH: 需求方平台允许广告主管理多个广告交易平台账号。
+       #9  sim=0.0%  score=85.5000  dist=61  normed_dist=1.2200
+           EN: Customer Acquisition Cost has increased due to high competition in the market.
+           ZH: 由于市场竞争激烈，客户获取成本有所上升。
+       #10  sim=0.0%  score=85.5000  dist=61  normed_dist=1.2200
+           EN: Header Bidding allows publishers to offer inventory to multiple SSPs simultaneously.
+           ZH: 头部竞价允许媒体方同时向多个供应方平台提供库存。
 
   [TB] Terminology Base (glossary) hits:
        'DMP'  →  ['数据管理平台']
@@ -970,36 +969,36 @@ The ATD is responsible for the overall media strategy.
 Example translations:
 
 [Low similarity — style and tone context only]
-  1. [score: 0.78]
-    We are shifting our budget from RTB to PMP for better quality control.
-    为了更好的质量控制，我们正将预算从实时竞价转向私有交易市场。
-  2. [score: 0.78]
-    We use CPC bidding to drive traffic to our landing page.
-    我们使用每次点击成本竞价来为落地页引流。
-  3. [score: 0.86]
-    First-Party Data is essential for personalized marketing.
-    第一方数据对于个性化营销至关重要。
-  4. [score: 0.94]
+  1. [score: 0.94]
     We need to optimize our Click-Through Rate to lower the total Cost Per Click.
     我们需要优化点击率以降低总每次点击成本。
-  5. [score: 0.94]
-    High Impressions are good but we need to focus on the CTR.
-    高广告曝光是好事，但我们需要关注点击率。
-  6. [score: 0.94]
-    Using a DMP allows for more sophisticated audience segmentation.
-    使用数据管理平台可以实现更复杂的人群细分。
-  7. [score: 1.02]
-    Our Return on Ad Spend has improved since we refined our targeting.
-    自从我们优化了定向投放后，我们的广告支出回报率有所提高。
-  8. [score: 1.04]
+  2. [score: 1.04]
     The Data Management Platform aggregates First-Party Data for better targeting.
     数据管理平台汇总第一方数据以实现更好的精准投放。
-  9. [score: 1.06]
+  3. [score: 1.06]
     The translation model uses retrieval augmented generation to improve accuracy.
     翻译模型使用检索增强生成技术来提高准确性。
-  10. [score: 1.18]
+  4. [score: 1.12]
+    A Private Marketplace offers premium inventory to a select group of buyers.
+    私有交易市场向选定的买家群体提供优质库存。
+  5. [score: 1.14]
+    Natural language processing enables computers to understand human language.
+    自然语言处理使计算机能够理解人类语言。
+  6. [score: 1.18]
+    Auction Dynamics determine the final price paid for each of the Impressions.
+    竞价机制决定了每条广告曝光所支付的最终价格。
+  7. [score: 1.18]
     Our main goal for this campaign is to increase Brand Awareness among Gen Z.
     我们此次活动的主要目标是提高 Z 世代的品牌知名度。
+  8. [score: 1.22]
+    The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
+    需求方平台允许广告主管理多个广告交易平台账号。
+  9. [score: 1.22]
+    Customer Acquisition Cost has increased due to high competition in the market.
+    由于市场竞争激烈，客户获取成本有所上升。
+  10. [score: 1.22]
+    Header Bidding allows publishers to offer inventory to multiple SSPs simultaneously.
+    头部竞价允许媒体方同时向多个供应方平台提供库存。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 We need to audit our DMP for better data accuracy.
 
@@ -1011,36 +1010,36 @@ We need to audit our DMP for better data accuracy.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=27.6%  score=9.6027  dist=42  normed_dist=0.7241
+       #1  sim=27.6%  score=52.1008  dist=42  normed_dist=0.7241
            EN: The D2C model allows brands to own the customer relationship.
            ZH: 直面消费者模式允许品牌拥有客户关系。
-       #2  sim=17.2%  score=3.0337  dist=48  normed_dist=0.8276
-           EN: KOC marketing is becoming more popular for niche brands.
-           ZH: 关键意见消费者营销在小众品牌中变得越来越流行。
-       #3  sim=17.2%  score=2.6984  dist=48  normed_dist=0.8276
+       #2  sim=17.2%  score=41.2698  dist=48  normed_dist=0.8276
            EN: Our CAC is currently higher than the lifetime value of the customer.
            ZH: 我们的客户获取成本目前高于客户的终身价值。
-       #4  sim=12.1%  score=4.4871  dist=51  normed_dist=0.8793
-           EN: A high Cost Per Mille does not always guarantee high Viewability.
-           ZH: 高每千次展示成本并不总是能保证高可见性。
-       #5  sim=10.3%  score=5.9129  dist=52  normed_dist=0.8966
+       #3  sim=13.8%  score=44.2748  dist=50  normed_dist=0.8621
+           EN: Deep learning has achieved remarkable results in image recognition tasks.
+           ZH: 深度学习在图像识别任务中取得了显著成果。
+       #4  sim=10.3%  score=40.6250  dist=52  normed_dist=0.8966
            EN: Private Traffic is more cost-effective than constant paid acquisition.
            ZH: 私域流量比持续的付费获客更具成本效益。
-       #6  sim=8.6%  score=2.9131  dist=53  normed_dist=0.9138
+       #5  sim=8.6%  score=43.6066  dist=53  normed_dist=0.9138
            EN: Direct to Consumer brands often rely heavily on Private Traffic.
            ZH: 直面消费者品牌通常严重依赖私域流量。
-       #7  sim=8.6%  score=2.0919  dist=53  normed_dist=0.9138
-           EN: Using a DMP allows for more sophisticated audience segmentation.
-           ZH: 使用数据管理平台可以实现更复杂的人群细分。
-       #8  sim=0.0%  score=8.1756  dist=58  normed_dist=1.0000
+       #6  sim=6.9%  score=39.6825  dist=54  normed_dist=0.9310
+           EN: Yield Management strategies help publishers fill their unsold spots.
+           ZH: 收益管理策略帮助媒体方填充未售出的广告位。
+       #7  sim=3.4%  score=41.5625  dist=56  normed_dist=0.9655
+           EN: Programmatic Advertising uses AI to automate the media buying process.
+           ZH: 程序化广告使用人工智能来自动化媒体购买流程。
+       #8  sim=3.4%  score=40.0000  dist=56  normed_dist=0.9655
+           EN: A good CTR indicates that the creative is relevant to the audience.
+           ZH: 良好的点击率表明创意与受众相关。
+       #9  sim=0.0%  score=53.0882  dist=58  normed_dist=1.0000
            EN: Customer Acquisition Cost has increased due to high competition in the market.
            ZH: 由于市场竞争激烈，客户获取成本有所上升。
-       #9  sim=0.0%  score=5.3664  dist=58  normed_dist=1.0000
+       #10  sim=0.0%  score=41.4815  dist=58  normed_dist=1.0000
            EN: We need to optimize our Click-Through Rate to lower the total Cost Per Click.
            ZH: 我们需要优化点击率以降低总每次点击成本。
-       #10  sim=0.0%  score=2.6039  dist=62  normed_dist=1.0690
-           EN: A Private Marketplace offers premium inventory to a select group of buyers.
-           ZH: 私有交易市场向选定的买家群体提供优质库存。
 
   [TB] Terminology Base (glossary) hits:
        'Customer Acquisition Cost'  →  ['客户获取成本']
@@ -1057,32 +1056,32 @@ Example translations:
     The D2C model allows brands to own the customer relationship.
     直面消费者模式允许品牌拥有客户关系。
   2. [score: 0.83]
-    KOC marketing is becoming more popular for niche brands.
-    关键意见消费者营销在小众品牌中变得越来越流行。
-  3. [score: 0.83]
     Our CAC is currently higher than the lifetime value of the customer.
     我们的客户获取成本目前高于客户的终身价值。
-  4. [score: 0.88]
-    A high Cost Per Mille does not always guarantee high Viewability.
-    高每千次展示成本并不总是能保证高可见性。
-  5. [score: 0.90]
+  3. [score: 0.86]
+    Deep learning has achieved remarkable results in image recognition tasks.
+    深度学习在图像识别任务中取得了显著成果。
+  4. [score: 0.90]
     Private Traffic is more cost-effective than constant paid acquisition.
     私域流量比持续的付费获客更具成本效益。
-  6. [score: 0.91]
+  5. [score: 0.91]
     Direct to Consumer brands often rely heavily on Private Traffic.
     直面消费者品牌通常严重依赖私域流量。
-  7. [score: 0.91]
-    Using a DMP allows for more sophisticated audience segmentation.
-    使用数据管理平台可以实现更复杂的人群细分。
-  8. [score: 1.00]
+  6. [score: 0.93]
+    Yield Management strategies help publishers fill their unsold spots.
+    收益管理策略帮助媒体方填充未售出的广告位。
+  7. [score: 0.97]
+    Programmatic Advertising uses AI to automate the media buying process.
+    程序化广告使用人工智能来自动化媒体购买流程。
+  8. [score: 0.97]
+    A good CTR indicates that the creative is relevant to the audience.
+    良好的点击率表明创意与受众相关。
+  9. [score: 1.00]
     Customer Acquisition Cost has increased due to high competition in the market.
     由于市场竞争激烈，客户获取成本有所上升。
-  9. [score: 1.00]
+  10. [score: 1.00]
     We need to optimize our Click-Through Rate to lower the total Cost Per Click.
     我们需要优化点击率以降低总每次点击成本。
-  10. [score: 1.07]
-    A Private Marketplace offers premium inventory to a select group of buyers.
-    私有交易市场向选定的买家群体提供优质库存。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 D2C brands usually have a lower Customer Acquisition Cost.
 
@@ -1094,30 +1093,36 @@ D2C brands usually have a lower Customer Acquisition Cost.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=36.5%  score=6.1578  dist=33  normed_dist=0.6346
+       #1  sim=36.5%  score=56.8966  dist=33  normed_dist=0.6346
            EN: Native Advertising often sees higher engagement than banner ads.
            ZH: 原生广告的互动率通常高于横幅广告。
-       #2  sim=30.8%  score=8.2420  dist=36  normed_dist=0.6923
+       #2  sim=30.8%  score=63.4146  dist=36  normed_dist=0.6923
            EN: Native Advertising blends in with the editorial content of the website.
            ZH: 原生广告与网站的编辑内容融为一体。
-       #3  sim=25.0%  score=2.8865  dist=39  normed_dist=0.7500
+       #3  sim=25.0%  score=42.9907  dist=39  normed_dist=0.7500
            EN: The MCN helps influencers optimize their video content.
            ZH: 多频道网络帮助网红优化他们的视频内容。
-       #4  sim=21.2%  score=2.6569  dist=41  normed_dist=0.7885
+       #4  sim=21.2%  score=53.4483  dist=41  normed_dist=0.7885
            EN: Programmatic Advertising is now used for connected TV and radio.
            ZH: 程序化广告现在也用于联网电视和广播。
-       #5  sim=15.4%  score=2.6569  dist=44  normed_dist=0.8462
+       #5  sim=15.4%  score=47.5410  dist=44  normed_dist=0.8462
            EN: Programmatic Advertising uses AI to automate the media buying process.
            ZH: 程序化广告使用人工智能来自动化媒体购买流程。
-       #6  sim=7.7%  score=2.6569  dist=48  normed_dist=0.9231
-           EN: Many content creators are managed by a Multi-Channel Network.
-           ZH: 许多内容创作者由多频道网络管理。
-       #7  sim=0.0%  score=3.9331  dist=53  normed_dist=1.0192
-           EN: Natural language processing enables computers to understand human language.
-           ZH: 自然语言处理使计算机能够理解人类语言。
-       #8  sim=0.0%  score=2.5553  dist=56  normed_dist=1.0769
-           EN: Dynamic Creative Optimization adjusts the ad content based on user behavior.
-           ZH: 动态创意优化根据用户行为调整广告内容。
+       #6  sim=13.5%  score=45.2174  dist=45  normed_dist=0.8654
+           EN: Machine learning models require large amounts of training data.
+           ZH: 机器学习模型需要大量的训练数据。
+       #7  sim=11.5%  score=46.9565  dist=46  normed_dist=0.8846
+           EN: Scientists are developing new methods to combat climate change.
+           ZH: 科学家们正在开发应对气候变化的新方法。
+       #8  sim=5.8%  score=45.7627  dist=49  normed_dist=0.9423
+           EN: Real-Time Bidding has revolutionized how we purchase Ad Inventory.
+           ZH: 实时竞价彻底改变了我们购买广告库存的方式。
+       #9  sim=1.9%  score=42.6230  dist=51  normed_dist=0.9808
+           EN: We are shifting our budget from RTB to PMP for better quality control.
+           ZH: 为了更好的质量控制，我们正将预算从实时竞价转向私有交易市场。
+       #10  sim=0.0%  score=43.2000  dist=66  normed_dist=1.2692
+           EN: Header Bidding allows publishers to offer inventory to multiple SSPs simultaneously.
+           ZH: 头部竞价允许媒体方同时向多个供应方平台提供库存。
 
   [TB] Terminology Base (glossary) hits:
        'Native Advertising'  →  ['原生广告']
@@ -1143,15 +1148,21 @@ Example translations:
   5. [score: 0.85]
     Programmatic Advertising uses AI to automate the media buying process.
     程序化广告使用人工智能来自动化媒体购买流程。
-  6. [score: 0.92]
-    Many content creators are managed by a Multi-Channel Network.
-    许多内容创作者由多频道网络管理。
-  7. [score: 1.02]
-    Natural language processing enables computers to understand human language.
-    自然语言处理使计算机能够理解人类语言。
-  8. [score: 1.08]
-    Dynamic Creative Optimization adjusts the ad content based on user behavior.
-    动态创意优化根据用户行为调整广告内容。
+  6. [score: 0.87]
+    Machine learning models require large amounts of training data.
+    机器学习模型需要大量的训练数据。
+  7. [score: 0.88]
+    Scientists are developing new methods to combat climate change.
+    科学家们正在开发应对气候变化的新方法。
+  8. [score: 0.94]
+    Real-Time Bidding has revolutionized how we purchase Ad Inventory.
+    实时竞价彻底改变了我们购买广告库存的方式。
+  9. [score: 0.98]
+    We are shifting our budget from RTB to PMP for better quality control.
+    为了更好的质量控制，我们正将预算从实时竞价转向私有交易市场。
+  10. [score: 1.27]
+    Header Bidding allows publishers to offer inventory to multiple SSPs simultaneously.
+    头部竞价允许媒体方同时向多个供应方平台提供库存。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 Native Advertising should look like natural content.
 
@@ -1163,36 +1174,36 @@ Native Advertising should look like natural content.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=29.1%  score=4.7803  dist=39  normed_dist=0.7091
+       #1  sim=29.1%  score=52.2500  dist=39  normed_dist=0.7091
            EN: The DSP uses algorithms to bid on the most relevant Ad Inventory.
            ZH: 需求方平台使用算法对最相关的广告库存进行竞价。
-       #2  sim=25.5%  score=3.8186  dist=41  normed_dist=0.7455
+       #2  sim=25.5%  score=45.3982  dist=41  normed_dist=0.7455
            EN: ROAS is the primary metric for our e-commerce performance.
            ZH: 广告支出回报率是我们电商绩效的核心指标。
-       #3  sim=21.8%  score=4.3477  dist=43  normed_dist=0.7818
+       #3  sim=21.8%  score=44.6281  dist=43  normed_dist=0.7818
            EN: Real-Time Bidding has revolutionized how we purchase Ad Inventory.
            ZH: 实时竞价彻底改变了我们购买广告库存的方式。
-       #4  sim=18.2%  score=3.1589  dist=45  normed_dist=0.8182
-           EN: The SSP reported a significant increase in available inventory.
-           ZH: 供应方平台报告可用库存显著增加。
-       #5  sim=18.2%  score=2.7998  dist=45  normed_dist=0.8182
+       #4  sim=18.2%  score=42.7928  dist=45  normed_dist=0.8182
            EN: The Ad Server delivers the creative to the user browser.
            ZH: 广告投放服务器将创意投递到用户的浏览器。
-       #6  sim=14.5%  score=3.5176  dist=47  normed_dist=0.8545
-           EN: First-Party Data is essential for personalized marketing.
-           ZH: 第一方数据对于个性化营销至关重要。
-       #7  sim=10.9%  score=3.3719  dist=49  normed_dist=0.8909
-           EN: KOC marketing is becoming more popular for niche brands.
-           ZH: 关键意见消费者营销在小众品牌中变得越来越流行。
-       #8  sim=10.9%  score=3.2378  dist=49  normed_dist=0.8909
-           EN: Programmatic Advertising is now used for connected TV and radio.
-           ZH: 程序化广告现在也用于联网电视和广播。
-       #9  sim=1.8%  score=3.1139  dist=54  normed_dist=0.9818
-           EN: Search Engine Optimization is a long-term strategy for organic growth.
-           ZH: 搜索引擎优化是实现有机增长的长期战略。
-       #10  sim=0.0%  score=6.0516  dist=60  normed_dist=1.0909
+       #5  sim=7.3%  score=44.7059  dist=51  normed_dist=0.9273
+           EN: Our CAC is currently higher than the lifetime value of the customer.
+           ZH: 我们的客户获取成本目前高于客户的终身价值。
+       #6  sim=1.8%  score=43.4746  dist=54  normed_dist=0.9818
+           EN: A good CTR indicates that the creative is relevant to the audience.
+           ZH: 良好的点击率表明创意与受众相关。
+       #7  sim=0.0%  score=42.0492  dist=55  normed_dist=1.0000
+           EN: Our Return on Ad Spend has improved since we refined our targeting.
+           ZH: 自从我们优化了定向投放后，我们的广告支出回报率有所提高。
+       #8  sim=0.0%  score=42.0611  dist=56  normed_dist=1.0182
+           EN: Auction Dynamics determine the final price paid for each of the Impressions.
+           ZH: 竞价机制决定了每条广告曝光所支付的最终价格。
+       #9  sim=0.0%  score=43.8462  dist=60  normed_dist=1.0909
            EN: Our main goal for this campaign is to increase Brand Awareness among Gen Z.
            ZH: 我们此次活动的主要目标是提高 Z 世代的品牌知名度。
+       #10  sim=0.0%  score=85.5000  dist=63  normed_dist=1.1455
+           EN: The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
+           ZH: 需求方平台允许广告主管理多个广告交易平台账号。
 
   [TB] Terminology Base (glossary) hits:
        'Ad Inventory'  →  ['广告库存']
@@ -1215,26 +1226,26 @@ Example translations:
     Real-Time Bidding has revolutionized how we purchase Ad Inventory.
     实时竞价彻底改变了我们购买广告库存的方式。
   4. [score: 0.82]
-    The SSP reported a significant increase in available inventory.
-    供应方平台报告可用库存显著增加。
-  5. [score: 0.82]
     The Ad Server delivers the creative to the user browser.
     广告投放服务器将创意投递到用户的浏览器。
-  6. [score: 0.85]
-    First-Party Data is essential for personalized marketing.
-    第一方数据对于个性化营销至关重要。
-  7. [score: 0.89]
-    KOC marketing is becoming more popular for niche brands.
-    关键意见消费者营销在小众品牌中变得越来越流行。
-  8. [score: 0.89]
-    Programmatic Advertising is now used for connected TV and radio.
-    程序化广告现在也用于联网电视和广播。
-  9. [score: 0.98]
-    Search Engine Optimization is a long-term strategy for organic growth.
-    搜索引擎优化是实现有机增长的长期战略。
-  10. [score: 1.09]
+  5. [score: 0.93]
+    Our CAC is currently higher than the lifetime value of the customer.
+    我们的客户获取成本目前高于客户的终身价值。
+  6. [score: 0.98]
+    A good CTR indicates that the creative is relevant to the audience.
+    良好的点击率表明创意与受众相关。
+  7. [score: 1.00]
+    Our Return on Ad Spend has improved since we refined our targeting.
+    自从我们优化了定向投放后，我们的广告支出回报率有所提高。
+  8. [score: 1.02]
+    Auction Dynamics determine the final price paid for each of the Impressions.
+    竞价机制决定了每条广告曝光所支付的最终价格。
+  9. [score: 1.09]
     Our main goal for this campaign is to increase Brand Awareness among Gen Z.
     我们此次活动的主要目标是提高 Z 世代的品牌知名度。
+  10. [score: 1.15]
+    The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
+    需求方平台允许广告主管理多个广告交易平台账号。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 What is the average CPM for this specific Ad Inventory?
 
@@ -1246,36 +1257,36 @@ What is the average CPM for this specific Ad Inventory?
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=29.1%  score=0.8161  dist=39  normed_dist=0.7091
-           EN: The quick brown fox jumps over the lazy dog.
-           ZH: 那只敏捷的棕色狐狸跳过了那只懒狗。
-       #2  sim=23.6%  score=0.9045  dist=42  normed_dist=0.7636
-           EN: The Ad Server delivers the creative to the user browser.
-           ZH: 广告投放服务器将创意投递到用户的浏览器。
-       #3  sim=18.2%  score=0.8161  dist=45  normed_dist=0.8182
-           EN: She walked along the riverbank enjoying the cool breeze.
-           ZH: 她沿着河岸漫步享受着凉爽的微风。
-       #4  sim=16.4%  score=4.7341  dist=46  normed_dist=0.8364
-           EN: OpenRTB allows for transparency in the programmatic ecosystem.
-           ZH: 开放实时竞价使程序化生态系统具备透明度。
-       #5  sim=16.4%  score=4.0364  dist=46  normed_dist=0.8364
+       #1  sim=18.2%  score=44.2478  dist=45  normed_dist=0.8182
+           EN: The PMP provides a brand-safe environment for advertisers.
+           ZH: 私有交易市场为广告主提供了一个品牌安全的环境。
+       #2  sim=16.4%  score=55.6391  dist=46  normed_dist=0.8364
            EN: The Open Real-Time Bidding protocol ensures compatibility between DSP and SSP.
            ZH: 开放实时竞价协议确保了需求方平台与供应方平台之间的兼容性。
-       #6  sim=16.4%  score=3.7959  dist=46  normed_dist=0.8364
+       #3  sim=16.4%  score=47.0940  dist=46  normed_dist=0.8364
+           EN: OpenRTB allows for transparency in the programmatic ecosystem.
+           ZH: 开放实时竞价使程序化生态系统具备透明度。
+       #4  sim=16.4%  score=45.7627  dist=46  normed_dist=0.8364
+           EN: The KOL campaign reached over five million potential customers.
+           ZH: 关键意见领袖营销活动触达了超过五百万潜在客户。
+       #5  sim=16.4%  score=43.1818  dist=46  normed_dist=0.8364
            EN: The MCN helps influencers optimize their video content.
            ZH: 多频道网络帮助网红优化他们的视频内容。
-       #7  sim=14.5%  score=0.7939  dist=47  normed_dist=0.8545
+       #6  sim=14.5%  score=43.3333  dist=47  normed_dist=0.8545
+           EN: The ATD provides centralized reporting for all digital campaigns.
+           ZH: 代理商通用平台为所有数字营销活动提供集中报告。
+       #7  sim=14.5%  score=43.1034  dist=47  normed_dist=0.8545
            EN: The D2C model allows brands to own the customer relationship.
            ZH: 直面消费者模式允许品牌拥有客户关系。
-       #8  sim=5.5%  score=3.4939  dist=52  normed_dist=0.9455
+       #8  sim=5.5%  score=44.9612  dist=52  normed_dist=0.9455
            EN: The Supply Side Platform helps publishers maximize their Yield Management.
            ZH: 供应方平台帮助媒体方实现收益管理最大化。
-       #9  sim=3.6%  score=0.8199  dist=53  normed_dist=0.9636
+       #9  sim=3.6%  score=46.6165  dist=53  normed_dist=0.9636
            EN: The sun set behind the mountains painting the sky in shades of orange and red.
            ZH: 夕阳西下山峦之后将天空染成橙红色。
-       #10  sim=0.0%  score=3.3603  dist=59  normed_dist=1.0727
-           EN: Attribution Modeling helps us understand the true value of each touchpoint.
-           ZH: 归因模型帮助我们了解每个触点的真实价值。
+       #10  sim=0.0%  score=85.5000  dist=62  normed_dist=1.1273
+           EN: The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
+           ZH: 需求方平台允许广告主管理多个广告交易平台账号。
 
   [TB] Terminology Base (glossary) hits:
        'OpenRTB'  →  ['开放实时竞价']
@@ -1286,24 +1297,24 @@ What is the average CPM for this specific Ad Inventory?
 Example translations:
 
 [Low similarity — style and tone context only]
-  1. [score: 0.71]
-    The quick brown fox jumps over the lazy dog.
-    那只敏捷的棕色狐狸跳过了那只懒狗。
-  2. [score: 0.76]
-    The Ad Server delivers the creative to the user browser.
-    广告投放服务器将创意投递到用户的浏览器。
-  3. [score: 0.82]
-    She walked along the riverbank enjoying the cool breeze.
-    她沿着河岸漫步享受着凉爽的微风。
-  4. [score: 0.84]
-    OpenRTB allows for transparency in the programmatic ecosystem.
-    开放实时竞价使程序化生态系统具备透明度。
-  5. [score: 0.84]
+  1. [score: 0.82]
+    The PMP provides a brand-safe environment for advertisers.
+    私有交易市场为广告主提供了一个品牌安全的环境。
+  2. [score: 0.84]
     The Open Real-Time Bidding protocol ensures compatibility between DSP and SSP.
     开放实时竞价协议确保了需求方平台与供应方平台之间的兼容性。
-  6. [score: 0.84]
+  3. [score: 0.84]
+    OpenRTB allows for transparency in the programmatic ecosystem.
+    开放实时竞价使程序化生态系统具备透明度。
+  4. [score: 0.84]
+    The KOL campaign reached over five million potential customers.
+    关键意见领袖营销活动触达了超过五百万潜在客户。
+  5. [score: 0.84]
     The MCN helps influencers optimize their video content.
     多频道网络帮助网红优化他们的视频内容。
+  6. [score: 0.85]
+    The ATD provides centralized reporting for all digital campaigns.
+    代理商通用平台为所有数字营销活动提供集中报告。
   7. [score: 0.85]
     The D2C model allows brands to own the customer relationship.
     直面消费者模式允许品牌拥有客户关系。
@@ -1313,9 +1324,9 @@ Example translations:
   9. [score: 0.96]
     The sun set behind the mountains painting the sky in shades of orange and red.
     夕阳西下山峦之后将天空染成橙红色。
-  10. [score: 1.07]
-    Attribution Modeling helps us understand the true value of each touchpoint.
-    归因模型帮助我们了解每个触点的真实价值。
+  10. [score: 1.13]
+    The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
+    需求方平台允许广告主管理多个广告交易平台账号。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 The OpenRTB protocol helps maintain industry standards.
 
@@ -1327,36 +1338,36 @@ The OpenRTB protocol helps maintain industry standards.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=28.3%  score=10.0128  dist=38  normed_dist=0.7170
+       #1  sim=28.3%  score=59.1803  dist=38  normed_dist=0.7170
            EN: Low Viewability scores indicate that ads are not being seen by users.
            ZH: 低可见性得分表明广告未被用户看到。
-       #2  sim=22.6%  score=2.0545  dist=41  normed_dist=0.7736
+       #2  sim=22.6%  score=47.7064  dist=41  normed_dist=0.7736
            EN: We use CPC bidding to drive traffic to our landing page.
            ZH: 我们使用每次点击成本竞价来为落地页引流。
-       #3  sim=20.8%  score=4.8048  dist=42  normed_dist=0.7925
+       #3  sim=22.6%  score=47.0642  dist=41  normed_dist=0.7736
+           EN: KOC marketing is becoming more popular for niche brands.
+           ZH: 关键意见消费者营销在小众品牌中变得越来越流行。
+       #4  sim=20.8%  score=43.4783  dist=42  normed_dist=0.7925
            EN: Brand Awareness is measured through surveys and search volume.
            ZH: 品牌知名度通过调研和搜索量来衡量。
-       #4  sim=15.1%  score=3.8369  dist=45  normed_dist=0.8491
-           EN: ROAS is the primary metric for our e-commerce performance.
-           ZH: 广告支出回报率是我们电商绩效的核心指标。
-       #5  sim=11.3%  score=3.0337  dist=47  normed_dist=0.8868
-           EN: The PMP provides a brand-safe environment for advertisers.
-           ZH: 私有交易市场为广告主提供了一个品牌安全的环境。
-       #6  sim=5.7%  score=3.5541  dist=50  normed_dist=0.9434
-           EN: Our CAC is currently higher than the lifetime value of the customer.
-           ZH: 我们的客户获取成本目前高于客户的终身价值。
-       #7  sim=3.8%  score=1.9085  dist=51  normed_dist=0.9623
+       #5  sim=20.8%  score=41.8182  dist=42  normed_dist=0.7925
+           EN: First-Party Data is essential for personalized marketing.
+           ZH: 第一方数据对于个性化营销至关重要。
+       #6  sim=15.1%  score=42.4779  dist=45  normed_dist=0.8491
+           EN: The Ad Exchange facilitates the buying and selling of media.
+           ZH: 广告交易平台促进了媒介的买卖。
+       #7  sim=5.7%  score=41.7073  dist=50  normed_dist=0.9434
+           EN: Private Traffic is more cost-effective than constant paid acquisition.
+           ZH: 私域流量比持续的付费获客更具成本效益。
+       #8  sim=3.8%  score=42.2764  dist=51  normed_dist=0.9623
            EN: We are shifting our budget from RTB to PMP for better quality control.
            ZH: 为了更好的质量控制，我们正将预算从实时竞价转向私有交易市场。
-       #8  sim=1.9%  score=5.8235  dist=52  normed_dist=0.9811
-           EN: Our main goal for this campaign is to increase Brand Awareness among Gen Z.
-           ZH: 我们此次活动的主要目标是提高 Z 世代的品牌知名度。
-       #9  sim=0.0%  score=3.1314  dist=54  normed_dist=1.0189
+       #9  sim=0.0%  score=43.8462  dist=53  normed_dist=1.0000
+           EN: Direct to Consumer brands often rely heavily on Private Traffic.
+           ZH: 直面消费者品牌通常严重依赖私域流量。
+       #10  sim=0.0%  score=42.0354  dist=54  normed_dist=1.0189
            EN: A high Cost Per Mille does not always guarantee high Viewability.
            ZH: 高每千次展示成本并不总是能保证高可见性。
-       #10  sim=0.0%  score=2.7693  dist=54  normed_dist=1.0189
-           EN: Our Return on Ad Spend has improved since we refined our targeting.
-           ZH: 自从我们优化了定向投放后，我们的广告支出回报率有所提高。
 
   [TB] Terminology Base (glossary) hits:
        'Viewability'  →  ['可见性']
@@ -1373,30 +1384,30 @@ Example translations:
   2. [score: 0.77]
     We use CPC bidding to drive traffic to our landing page.
     我们使用每次点击成本竞价来为落地页引流。
-  3. [score: 0.79]
+  3. [score: 0.77]
+    KOC marketing is becoming more popular for niche brands.
+    关键意见消费者营销在小众品牌中变得越来越流行。
+  4. [score: 0.79]
     Brand Awareness is measured through surveys and search volume.
     品牌知名度通过调研和搜索量来衡量。
-  4. [score: 0.85]
-    ROAS is the primary metric for our e-commerce performance.
-    广告支出回报率是我们电商绩效的核心指标。
-  5. [score: 0.89]
-    The PMP provides a brand-safe environment for advertisers.
-    私有交易市场为广告主提供了一个品牌安全的环境。
-  6. [score: 0.94]
-    Our CAC is currently higher than the lifetime value of the customer.
-    我们的客户获取成本目前高于客户的终身价值。
-  7. [score: 0.96]
+  5. [score: 0.79]
+    First-Party Data is essential for personalized marketing.
+    第一方数据对于个性化营销至关重要。
+  6. [score: 0.85]
+    The Ad Exchange facilitates the buying and selling of media.
+    广告交易平台促进了媒介的买卖。
+  7. [score: 0.94]
+    Private Traffic is more cost-effective than constant paid acquisition.
+    私域流量比持续的付费获客更具成本效益。
+  8. [score: 0.96]
     We are shifting our budget from RTB to PMP for better quality control.
     为了更好的质量控制，我们正将预算从实时竞价转向私有交易市场。
-  8. [score: 0.98]
-    Our main goal for this campaign is to increase Brand Awareness among Gen Z.
-    我们此次活动的主要目标是提高 Z 世代的品牌知名度。
-  9. [score: 1.02]
+  9. [score: 1.00]
+    Direct to Consumer brands often rely heavily on Private Traffic.
+    直面消费者品牌通常严重依赖私域流量。
+  10. [score: 1.02]
     A high Cost Per Mille does not always guarantee high Viewability.
     高每千次展示成本并不总是能保证高可见性。
-  10. [score: 1.02]
-    Our Return on Ad Spend has improved since we refined our targeting.
-    自从我们优化了定向投放后，我们的广告支出回报率有所提高。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 Low Viewability is affecting our brand safety scores.
 
@@ -1408,36 +1419,36 @@ Low Viewability is affecting our brand safety scores.
   [REPEAT] Status: FIRST OCCURRENCE — translation will be reused for later repeats
 
   [TM] Translation Memory hits:
-       #1  sim=26.8%  score=5.7041  dist=41  normed_dist=0.7321
+       #1  sim=30.4%  score=46.0000  dist=39  normed_dist=0.6964
+           EN: The quick brown fox jumps over the lazy dog.
+           ZH: 那只敏捷的棕色狐狸跳过了那只懒狗。
+       #2  sim=26.8%  score=49.1964  dist=41  normed_dist=0.7321
            EN: KOC marketing is becoming more popular for niche brands.
            ZH: 关键意见消费者营销在小众品牌中变得越来越流行。
-       #2  sim=19.6%  score=5.1429  dist=45  normed_dist=0.8036
-           EN: The KOL campaign reached over five million potential customers.
-           ZH: 关键意见领袖营销活动触达了超过五百万潜在客户。
-       #3  sim=16.1%  score=2.8623  dist=47  normed_dist=0.8393
-           EN: ROAS is the primary metric for our e-commerce performance.
-           ZH: 广告支出回报率是我们电商绩效的核心指标。
-       #4  sim=12.5%  score=2.8623  dist=49  normed_dist=0.8750
-           EN: Artificial intelligence is transforming the way we live and work.
-           ZH: 人工智能正在改变我们生活和工作的模式。
-       #5  sim=12.5%  score=2.7670  dist=49  normed_dist=0.8750
-           EN: Native Advertising often sees higher engagement than banner ads.
-           ZH: 原生广告的互动率通常高于横幅广告。
-       #6  sim=10.7%  score=5.5424  dist=50  normed_dist=0.8929
+       #3  sim=23.2%  score=45.4701  dist=43  normed_dist=0.7679
+           EN: The D2C model allows brands to own the customer relationship.
+           ZH: 直面消费者模式允许品牌拥有客户关系。
+       #4  sim=16.1%  score=45.5372  dist=47  normed_dist=0.8393
+           EN: The DCO engine generates thousands of ad variations in real-time.
+           ZH: 动态创意优化引擎实时生成数千个广告变体。
+       #5  sim=10.7%  score=52.2500  dist=50  normed_dist=0.8929
            EN: Our CAC is currently higher than the lifetime value of the customer.
            ZH: 我们的客户获取成本目前高于客户的终身价值。
-       #7  sim=8.9%  score=4.3575  dist=51  normed_dist=0.9107
-           EN: Private Traffic is more cost-effective than constant paid acquisition.
-           ZH: 私域流量比持续的付费获客更具成本效益。
-       #8  sim=7.1%  score=3.0813  dist=52  normed_dist=0.9286
+       #6  sim=10.7%  score=45.9677  dist=50  normed_dist=0.8929
+           EN: The Key Opinion Leader shared the product link with their followers.
+           ZH: 关键意见领袖与他们的粉丝分享了产品链接。
+       #7  sim=7.1%  score=46.3025  dist=52  normed_dist=0.9286
            EN: A good CTR indicates that the creative is relevant to the audience.
            ZH: 良好的点击率表明创意与受众相关。
-       #9  sim=3.6%  score=4.5745  dist=54  normed_dist=0.9643
+       #8  sim=3.6%  score=46.7910  dist=54  normed_dist=0.9643
            EN: Customer Acquisition Cost has increased due to high competition in the market.
            ZH: 由于市场竞争激烈，客户获取成本有所上升。
-       #10  sim=0.0%  score=2.6569  dist=58  normed_dist=1.0357
-           EN: Key Opinion Consumers provide more authentic reviews than traditional celebrities.
-           ZH: 关键意见消费者提供比传统名人更真实的评价。
+       #9  sim=3.6%  score=45.3077  dist=54  normed_dist=0.9643
+           EN: The sun set behind the mountains painting the sky in shades of orange and red.
+           ZH: 夕阳西下山峦之后将天空染成橙红色。
+       #10  sim=0.0%  score=85.5000  dist=60  normed_dist=1.0714
+           EN: The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
+           ZH: 需求方平台允许广告主管理多个广告交易平台账号。
 
   [TB] Terminology Base (glossary) hits:
        'KOC'  →  ['关键意见消费者']
@@ -1450,36 +1461,36 @@ Low Viewability is affecting our brand safety scores.
 Example translations:
 
 [Low similarity — style and tone context only]
-  1. [score: 0.73]
+  1. [score: 0.70]
+    The quick brown fox jumps over the lazy dog.
+    那只敏捷的棕色狐狸跳过了那只懒狗。
+  2. [score: 0.73]
     KOC marketing is becoming more popular for niche brands.
     关键意见消费者营销在小众品牌中变得越来越流行。
-  2. [score: 0.80]
-    The KOL campaign reached over five million potential customers.
-    关键意见领袖营销活动触达了超过五百万潜在客户。
-  3. [score: 0.84]
-    ROAS is the primary metric for our e-commerce performance.
-    广告支出回报率是我们电商绩效的核心指标。
-  4. [score: 0.88]
-    Artificial intelligence is transforming the way we live and work.
-    人工智能正在改变我们生活和工作的模式。
-  5. [score: 0.88]
-    Native Advertising often sees higher engagement than banner ads.
-    原生广告的互动率通常高于横幅广告。
-  6. [score: 0.89]
+  3. [score: 0.77]
+    The D2C model allows brands to own the customer relationship.
+    直面消费者模式允许品牌拥有客户关系。
+  4. [score: 0.84]
+    The DCO engine generates thousands of ad variations in real-time.
+    动态创意优化引擎实时生成数千个广告变体。
+  5. [score: 0.89]
     Our CAC is currently higher than the lifetime value of the customer.
     我们的客户获取成本目前高于客户的终身价值。
-  7. [score: 0.91]
-    Private Traffic is more cost-effective than constant paid acquisition.
-    私域流量比持续的付费获客更具成本效益。
-  8. [score: 0.93]
+  6. [score: 0.89]
+    The Key Opinion Leader shared the product link with their followers.
+    关键意见领袖与他们的粉丝分享了产品链接。
+  7. [score: 0.93]
     A good CTR indicates that the creative is relevant to the audience.
     良好的点击率表明创意与受众相关。
-  9. [score: 0.96]
+  8. [score: 0.96]
     Customer Acquisition Cost has increased due to high competition in the market.
     由于市场竞争激烈，客户获取成本有所上升。
-  10. [score: 1.04]
-    Key Opinion Consumers provide more authentic reviews than traditional celebrities.
-    关键意见消费者提供比传统名人更真实的评价。
+  9. [score: 0.96]
+    The sun set behind the mountains painting the sky in shades of orange and red.
+    夕阳西下山峦之后将天空染成橙红色。
+  10. [score: 1.07]
+    The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
+    需求方平台允许广告主管理多个广告交易平台账号。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 The KOC community is growing faster than the KOL market.
 
@@ -1491,36 +1502,36 @@ The KOC community is growing faster than the KOL market.
   [REPEAT] Status: FIRST OCCURRENCE — translation will be reused for later repeats
 
   [TM] Translation Memory hits:
-       #1  sim=19.6%  score=2.5873  dist=41  normed_dist=0.8039
-           EN: The Ad Exchange facilitates the buying and selling of media.
-           ZH: 广告交易平台促进了媒介的买卖。
-       #2  sim=11.8%  score=9.4109  dist=45  normed_dist=0.8824
+       #1  sim=11.8%  score=59.0541  dist=45  normed_dist=0.8824
            EN: Auction Dynamics determine the final price paid for each of the Impressions.
            ZH: 竞价机制决定了每条广告曝光所支付的最终价格。
-       #3  sim=9.8%  score=2.8097  dist=46  normed_dist=0.9020
-           EN: High Impressions are good but we need to focus on the CTR.
-           ZH: 高广告曝光是好事，但我们需要关注点击率。
-       #4  sim=5.9%  score=2.4976  dist=48  normed_dist=0.9412
-           EN: Neural networks are inspired by the structure of the human brain.
-           ZH: 神经网络的灵感来源于人类大脑的结构。
-       #5  sim=2.0%  score=3.0247  dist=50  normed_dist=0.9804
-           EN: The DSP uses algorithms to bid on the most relevant Ad Inventory.
-           ZH: 需求方平台使用算法对最相关的广告库存进行竞价。
-       #6  sim=2.0%  score=2.9131  dist=50  normed_dist=0.9804
-           EN: Real-Time Bidding has revolutionized how we purchase Ad Inventory.
-           ZH: 实时竞价彻底改变了我们购买广告库存的方式。
-       #7  sim=0.0%  score=5.0850  dist=51  normed_dist=1.0000
-           EN: The DCO engine generates thousands of ad variations in real-time.
-           ZH: 动态创意优化引擎实时生成数千个广告变体。
-       #8  sim=0.0%  score=2.4976  dist=52  normed_dist=1.0196
+       #2  sim=11.8%  score=49.1228  dist=45  normed_dist=0.8824
+           EN: Scientists are developing new methods to combat climate change.
+           ZH: 科学家们正在开发应对气候变化的新方法。
+       #3  sim=11.8%  score=48.3333  dist=45  normed_dist=0.8824
+           EN: Machine learning models require large amounts of training data.
+           ZH: 机器学习模型需要大量的训练数据。
+       #4  sim=2.0%  score=44.4444  dist=50  normed_dist=0.9804
+           EN: Attribution Modeling helps us understand the true value of each touchpoint.
+           ZH: 归因模型帮助我们了解每个触点的真实价值。
+       #5  sim=0.0%  score=44.6087  dist=51  normed_dist=1.0000
+           EN: Our CAC is currently higher than the lifetime value of the customer.
+           ZH: 我们的客户获取成本目前高于客户的终身价值。
+       #6  sim=0.0%  score=43.4746  dist=52  normed_dist=1.0196
            EN: Native Advertising blends in with the editorial content of the website.
            ZH: 原生广告与网站的编辑内容融为一体。
-       #9  sim=0.0%  score=2.9172  dist=59  normed_dist=1.1569
+       #7  sim=0.0%  score=85.5000  dist=57  normed_dist=1.1176
+           EN: The sun set behind the mountains painting the sky in shades of orange and red.
+           ZH: 夕阳西下山峦之后将天空染成橙红色。
+       #8  sim=0.0%  score=85.5000  dist=57  normed_dist=1.1176
+           EN: Customer Acquisition Cost has increased due to high competition in the market.
+           ZH: 由于市场竞争激烈，客户获取成本有所上升。
+       #9  sim=0.0%  score=85.5000  dist=59  normed_dist=1.1569
+           EN: We need to optimize our Click-Through Rate to lower the total Cost Per Click.
+           ZH: 我们需要优化点击率以降低总每次点击成本。
+       #10  sim=0.0%  score=44.8819  dist=59  normed_dist=1.1569
            EN: Dynamic Creative Optimization adjusts the ad content based on user behavior.
            ZH: 动态创意优化根据用户行为调整广告内容。
-       #10  sim=0.0%  score=3.2365  dist=61  normed_dist=1.1961
-           EN: The Open Real-Time Bidding protocol ensures compatibility between DSP and SSP.
-           ZH: 开放实时竞价协议确保了需求方平台与供应方平台之间的兼容性。
 
   [TB] Terminology Base (glossary) hits:
        'Auction Dynamics'  →  ['竞价机制']
@@ -1531,36 +1542,36 @@ The KOC community is growing faster than the KOL market.
 Example translations:
 
 [Low similarity — style and tone context only]
-  1. [score: 0.80]
-    The Ad Exchange facilitates the buying and selling of media.
-    广告交易平台促进了媒介的买卖。
-  2. [score: 0.88]
+  1. [score: 0.88]
     Auction Dynamics determine the final price paid for each of the Impressions.
     竞价机制决定了每条广告曝光所支付的最终价格。
-  3. [score: 0.90]
-    High Impressions are good but we need to focus on the CTR.
-    高广告曝光是好事，但我们需要关注点击率。
-  4. [score: 0.94]
-    Neural networks are inspired by the structure of the human brain.
-    神经网络的灵感来源于人类大脑的结构。
-  5. [score: 0.98]
-    The DSP uses algorithms to bid on the most relevant Ad Inventory.
-    需求方平台使用算法对最相关的广告库存进行竞价。
-  6. [score: 0.98]
-    Real-Time Bidding has revolutionized how we purchase Ad Inventory.
-    实时竞价彻底改变了我们购买广告库存的方式。
-  7. [score: 1.00]
-    The DCO engine generates thousands of ad variations in real-time.
-    动态创意优化引擎实时生成数千个广告变体。
-  8. [score: 1.02]
+  2. [score: 0.88]
+    Scientists are developing new methods to combat climate change.
+    科学家们正在开发应对气候变化的新方法。
+  3. [score: 0.88]
+    Machine learning models require large amounts of training data.
+    机器学习模型需要大量的训练数据。
+  4. [score: 0.98]
+    Attribution Modeling helps us understand the true value of each touchpoint.
+    归因模型帮助我们了解每个触点的真实价值。
+  5. [score: 1.00]
+    Our CAC is currently higher than the lifetime value of the customer.
+    我们的客户获取成本目前高于客户的终身价值。
+  6. [score: 1.02]
     Native Advertising blends in with the editorial content of the website.
     原生广告与网站的编辑内容融为一体。
+  7. [score: 1.12]
+    The sun set behind the mountains painting the sky in shades of orange and red.
+    夕阳西下山峦之后将天空染成橙红色。
+  8. [score: 1.12]
+    Customer Acquisition Cost has increased due to high competition in the market.
+    由于市场竞争激烈，客户获取成本有所上升。
   9. [score: 1.16]
+    We need to optimize our Click-Through Rate to lower the total Cost Per Click.
+    我们需要优化点击率以降低总每次点击成本。
+  10. [score: 1.16]
     Dynamic Creative Optimization adjusts the ad content based on user behavior.
     动态创意优化根据用户行为调整广告内容。
-  10. [score: 1.20]
-    The Open Real-Time Bidding protocol ensures compatibility between DSP and SSP.
-    开放实时竞价协议确保了需求方平台与供应方平台之间的兼容性。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 Auction Dynamics vary depending on the time of day.
 
@@ -1572,36 +1583,36 @@ Auction Dynamics vary depending on the time of day.
   [REPEAT] Status: FIRST OCCURRENCE — translation will be reused for later repeats
 
   [TM] Translation Memory hits:
-       #1  sim=28.6%  score=5.7272  dist=40  normed_dist=0.7143
+       #1  sim=28.6%  score=47.0642  dist=40  normed_dist=0.7143
            EN: We use CPC bidding to drive traffic to our landing page.
            ZH: 我们使用每次点击成本竞价来为落地页引流。
-       #2  sim=21.4%  score=5.2192  dist=44  normed_dist=0.7857
-           EN: High Impressions are good but we need to focus on the CTR.
-           ZH: 高广告曝光是好事，但我们需要关注点击率。
-       #3  sim=19.6%  score=7.5761  dist=45  normed_dist=0.8036
+       #2  sim=25.0%  score=44.6429  dist=42  normed_dist=0.7500
+           EN: She walked along the riverbank enjoying the cool breeze.
+           ZH: 她沿着河岸漫步享受着凉爽的微风。
+       #3  sim=19.6%  score=48.7395  dist=45  normed_dist=0.8036
            EN: Scientists are developing new methods to combat climate change.
            ZH: 科学家们正在开发应对气候变化的新方法。
-       #4  sim=17.9%  score=8.3156  dist=46  normed_dist=0.8214
+       #4  sim=17.9%  score=47.6190  dist=46  normed_dist=0.8214
            EN: We are shifting our budget from RTB to PMP for better quality control.
            ZH: 为了更好的质量控制，我们正将预算从实时竞价转向私有交易市场。
-       #5  sim=14.3%  score=8.0674  dist=48  normed_dist=0.8571
-           EN: Many content creators are managed by a Multi-Channel Network.
-           ZH: 许多内容创作者由多频道网络管理。
-       #6  sim=14.3%  score=6.5038  dist=48  normed_dist=0.8571
+       #5  sim=17.9%  score=46.1538  dist=46  normed_dist=0.8214
+           EN: The D2C model allows brands to own the customer relationship.
+           ZH: 直面消费者模式允许品牌拥有客户关系。
+       #6  sim=17.9%  score=44.6429  dist=46  normed_dist=0.8214
+           EN: The Ad Server delivers the creative to the user browser.
+           ZH: 广告投放服务器将创意投递到用户的浏览器。
+       #7  sim=16.1%  score=45.0000  dist=47  normed_dist=0.8393
+           EN: ROAS is the primary metric for our e-commerce performance.
+           ZH: 广告支出回报率是我们电商绩效的核心指标。
+       #8  sim=14.3%  score=47.8862  dist=48  normed_dist=0.8571
            EN: Our Return on Ad Spend has improved since we refined our targeting.
            ZH: 自从我们优化了定向投放后，我们的广告支出回报率有所提高。
-       #7  sim=10.7%  score=4.0316  dist=50  normed_dist=0.8929
-           EN: Real-Time Bidding has revolutionized how we purchase Ad Inventory.
-           ZH: 实时竞价彻底改变了我们购买广告库存的方式。
-       #8  sim=5.4%  score=5.0270  dist=53  normed_dist=0.9464
-           EN: We need to optimize our Click-Through Rate to lower the total Cost Per Click.
-           ZH: 我们需要优化点击率以降低总每次点击成本。
-       #9  sim=3.6%  score=3.7303  dist=54  normed_dist=0.9643
-           EN: A Private Marketplace offers premium inventory to a select group of buyers.
-           ZH: 私有交易市场向选定的买家群体提供优质库存。
-       #10  sim=0.0%  score=4.2184  dist=56  normed_dist=1.0000
-           EN: Our main goal for this campaign is to increase Brand Awareness among Gen Z.
-           ZH: 我们此次活动的主要目标是提高 Z 世代的品牌知名度。
+       #9  sim=0.0%  score=85.5000  dist=58  normed_dist=1.0357
+           EN: The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
+           ZH: 需求方平台允许广告主管理多个广告交易平台账号。
+       #10  sim=0.0%  score=85.5000  dist=60  normed_dist=1.0714
+           EN: Header Bidding allows publishers to offer inventory to multiple SSPs simultaneously.
+           ZH: 头部竞价允许媒体方同时向多个供应方平台提供库存。
 
   [TB] Terminology Base (glossary) hits:
        'Ad Network'  →  ['广告网络']
@@ -1615,33 +1626,33 @@ Example translations:
   1. [score: 0.71]
     We use CPC bidding to drive traffic to our landing page.
     我们使用每次点击成本竞价来为落地页引流。
-  2. [score: 0.79]
-    High Impressions are good but we need to focus on the CTR.
-    高广告曝光是好事，但我们需要关注点击率。
+  2. [score: 0.75]
+    She walked along the riverbank enjoying the cool breeze.
+    她沿着河岸漫步享受着凉爽的微风。
   3. [score: 0.80]
     Scientists are developing new methods to combat climate change.
     科学家们正在开发应对气候变化的新方法。
   4. [score: 0.82]
     We are shifting our budget from RTB to PMP for better quality control.
     为了更好的质量控制，我们正将预算从实时竞价转向私有交易市场。
-  5. [score: 0.86]
-    Many content creators are managed by a Multi-Channel Network.
-    许多内容创作者由多频道网络管理。
-  6. [score: 0.86]
+  5. [score: 0.82]
+    The D2C model allows brands to own the customer relationship.
+    直面消费者模式允许品牌拥有客户关系。
+  6. [score: 0.82]
+    The Ad Server delivers the creative to the user browser.
+    广告投放服务器将创意投递到用户的浏览器。
+  7. [score: 0.84]
+    ROAS is the primary metric for our e-commerce performance.
+    广告支出回报率是我们电商绩效的核心指标。
+  8. [score: 0.86]
     Our Return on Ad Spend has improved since we refined our targeting.
     自从我们优化了定向投放后，我们的广告支出回报率有所提高。
-  7. [score: 0.89]
-    Real-Time Bidding has revolutionized how we purchase Ad Inventory.
-    实时竞价彻底改变了我们购买广告库存的方式。
-  8. [score: 0.95]
-    We need to optimize our Click-Through Rate to lower the total Cost Per Click.
-    我们需要优化点击率以降低总每次点击成本。
-  9. [score: 0.96]
-    A Private Marketplace offers premium inventory to a select group of buyers.
-    私有交易市场向选定的买家群体提供优质库存。
-  10. [score: 1.00]
-    Our main goal for this campaign is to increase Brand Awareness among Gen Z.
-    我们此次活动的主要目标是提高 Z 世代的品牌知名度。
+  9. [score: 1.04]
+    The Demand Side Platform allows advertisers to manage multiple Ad Exchange accounts.
+    需求方平台允许广告主管理多个广告交易平台账号。
+  10. [score: 1.07]
+    Header Bidding allows publishers to offer inventory to multiple SSPs simultaneously.
+    头部竞价允许媒体方同时向多个供应方平台提供库存。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 We are looking for a new Ad Network to expand our reach.
 
@@ -1653,36 +1664,36 @@ We are looking for a new Ad Network to expand our reach.
   [REPEAT] Status: UNIQUE
 
   [TM] Translation Memory hits:
-       #1  sim=40.0%  score=7.0550  dist=36  normed_dist=0.6000
+       #1  sim=40.0%  score=54.7009  dist=36  normed_dist=0.6000
            EN: First-Party Data is essential for personalized marketing.
            ZH: 第一方数据对于个性化营销至关重要。
-       #2  sim=35.0%  score=7.2644  dist=39  normed_dist=0.6500
+       #2  sim=35.0%  score=56.2963  dist=39  normed_dist=0.6500
            EN: Attribution Modeling helps us understand the true value of each touchpoint.
            ZH: 归因模型帮助我们了解每个触点的真实价值。
-       #3  sim=30.0%  score=3.2378  dist=42  normed_dist=0.7000
+       #3  sim=30.0%  score=46.7742  dist=42  normed_dist=0.7000
            EN: Programmatic Advertising is now used for connected TV and radio.
            ZH: 程序化广告现在也用于联网电视和广播。
-       #4  sim=28.3%  score=6.7627  dist=43  normed_dist=0.7167
+       #4  sim=28.3%  score=50.7759  dist=43  normed_dist=0.7167
            EN: KOC marketing is becoming more popular for niche brands.
            ZH: 关键意见消费者营销在小众品牌中变得越来越流行。
-       #5  sim=21.7%  score=1.7006  dist=47  normed_dist=0.7833
+       #5  sim=23.3%  score=45.5285  dist=46  normed_dist=0.7667
+           EN: Scientists are developing new methods to combat climate change.
+           ZH: 科学家们正在开发应对气候变化的新方法。
+       #6  sim=23.3%  score=44.0945  dist=46  normed_dist=0.7667
+           EN: Our Return on Ad Spend has improved since we refined our targeting.
+           ZH: 自从我们优化了定向投放后，我们的广告支出回报率有所提高。
+       #7  sim=21.7%  score=46.4000  dist=47  normed_dist=0.7833
            EN: Artificial intelligence is transforming the way we live and work.
            ZH: 人工智能正在改变我们生活和工作的模式。
-       #6  sim=18.3%  score=3.2378  dist=49  normed_dist=0.8167
-           EN: ROAS is the primary metric for our e-commerce performance.
-           ZH: 广告支出回报率是我们电商绩效的核心指标。
-       #7  sim=13.3%  score=3.1139  dist=52  normed_dist=0.8667
+       #8  sim=13.3%  score=47.8261  dist=52  normed_dist=0.8667
+           EN: Customer Acquisition Cost has increased due to high competition in the market.
+           ZH: 由于市场竞争激烈，客户获取成本有所上升。
+       #9  sim=13.3%  score=47.0588  dist=52  normed_dist=0.8667
+           EN: Auction Dynamics determine the final price paid for each of the Impressions.
+           ZH: 竞价机制决定了每条广告曝光所支付的最终价格。
+       #10  sim=13.3%  score=45.3077  dist=52  normed_dist=0.8667
            EN: Search Engine Optimization is a long-term strategy for organic growth.
            ZH: 搜索引擎优化是实现有机增长的长期战略。
-       #8  sim=11.7%  score=1.7710  dist=53  normed_dist=0.8833
-           EN: Brand Awareness is measured through surveys and search volume.
-           ZH: 品牌知名度通过调研和搜索量来衡量。
-       #9  sim=10.0%  score=1.7006  dist=54  normed_dist=0.9000
-           EN: Private Traffic is more cost-effective than constant paid acquisition.
-           ZH: 私域流量比持续的付费获客更具成本效益。
-       #10  sim=5.0%  score=2.7934  dist=57  normed_dist=0.9500
-           EN: Our main goal for this campaign is to increase Brand Awareness among Gen Z.
-           ZH: 我们此次活动的主要目标是提高 Z 世代的品牌知名度。
 
   [TB] Terminology Base (glossary) hits:
        'Attribution Modeling'  →  ['归因模型']
@@ -1705,24 +1716,24 @@ Example translations:
   4. [score: 0.72]
     KOC marketing is becoming more popular for niche brands.
     关键意见消费者营销在小众品牌中变得越来越流行。
-  5. [score: 0.78]
+  5. [score: 0.77]
+    Scientists are developing new methods to combat climate change.
+    科学家们正在开发应对气候变化的新方法。
+  6. [score: 0.77]
+    Our Return on Ad Spend has improved since we refined our targeting.
+    自从我们优化了定向投放后，我们的广告支出回报率有所提高。
+  7. [score: 0.78]
     Artificial intelligence is transforming the way we live and work.
     人工智能正在改变我们生活和工作的模式。
-  6. [score: 0.82]
-    ROAS is the primary metric for our e-commerce performance.
-    广告支出回报率是我们电商绩效的核心指标。
-  7. [score: 0.87]
+  8. [score: 0.87]
+    Customer Acquisition Cost has increased due to high competition in the market.
+    由于市场竞争激烈，客户获取成本有所上升。
+  9. [score: 0.87]
+    Auction Dynamics determine the final price paid for each of the Impressions.
+    竞价机制决定了每条广告曝光所支付的最终价格。
+  10. [score: 0.87]
     Search Engine Optimization is a long-term strategy for organic growth.
     搜索引擎优化是实现有机增长的长期战略。
-  8. [score: 0.88]
-    Brand Awareness is measured through surveys and search volume.
-    品牌知名度通过调研和搜索量来衡量。
-  9. [score: 0.90]
-    Private Traffic is more cost-effective than constant paid acquisition.
-    私域流量比持续的付费获客更具成本效益。
-  10. [score: 0.95]
-    Our main goal for this campaign is to increase Brand Awareness among Gen Z.
-    我们此次活动的主要目标是提高 Z 世代的品牌知名度。
 Translate this English passage to Chinese without additional questions, disclaimer, or explanations, but accurately and completely:
 Attribution Modeling is necessary for omnichannel marketing.
 

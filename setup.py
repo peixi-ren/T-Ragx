@@ -22,6 +22,7 @@ setup(
         'elasticsearch',
         'OpenCC',
         'levenshtein',
+        'rapidfuzz>=3.0.0',
         'unbabel-comet>=2.2.1',
     ],
     keywords=[

@@ -6,8 +6,10 @@ torch==2.1.1
 torchvision
 torchaudio
 
-#For elastic search
+#For elastic search (optional — only needed for ElasticInputProcessor)
 elasticsearch>=7.9.1
+
+rapidfuzz>=3.0.0
 
 transformers>=4.38.1
 llama-cpp-python==0.2.54

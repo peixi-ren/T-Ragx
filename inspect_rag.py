@@ -11,15 +11,12 @@ or simply:
 import os
 import pandas as pd
 import t_ragx
-from elasticsearch import Elasticsearch
 from t_ragx.models.OpenAIModel import OpenAIModel
 from t_ragx.models.BaseModel import glossary_to_text, trans_mem_to_text, pretext_to_text, tm_context_to_text
 from t_ragx.models.constants import LANG_BY_LANG_CODE
 
 MEMORY_CSV_PATH = os.path.join(os.path.dirname(__file__), "zh_en_memory.csv")
 GLOSSARY_CSV_PATH = os.path.join(os.path.dirname(__file__), "zh_en_glossary.csv")
-MEMORY_INDEX = "zh_en_translation_memory"
-LOCAL_ES_HOST = "http://localhost:9200"
 
 EXAMPLE_SENTENCES = [
     "The quick brown fox jumps over the lazy dog.",
@@ -68,19 +65,6 @@ def load_exact_match_memory(csv_path, source_lang, target_lang):
     return exact_match_memory
 
 
-def index_memory_csv(es_client):
-    from t_ragx.utils.elastic import csv_to_elastic
-    try:
-        es_client.indices.create(index=MEMORY_INDEX)
-        print(f"Indexing {MEMORY_CSV_PATH} into Elasticsearch...")
-        csv_to_elastic(MEMORY_CSV_PATH, id_key='en', es_client=es_client, index=MEMORY_INDEX)
-        print("Indexing complete.")
-    except Exception as e:
-        if 'resource_already_exists' in str(e).lower():
-            print(f"Index '{MEMORY_INDEX}' already exists, skipping indexing.")
-        else:
-            raise
-
 
 def main():
     # --- Model (prompt-building only, no API calls made) ---
@@ -90,16 +74,9 @@ def main():
     )
 
     # --- Set up input processor (mirrors test.py) ---
-    input_processor = t_ragx.processors.ElasticInputProcessor()
+    input_processor = t_ragx.processors.RapidFuzzInputProcessor()
     input_processor.load_local_glossary(GLOSSARY_CSV_PATH, source_lang=SOURCE_LANG, target_lang=TARGET_LANG)
-
-    es_client = Elasticsearch(LOCAL_ES_HOST)
-    index_memory_csv(es_client)
-    input_processor.load_general_translation(
-        elastic_index=MEMORY_INDEX,
-        elasticsearch_host=LOCAL_ES_HOST,
-        es_client=es_client,
-    )
+    input_processor.load_general_translation(MEMORY_CSV_PATH, source_lang=SOURCE_LANG, target_lang=TARGET_LANG)
 
     # --- Load exact match memory with context ---
     exact_match_memory = load_exact_match_memory(MEMORY_CSV_PATH, SOURCE_LANG, TARGET_LANG)

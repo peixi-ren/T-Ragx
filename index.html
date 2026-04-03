@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Translator</title>
+<style>
+  :root {
+    --bg: #f5f6fa;
+    --surface: #ffffff;
+    --surface2: #f0f2f8;
+    --border: #dde1ed;
+    --accent: #5c6bc0;
+    --accent-hover: #3949ab;
+    --accent2: #26a69a;
+    --accent2-hover: #00897b;
+    --text: #1a1d2e;
+    --text-muted: #6b7280;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* Header */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+    position: sticky; top: 0; z-index: 100;
+  }
+  header h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.3px;
+  }
+  header h1 span { color: var(--text); font-weight: 400; }
+
+  /* Layout */
+  .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.75rem; }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+  }
+  .card-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  /* File upload */
+  .upload-zone {
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s;
+    position: relative;
+    background: var(--surface2);
+  }
+  .upload-zone:hover { border-color: var(--accent); background: var(--surface); }
+  .upload-zone.has-file { border-color: var(--success); border-style: solid; }
+  .upload-zone input[type="file"] {
+    position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%;
+  }
+  .upload-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+  .upload-label { font-size: 0.8rem; font-weight: 600; color: var(--text); }
+  .upload-sub { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.2rem; }
+  .upload-filename {
+    font-size: 0.75rem; color: var(--success); font-weight: 600;
+    margin-top: 0.3rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  /* Form fields */
+  label { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 0.3rem; }
+  input[type="text"], input[type="password"], input[type="number"], select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--surface2);
+    color: var(--text);
+    font-size: 0.875rem;
+    transition: border 0.15s;
+    outline: none;
+  }
+  input:focus, select:focus { border-color: var(--accent); background: var(--surface); }
+  .field { margin-bottom: 0.85rem; }
+  .field:last-child { margin-bottom: 0; }
+  .input-group { display: flex; gap: 0.5rem; align-items: flex-end; }
+  .input-group input { flex: 1; }
+  .eye-btn {
+    padding: 8px 10px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .eye-btn:hover { background: var(--border); }
+
+  /* Buttons */
+  .btn-row { display: flex; gap: 0.75rem; margin: 1.25rem 0; }
+  .btn {
+    padding: 11px 28px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-primary { background: var(--accent); color: white; }
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+  .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { background: var(--border); transform: translateY(-1px); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  /* Progress */
+  .progress-section { display: none; margin-bottom: 1rem; }
+  .progress-section.visible { display: block; }
+  .progress-label {
+    font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem;
+    display: flex; justify-content: space-between;
+  }
+  .progress-bar-track {
+    height: 8px; background: var(--surface2); border-radius: 4px;
+    overflow: hidden; border: 1px solid var(--border);
+  }
+  .progress-bar-fill {
+    height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 4px; transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* Results table */
+  .results-section { display: none; }
+  .results-section.visible { display: block; }
+  .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  thead { background: var(--surface2); }
+  th {
+    padding: 10px 16px; text-align: left;
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+  td { padding: 10px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--surface2); }
+  .download-row { margin-top: 1rem; display: flex; justify-content: flex-end; }
+  .btn-download {
+    padding: 9px 20px;
+    background: var(--accent2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex; align-items: center; gap: 0.4rem;
+    transition: all 0.15s;
+  }
+  .btn-download:hover { background: var(--accent2-hover); transform: translateY(-1px); }
+
+  /* Inspect section */
+  .inspect-section { display: none; }
+  .inspect-section.visible { display: block; }
+  details {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    background: var(--surface);
+    overflow: hidden;
+  }
+  summary {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    user-select: none;
+    background: var(--surface2);
+    transition: background 0.15s;
+  }
+  summary:hover { background: var(--border); }
+  summary::before { content: '▶'; font-size: 0.65rem; color: var(--text-muted); transition: transform 0.2s; }
+  details[open] summary::before { transform: rotate(90deg); }
+  .inspect-body { padding: 1rem 1.25rem; }
+  .inspect-row {
+    display: flex; gap: 1rem; padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border); font-size: 0.85rem;
+    align-items: flex-start;
+  }
+  .inspect-row:last-child { border-bottom: none; }
+  .inspect-key {
+    font-weight: 700; color: var(--text-muted); font-size: 0.75rem;
+    text-transform: uppercase; letter-spacing: 0.05em; min-width: 100px; padding-top: 2px;
+  }
+  .inspect-val { flex: 1; color: var(--text); }
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 12px;
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .badge-green { background: #dcfce7; color: #15803d; }
+  .badge-blue { background: #dbeafe; color: #1d4ed8; }
+  .badge-yellow { background: #fef3c7; color: #b45309; }
+  .badge-gray { background: var(--surface2); color: var(--text-muted); }
+  .tm-hits-table { width: 100%; font-size: 0.8rem; border-collapse: collapse; margin-top: 0.5rem; }
+  .tm-hits-table th { font-size: 0.7rem; color: var(--text-muted); text-align: left; padding: 4px 8px; }
+  .tm-hits-table td { padding: 5px 8px; border-top: 1px solid var(--border); }
+  .sim-bar { display: inline-block; height: 6px; border-radius: 3px; background: var(--accent); vertical-align: middle; margin-right: 6px; }
+  .prompt-block {
+    background: var(--surface2); border-radius: 6px; padding: 0.75rem 1rem;
+    font-size: 0.78rem; font-family: monospace; white-space: pre-wrap;
+    word-break: break-word; color: var(--text-muted); margin-top: 0.5rem;
+    max-height: 200px; overflow-y: auto; border: 1px solid var(--border);
+  }
+  .prompt-role { font-weight: 700; color: var(--accent); font-size: 0.75rem; margin-bottom: 0.25rem; }
+
+  /* Error/info banners */
+  .banner {
+    padding: 10px 16px; border-radius: 8px; font-size: 0.85rem;
+    margin-bottom: 1rem; display: none;
+  }
+  .banner.visible { display: block; }
+  .banner-error { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+  .banner-info { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+
+  /* Section divider */
+  .section-title {
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--text-muted);
+    margin: 1.5rem 0 0.75rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>RAG <span>Translator</span></h1>
+</header>
+
+<div class="container">
+
+  <!-- Mandatory -->
+  <div class="card">
+    <div class="card-title">1 — Required</div>
+    <div class="grid-2" style="margin-bottom:1.25rem">
+      <div>
+        <div class="upload-zone" id="zone-src">
+          <input type="file" accept=".txt" onchange="handleFile(this,'src','zone-src','src-name')">
+          <div class="upload-icon">📄</div>
+          <div class="upload-label">Source Text</div>
+          <div class="upload-sub">.txt — one sentence per line</div>
+          <div class="upload-filename" id="src-name"></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1rem;align-content:start">
+        <div class="field">
+          <label>Source Language</label>
+          <select id="src-lang">
+            <option value="en">English (en)</option>
+            <option value="ja">Japanese (ja)</option>
+            <option value="zh">Chinese (zh)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Target Language</label>
+          <select id="tgt-lang">
+            <option value="zh">Chinese (zh)</option>
+            <option value="en">English (en)</option>
+            <option value="ja">Japanese (ja)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional -->
+  <div class="card">
+    <div class="card-title">2 — Optional</div>
+    <div class="grid-2">
+      <div>
+        <div class="upload-zone" id="zone-tm">
+          <input type="file" accept=".csv" onchange="handleFile(this,'tm','zone-tm','tm-name')">
+          <div class="upload-icon">📊</div>
+          <div class="upload-label">Translation Memory</div>
+          <div class="upload-sub">CSV with en/zh columns</div>
+          <div class="upload-filename" id="tm-name"></div>
+        </div>
+      </div>
+      <div>
+        <div class="upload-zone" id="zone-gloss">
+          <input type="file" accept=".csv" onchange="handleFile(this,'gloss','zone-gloss','gloss-name')">
+          <div class="upload-icon">📖</div>
+          <div class="upload-label">Glossary</div>
+          <div class="upload-sub">CSV with term translations</div>
+          <div class="upload-filename" id="gloss-name"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="btn-row">
+    <button class="btn btn-primary" style="padding:16px 40px;font-size:1.05rem" onclick="runDemoTranslation()">🌐 Translate</button>
+    <button class="btn btn-secondary" style="padding:16px 40px;font-size:1.05rem" onclick="runDemoInspect()">🔍 Inspect RAG Pipeline</button>
+  </div>
+
+  <!-- Error banner -->
+  <div class="banner banner-error" id="error-banner"></div>
+
+  <!-- Progress -->
+  <div class="progress-section" id="progress-section">
+    <div class="progress-label">
+      <span id="progress-text">Translating sentence 1 of 5...</span>
+      <span id="progress-pct">0%</span>
+    </div>
+    <div class="progress-bar-track">
+      <div class="progress-bar-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results-section" id="results-section">
+    <div class="section-title">Translation Results</div>
+    <div class="card" style="padding:0; overflow:hidden">
+      <div class="table-wrap">
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Source</th>
+              <th>Translation</th>
+            </tr>
+          </thead>
+          <tbody id="results-tbody"></tbody>
+        </table>
+      </div>
+      <div class="download-row" style="padding:1rem">
+        <button class="btn-download" onclick="downloadTxt()">⬇ Download .txt</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inspect -->
+  <div class="inspect-section" id="inspect-section">
+    <div class="section-title">RAG Inspection — Per Sentence</div>
+    <div id="inspect-container"></div>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+
+// ─── File upload ──────────────────────────────────────────────────────────
+const files = {};
+function handleFile(input, key, zoneId, nameId) {
+  const file = input.files[0];
+  if (!file) return;
+  files[key] = file;
+  document.getElementById(nameId).textContent = '✓ ' + file.name;
+  document.getElementById(zoneId).classList.add('has-file');
+}
+
+// ─── Mock data ────────────────────────────────────────────────────────────
+const MOCK_TRANSLATIONS = [
+  { src: 'The quick brown fox jumps over the lazy dog.', tgt: '那只敏捷的棕色狐狸跳过了那只懒狗。' },
+  { src: 'Artificial intelligence is transforming the way we live and work.', tgt: '人工智能正在改变我们生活和工作的模式。' },
+  { src: 'She walked along the riverbank as the sun set behind the mountains.', tgt: '她沿着河岸漫步，夕阳西下山峦之后。' },
+  { src: 'How can we lower the CAC using First-Party Data?', tgt: '我们如何利用第一方数据降低客户获取成本？' },
+  { src: 'The DSP is integrated with the top three Ad Exchange platforms.', tgt: '需求方平台与顶级的三个广告交易平台相集成。' },
+];
+
+const MOCK_INSPECT = [
+  {
+    src: 'The quick brown fox jumps over the lazy dog.',
+    exact_match: { status: 'LONG SEGMENT — used directly', badge: 'green', tm: '那只敏捷的棕色狐狸跳过了那只懒狗。' },
+    repeat: { status: 'UNIQUE', badge: 'gray' },
+    tm_hits: [],
+    glossary_hits: {},
+    skipped_llm: true,
+    prompt: [],
+  },
+  {
+    src: 'Artificial intelligence is transforming the way we live and work.',
+    exact_match: { status: 'LONG SEGMENT — used directly', badge: 'green', tm: '人工智能正在改变我们生活和工作的模式。' },
+    repeat: { status: 'UNIQUE', badge: 'gray' },
+    tm_hits: [],
+    glossary_hits: {},
+    skipped_llm: true,
+    prompt: [],
+  },
+  {
+    src: 'She walked along the riverbank as the sun set behind the mountains.',
+    exact_match: { status: 'NO MATCH', badge: 'gray' },
+    repeat: { status: 'UNIQUE', badge: 'gray' },
+    tm_hits: [
+      { sim: 59.7, score: 69.5, dist: 27, normed: 0.403, src: 'She walked along the riverbank enjoying the cool breeze.', tgt: '她沿着河岸漫步享受着凉爽的微风。' },
+      { sim: 34.3, score: 47.5, dist: 44, normed: 0.657, src: 'Neural networks are inspired by the structure of the human brain.', tgt: '神经网络的灵感来源于人类大脑的结构。' },
+      { sim: 32.8, score: 47.2, dist: 45, normed: 0.672, src: 'The Ad Exchange facilitates the buying and selling of media.', tgt: '广告交易平台促进了媒介的买卖。' },
+    ],
+    glossary_hits: {},
+    skipped_llm: false,
+    prompt: [
+      { role: 'system', content: 'You are a professional translator. When example translations are provided with a similarity score: a score of 0.0 means the example is identical to the source — follow it very closely...' },
+      { role: 'user', content: '[Partial similarity — selective wording reference]\n1. [score: 0.40]\n   She walked along the riverbank enjoying the cool breeze.\n   她沿着河岸漫步享受着凉爽的微风。\n\nTranslate to Chinese:\nShe walked along the riverbank as the sun set behind the mountains.' },
+    ],
+  },
+  {
+    src: 'How can we lower the CAC using First-Party Data?',
+    exact_match: { status: 'NO MATCH', badge: 'gray' },
+    repeat: { status: 'UNIQUE', badge: 'gray' },
+    tm_hits: [
+      { sim: 4.2, score: 2.1, dist: 46, normed: 0.958, src: 'We use CPC bidding to drive traffic to our landing page.', tgt: '我们使用每次点击成本竞价来为落地页引流。' },
+      { sim: 2.1, score: 10.2, dist: 47, normed: 0.979, src: 'First-Party Data is essential for personalized marketing.', tgt: '第一方数据对于个性化营销至关重要。' },
+    ],
+    glossary_hits: { 'CAC': ['客户获取成本'], 'First-Party Data': ['第一方数据'] },
+    skipped_llm: false,
+    prompt: [
+      { role: 'system', content: 'You are a professional translator. You MUST strictly follow the provided glossary...' },
+      { role: 'user', content: 'MANDATORY glossary:\n  CAC → 客户获取成本\n  First-Party Data → 第一方数据\n\nTranslate to Chinese:\nHow can we lower the CAC using First-Party Data?' },
+    ],
+  },
+  {
+    src: 'The DSP is integrated with the top three Ad Exchange platforms.',
+    exact_match: { status: 'NO MATCH', badge: 'gray' },
+    repeat: { status: 'UNIQUE', badge: 'gray' },
+    tm_hits: [
+      { sim: 34.9, score: 6.3, dist: 41, normed: 0.651, src: 'The DSP uses algorithms to bid on the most relevant Ad Inventory.', tgt: '需求方平台使用算法对最相关的广告库存进行竞价。' },
+      { sim: 31.7, score: 3.7, dist: 43, normed: 0.683, src: 'The Ad Server delivers the creative to the user browser.', tgt: '广告投放服务器将创意投递到用户的浏览器。' },
+    ],
+    glossary_hits: { 'DSP': ['需求方平台'], 'Ad Exchange': ['广告交易平台'] },
+    skipped_llm: false,
+    prompt: [
+      { role: 'system', content: 'You are a professional translator. You MUST strictly follow the provided glossary...' },
+      { role: 'user', content: 'MANDATORY glossary:\n  DSP → 需求方平台\n  Ad Exchange → 广告交易平台\n\nTranslate to Chinese:\nThe DSP is integrated with the top three Ad Exchange platforms.' },
+    ],
+  },
+];
+
+// ─── Demo translate (simulated with progress) ─────────────────────────────
+let translationData = [];
+
+async function runDemoTranslation() {
+  translationData = [];
+  document.getElementById('results-tbody').innerHTML = '';
+  document.getElementById('results-section').classList.remove('visible');
+  document.getElementById('inspect-section').classList.remove('visible');
+  document.getElementById('error-banner').classList.remove('visible');
+
+  const progressSec = document.getElementById('progress-section');
+  progressSec.classList.add('visible');
+
+  const data = MOCK_TRANSLATIONS;
+  const n = data.length;
+
+  for (let i = 0; i < n; i++) {
+    const pct = Math.round((i / n) * 100);
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-pct').textContent = pct + '%';
+    document.getElementById('progress-text').textContent =
+      `Translating sentence ${i + 1} of ${n}: "${data[i].src.slice(0, 40)}..."`;
+
+    await sleep(600);
+
+    translationData.push(data[i]);
+    appendResultRow(i + 1, data[i].src, data[i].tgt);
+    document.getElementById('results-section').classList.add('visible');
+  }
+
+  document.getElementById('progress-fill').style.width = '100%';
+  document.getElementById('progress-pct').textContent = '100%';
+  document.getElementById('progress-text').textContent = 'Translation complete!';
+}
+
+function appendResultRow(idx, src, tgt) {
+  const tbody = document.getElementById('results-tbody');
+  const tr = document.createElement('tr');
+  tr.innerHTML = `<td style="color:var(--text-muted);font-size:0.8rem;width:40px">${idx}</td>
+    <td>${escHtml(src)}</td><td>${escHtml(tgt)}</td>`;
+  tbody.appendChild(tr);
+}
+
+// ─── Demo inspect ─────────────────────────────────────────────────────────
+function runDemoInspect() {
+  const container = document.getElementById('inspect-container');
+  container.innerHTML = '';
+
+  MOCK_INSPECT.forEach((r, i) => {
+    const d = document.createElement('details');
+    if (i === 0) d.open = true;
+
+    // Badge class map
+    const badgeMap = { green: 'badge-green', blue: 'badge-blue', yellow: 'badge-yellow', gray: 'badge-gray' };
+
+    // TM hits table
+    let tmHtml = '<em style="color:var(--text-muted);font-size:0.8rem">(none)</em>';
+    if (r.tm_hits.length > 0) {
+      tmHtml = `<table class="tm-hits-table">
+        <thead><tr><th>#</th><th>Similarity</th><th>Source</th><th>Translation</th></tr></thead>
+        <tbody>${r.tm_hits.map((h, j) => `
+          <tr>
+            <td style="color:var(--text-muted)">${j+1}</td>
+            <td>
+              <span class="sim-bar" style="width:${h.sim * 0.6}px"></span>
+              ${h.sim.toFixed(1)}%
+            </td>
+            <td>${escHtml(h.src)}</td>
+            <td>${escHtml(h.tgt)}</td>
+          </tr>`).join('')}
+        </tbody></table>`;
+    }
+
+    // Glossary
+    const glossEntries = Object.entries(r.glossary_hits);
+    let glossHtml = '<em style="color:var(--text-muted);font-size:0.8rem">(none)</em>';
+    if (glossEntries.length > 0) {
+      glossHtml = glossEntries.map(([term, trans]) =>
+        `<span class="badge badge-blue" style="margin-right:6px;margin-bottom:4px">${escHtml(term)}</span>
+         → <strong>${escHtml(trans.join(', '))}</strong>`
+      ).join('<br>');
+    }
+
+    // Prompt
+    let promptHtml = '';
+    if (r.skipped_llm) {
+      promptHtml = `<span class="badge badge-green">LLM skipped — TM/repeat match used directly</span>`;
+    } else {
+      promptHtml = r.prompt.map(m => `
+        <div class="prompt-role">[${m.role.toUpperCase()}]</div>
+        <div class="prompt-block">${escHtml(m.content)}</div>
+      `).join('');
+    }
+
+    // TM match status
+    let tmStatusExtra = '';
+    if (r.exact_match.tm) {
+      tmStatusExtra = `<br><span style="color:var(--text-muted);font-size:0.8rem;margin-top:4px;display:block">
+        TM: ${escHtml(r.exact_match.tm)}</span>`;
+    }
+
+    d.innerHTML = `
+      <summary>
+        <span style="color:var(--text-muted);font-size:0.75rem;min-width:30px">[${String(i+1).padStart(2,'0')}]</span>
+        ${escHtml(r.src.length > 70 ? r.src.slice(0,70) + '…' : r.src)}
+      </summary>
+      <div class="inspect-body">
+        <div class="inspect-row">
+          <div class="inspect-key">100% Match</div>
+          <div class="inspect-val">
+            <span class="badge ${badgeMap[r.exact_match.badge]}">${r.exact_match.status}</span>
+            ${tmStatusExtra}
+          </div>
+        </div>
+        <div class="inspect-row">
+          <div class="inspect-key">Repeat</div>
+          <div class="inspect-val">
+            <span class="badge ${badgeMap[r.repeat.badge]}">${r.repeat.status}</span>
+          </div>
+        </div>
+        <div class="inspect-row">
+          <div class="inspect-key">TM Hits</div>
+          <div class="inspect-val">${tmHtml}</div>
+        </div>
+        <div class="inspect-row">
+          <div class="inspect-key">Glossary</div>
+          <div class="inspect-val">${glossHtml}</div>
+        </div>
+        <div class="inspect-row">
+          <div class="inspect-key">LLM Prompt</div>
+          <div class="inspect-val">${promptHtml}</div>
+        </div>
+      </div>`;
+
+    container.appendChild(d);
+  });
+
+  document.getElementById('inspect-section').classList.add('visible');
+  document.getElementById('inspect-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ─── Download ─────────────────────────────────────────────────────────────
+function downloadTxt() {
+  const lines = translationData.map(d => `[SRC] ${d.src}\n[TGT] ${d.tgt}`).join('\n\n');
+  const blob = new Blob([lines], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'translation.txt'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ─── Utilities ────────────────────────────────────────────────────────────
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+function escHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+</script>
+</body>
+</html>
